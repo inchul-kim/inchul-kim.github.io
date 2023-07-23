@@ -9,10 +9,11 @@
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
 	<!-- <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>"> -->
   <link rel="icon" href="data/misc/favicon_camera.png">
+  <script type="module" src="https://unpkg.com/dark-mode-toggle"></script>
 </head>
 
 <body>
-  <button onclick="topFunction()" id="btn_back_to_top" title="Go to top"><img src="./images/misc/up-arrow-svgrepo-com.svg" width="40px" height="40px"/></button>
+  <button onclick="topFunction()" id="btn_back_to_top" title="Go to top"><img src="./images/misc/up-arrow-svgrepo-com-steelblue.svg" width="40px" height="40px"/></button>
 
   <table style="width:100%;max-width:1000px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
     <tr style="padding:0px">
@@ -47,6 +48,12 @@
         </tbody></table>
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 				
+
+
+
+
+
+
           <!-- dp2023 -->
           <tr>
             <td style="padding:20px;width:25%;vertical-align:middle">
@@ -91,6 +98,9 @@
               </p>
             </td>
           </tr>
+
+
+
 
           <!-- vr2019 -->
           <tr>
@@ -147,6 +157,9 @@
             </td>
           </tr>
 
+
+
+
           <!-- dehaze2019 -->
           <tr>
             <td style="padding:20px;width:25%;vertical-align:middle">
@@ -193,6 +206,9 @@
               </p>
             </td>
           </tr>
+
+
+
 
           <!-- prism2017 -->
           <tr>
@@ -250,6 +266,9 @@
               </p>
             </td>
           </tr>
+
+
+          
 
           <!-- dehaze2017 -->
           <tr>
@@ -452,23 +471,23 @@
 <script>
   // Javascript code here
   // Get the button
-let mybutton = document.getElementById("btn_back_to_top");
+  let mybutton = document.getElementById("btn_back_to_top");
 
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
+  // When the user scrolls down 20px from the top of the document, show the button
+  window.onscroll = function() {scrollFunction()};
 
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
+    }
   }
-}
 
-// When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-}
+  // When the user clicks on the button, scroll to the top of the document
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
 </script>
 </html>
