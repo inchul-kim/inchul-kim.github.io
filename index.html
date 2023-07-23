@@ -12,6 +12,8 @@
 </head>
 
 <body>
+  <button onclick="topFunction()" id="btn_back_to_top" title="Go to top"><img src="./images/misc/up-arrow-svgrepo-com.svg" width="40px" height="40px"/></button>
+
   <table style="width:100%;max-width:1000px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
     <tr style="padding:0px">
       <td style="padding:0px">
@@ -449,5 +451,24 @@
 </body>
 <script>
   // Javascript code here
+  // Get the button
+let mybutton = document.getElementById("btn_back_to_top");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
 </script>
 </html>

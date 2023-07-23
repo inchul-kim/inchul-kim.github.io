@@ -156,6 +156,25 @@ span.highlight {
   font-size: small;
 }
 
+#btn_back_to_top {
+  display: none;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 3px;
+  border-radius: 4px;
+  background: transparent;
+}
+
+/* #btn_back_to_top:hover {
+  background-color: #555;
+} */
+
 @media all and (max-width:420px){
   table{
       width:100%;
