@@ -1,0 +1,453 @@
+<!DOCTYPE HTML>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <title>Inchul Kim</title>
+  
+  <meta name="author" content="Inchul Kim">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+	<!-- <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>"> -->
+  <link rel="icon" href="data/misc/favicon_camera.png">
+</head>
+
+<body>
+  <table style="width:100%;max-width:1000px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+    <tr style="padding:0px">
+      <td style="padding:0px">
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr style="padding:0px">
+            <td style="padding:2.5%;width:63%;vertical-align:middle" class="td_contents">
+              <p style="text-align:center">
+                <name>Inchul (Incheol) Kim</name>
+              </p>
+              <p>I am a PhD student in <a href="http://vclab.kaist.ac.kr/">Visual Computing Lab</a> at Korea Advanced Institute of Science and Technology (KAIST), 
+                South Korea</a>, under supervision of Prof <a href="http://vclab.kaist.ac.kr/minhkim/index.html" target="_blank">Min H. Kim</a>.
+              </p>
+              <p style="text-align:center">
+                <a href="mailto:kimic89@gmail.com">Email</a> &nbsp/&nbsp
+                <a href="pdf/cv/ickim_cv_latest.pdf" target="_blank">CV</a> &nbsp/&nbsp
+                <a href="https://scholar.google.com/citations?user=gMaAWvYAAAAJ&hl=en/" target="_blank">Google Scholar</a> &nbsp/&nbsp
+                <a href="https://github.com/IncheolKim/" target="_blank">Github</a>
+              </p>
+            </td>
+            <td style="padding:2.5%;width:40%;max-width:40%">
+              <img style="width:200px;max-width:100%" alt="profile photo" src="images/profile/ickim_square.jpg" class="hoverZoomLink">     
+            </td>
+          </tr>
+        </tbody></table>
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr>
+            <td style="padding:20px;width:100%;vertical-align:middle" class="heading">
+              <heading>Publications</heading>
+            </td>
+          </tr>
+        </tbody></table>
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+				
+          <!-- dp2023 -->
+          <tr>
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one" onmouseout="dp2023_stop()" onmouseover="dp2023_start()">
+                <div class="two" id='dp_image_2023'>
+                  <img src='images/publication/[CVPR2023]dual_pixel/dp_bidisparity_colorbar2.png' class="img_papers_temp" width="180">
+                </div>
+                <img src='images/publication/[CVPR2023]dual_pixel/dp_kernel.png' class="img_papers_temp" width="180">
+              </div>
+              <script type="text/javascript">
+                function dp2023_start() {
+                  document.getElementById('dp_image_2023').style.opacity = 1;
+                }
+
+                function dp2023_stop() {
+                  document.getElementById('dp_image_2023').style.opacity = 0;
+                }
+                dp2023_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle" class="td_contents">
+              <a href="http://vclab.kaist.ac.kr/cvpr2023p1/index.html" target="_blank">
+                <papertitle>Spatio-Focal Bidirectional Disparity Estimation from a Dual-Pixel Image</papertitle>
+              </a>
+              <br>
+              <a href="https://sites.google.com/view/dgkim03" target="_blank">Donggun Kim</a>,
+              <a href="https://sites.google.com/view/hyeonjoong" target="_blank">Hyeonjoong Jang</a>,
+              <strong>Inchul Kim</strong>,
+              <a href="http://vclab.kaist.ac.kr/minhkim/index.html" target="_blank">Min H. Kim</a>
+              <br>
+              <em>Proc. IEEE/CVF Computer Vision and Pattern Recognition (<strong>CVPR</strong>)</em>, 2023 &nbsp
+              <br>
+              <a href="http://vclab.kaist.ac.kr/cvpr2023p1/index.html" target="_blank">Project</a> /
+              <a href="pdf/papers/[CVPR2023]dual_pixel/Kim_CVPR2023_dp_paper.pdf" target="_blank">Paper</a> /
+              <a href="pdf/papers/[CVPR2023]dual_pixel/Kim_CVPR2023_dp_supp.pdf" target="_blank">Supplemental</a> /
+              <a href="data/bib/cvpr2023_dp.txt" target="_blank">bibtex</a>
+              <br>
+              <p></p>
+              <p>
+                We estimate <em>bidirectional</em> disparities from a dual-pixel image by a network using self-supervised learning.
+                Our method based on the dual-pixel optics produces more physically correct results.
+              </p>
+            </td>
+          </tr>
+
+          <!-- vr2019 -->
+          <tr>
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one" onmouseout="vr2019_stop()" onmouseover="vr2019_start()">
+                <div class="two" id='vr_image_2019'>
+                  <video  width=100% height=100% muted autoplay loop>
+                    <source src="images/publication//[TVCG2019]parallax_vr/oculus_novel_view.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+                <img src='images/publication/[TVCG2019]parallax_vr/oculus_view_black.png' class="img_papers_temp" width="180">
+              </div>
+              <script type="text/javascript">
+                function vr2019_start() {
+                  document.getElementById('vr_image_2019').style.opacity = 1;
+                }
+
+                function vr2019_stop() {
+                  document.getElementById('vr_image_2019').style.opacity = 0;
+                }
+                vr2019_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle" class="td_contents">
+              <a href="https://ana-serrano.github.io/projects/VR-6dof.html" target="_blank">
+                <papertitle>Motion parallax for 360° RGBD video</papertitle>
+              </a>
+              <br>
+              <a href="https://ana-serrano.github.io/" target="_blank">Ana Serrano</a>,
+              <strong>Incheol Kim</strong>,
+              <a href="http://www.zhilichen.com/" target="_blank">Zhili Chen</a>,
+              <a href="http://www.stephendiverdi.com/" target="_blank">Stephen DiVerdi</a>,
+              <a href="http://giga.cps.unizar.es/~diegog/" target="_blank">Diego Gutierrez</a>,
+              <a href="https://research.adobe.com/person/aaron-hertzmann/" target="_blank">Aaron Hertzmann</a>,
+              <a href="http://webdiis.unizar.es/~bmasia/" target="_blank">Belen Masia</a>
+              <br>
+							<em>IEEE Transactions on Visualization and Computer Graphics (<strong>TVCG</strong>), Proc. IEEE VR</em>, 2019 
+              <strong><font color="red">(<a href="https://ieeevr.org/2019/awards/conference_awards.html" style="color:red" target="_blank"><u>Best journal paper nominee</u></a>)</font></strong>
+							<br>
+              <a href="https://ana-serrano.github.io/projects/VR-6dof.html" target="_blank">Project</a> /
+              <a href="pdf/papers/[TVCG2019]parallax_vr/Serrano_IEEEVR2019_VR-6dof.pdf" target="_blank">Paper</a> /
+              <a href="pdf/papers/[TVCG2019]parallax_vr/Serrano_IEEEVR2019_VR-6dof_supp.pdf" target="_blank">Supplemental</a> /
+              <a href="pdf/papers/[TVCG2019]parallax_vr/Serrano_IEEEVR2019_VR-6dof_slides.pdf" target="_blank">Slides</a> /
+              <a href="https://github.com/ana-serrano/VR-6dof" target="_blank">Code</a> /
+              <a href="https://ieeexplore.ieee.org/document/8661657" target="_blank">IEEE Xplore</a> /
+              <a href="data/bib/tvcg2019_vr.txt" target="_blank">bibtex</a>
+              <br>
+              <p></p>
+              <p>
+                Our VR video viewer exploits <em>motion parallax cues</em> to reduce VR sickness without additional hardware requirements.
+                Our system provides a compelling viewing experience with reduced discomfort.
+              </p>
+            </td>
+          </tr>
+
+          <!-- dehaze2019 -->
+          <tr>
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one" onmouseout="dehaze2019_stop()" onmouseover="dehaze2019_start()">
+                <div class="two" id='dehazed_image_2019'>
+                  <video  width=100% height=100% muted autoplay loop>
+                    <source src="images/publication/[CCIS2019]dehazing/nonlocal_mrf_prop.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+                <img src='images/publication/[CCIS2019]dehazing/nonlocal_mrf.png' class="img_papers_temp" width="180">
+              </div>
+              <script type="text/javascript">
+                function dehaze2019_start() {
+                  document.getElementById('dehazed_image_2019').style.opacity = 1;
+                }
+
+                function dehaze2019_stop() {
+                  document.getElementById('dehazed_image_2019').style.opacity = 0;
+                }
+                dehaze2019_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle" class="td_contents">
+              <a href="http://vclab.kaist.ac.kr/ccis2019/index.html" target="_blank">
+                <papertitle>Non-local Haze Propagation with an Iso-Depth Prior</papertitle>
+              </a>
+              <br>
+              <strong>Incheol Kim</strong>,
+              <a href="http://vclab.kaist.ac.kr/minhkim/index.html" target="_blank">Min H. Kim</a>
+              <br>
+							<em>Computer Vision, Imaging and Computer Graphics - Theory and Applications</em>, 2019
+              <br>
+              <a href="http://vclab.kaist.ac.kr/ccis2019/index.html" target="_blank">Project</a> /
+              <a href="pdf/papers/[CCIS2019]dehazing/CCIS_2019_Main_Paper.pdf" target="_blank">Paper</a> /
+              <a href="pdf/papers/[CCIS2019]dehazing/CCIS_2019_Supplemental.pdf" target="_blank">Supplemental</a> /
+              <a href="https://github.com/KAIST-VCLAB/dehazing-nnf" target="_blank">Code</a> /
+              <a href="https://link.springer.com/chapter/10.1007/978-3-030-12209-6_11" target="_blank">Springer DL</a> /
+              <a href="data/bib/ccis_2019_dehaze.txt" target="_blank">bibtex</a>
+              <br>
+              <p></p>
+              <p>
+                More experiments and validations have been added on top of our non-local haze regularization paper in 2017.
+              </p>
+            </td>
+          </tr>
+
+          <!-- prism2017 -->
+          <tr>
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one" onmouseout="prism2017_stop()" onmouseover="prism2017_start()">
+                <div class="two" id='prism_image_2017'>
+                  <img src='images/publication/[SIGA2017]prism/prism_result.png' class="img_papers_temp" width="180">
+                </div>
+                <img src='images/publication/[SIGA2017]prism/prism_system.png' class="img_papers_temp" width="180">
+              </div>
+              <script type="text/javascript">
+                function prism2017_start() {
+                  document.getElementById('prism_image_2017').style.opacity = 1;
+                }
+
+                function prism2017_stop() {
+                  document.getElementById('prism_image_2017').style.opacity = 0;
+                }
+                prism2017_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle" class="td_contents">
+              <a href="http://vclab.kaist.ac.kr/siggraphasia2017p2/index.html" target="_blank">
+                <papertitle>Compact Single-Shot Hyperspectral Imaging Using a Prism</papertitle>
+              </a>
+              <br>
+              <a href="https://sites.google.com/view/shbaek/" target="_blank">Seung-Hwan Baek</a>,
+              <strong>Incheol Kim</strong>,
+              <a href="http://giga.cps.unizar.es/~diegog/" target="_blank">Diego Gutierrez</a>,
+              <a href="http://vclab.kaist.ac.kr/minhkim/index.html" target="_blank">Min H. Kim</a>
+              <br>
+              <em>ACM Transactions on Graphics (TOG), presented at <strong>SIGGRAPH Asia</strong></em>, 2017 &nbsp
+              <br>
+              <a href="http://vclab.kaist.ac.kr/siggraphasia2017p2/index.html" target="_blank">Project</a> /
+              <a href="pdf/papers/[SIGA2017]prism/Baek_SIGA2017_prism_paper.pdf" target="_blank">Paper</a> /
+              <a href="pdf/papers/[SIGA2017]prism/Baek_SIGA2017_prism_supp_doc.pdf" target="_blank">Supplemental1</a> /
+              <a href="pdf/papers/[SIGA2017]prism/Baek_SIGA2017_prism_supp_results.pdf" target="_blank">Supplemental2</a> /
+              <a href="pdf/papers/[SIGA2017]prism/Baek_SIGA2017_prism_presentation.pdf" target="_blank">Slides</a> /
+              <a href="https://dl.acm.org/doi/10.1145/2980179.2980221" target="_blank">ACM DL</a> /
+              <a href="data/bib/siga2017_prism.txt" target="_blank">bibtex</a>
+              <br><br>
+              Press release:
+              <a href="https://www.eurekalert.org/news-releases/601979" target="_blank">EurekAlert!</a> /
+              <a href="https://www.photonics.com/Article.aspx?AID=62875" target="_blank">Photonics</a> /
+              <a href="https://www.technologybreakingnews.com/2017/12/compact-hyperspectral-imaging-at-low-cost/" target="_blank">Tech. Breaking News</a> /
+              <a href="https://www.rdworldonline.com/compact-hyperspectral-imaging-at-low-cost/" target="_blank">R&D Magazine</a>
+              <br>
+              Patent registered:
+              <a href="https://patents.google.com/patent/US20190096044A1/en" target="_blank">US Patent</a> /
+              <a href="https://patents.google.com/patent/EP3460427A1/en" target="_blank">European Patent</a> /
+              <a href="https://patents.google.com/patent/WO2019059632A1/en" target="_blank">PCT Patent</a>
+              <p></p>
+              <p>
+                Our compact snapshot hyperspectral imaging (HSI) system enables hand-held imaging spectroscopy, and shows strong performance over large HSI systems.
+              </p>
+            </td>
+          </tr>
+
+          <!-- dehaze2017 -->
+          <tr>
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one" onmouseout="dehaze2017_stop()" onmouseover="dehaze2017_start()">
+                <div class="two" id='dehazed_image_2017'>
+                  <img src='images/publication/[VISAPP2017]dehazing/house_input_dehazed_output.png' class="img_papers_temp" width="180">
+                </div>
+                <img src='images/publication/[VISAPP2017]dehazing/house_input.png' class="img_papers_temp" width="180">
+              </div>
+              <script type="text/javascript">
+                function dehaze2017_start() {
+                  document.getElementById('dehazed_image_2017').style.opacity = 1;
+                }
+
+                function dehaze2017_stop() {
+                  document.getElementById('dehazed_image_2017').style.opacity = 0;
+                }
+                dehaze2017_stop()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle" class="td_contents">
+              <a href="http://vclab.kaist.ac.kr/visapp2017/index.html" target="_blank">
+                <papertitle>Dehazing using Non-Local Regularization with Iso-Depth Neighbor-Fields</papertitle>
+              </a>
+              <br>
+              <strong>Incheol Kim</strong>,
+              <a href="http://vclab.kaist.ac.kr/minhkim/index.html" target="_blank">Min H. Kim</a>
+              <br>
+							<em>International Conference on Computer Vision, Theory and Applications (VISAPP)</em>, 2017 &nbsp <font color="red"><strong>(Oral Presentation)</strong></font>
+							<br>
+              <a href="http://vclab.kaist.ac.kr/visapp2017/index.html" target="_blank">Project</a> /
+              <a href="pdf/papers/[VISAPP2017]dehazing/Kim_VISAPP_2017.pdf" target="_blank">Paper</a> /
+              <a href="pdf/papers/[VISAPP2017]dehazing/Kim_VISAPP_2017_supplemental.pdf" target="_blank">Supplemental</a> /
+              <a href="https://github.com/KAIST-VCLAB/dehazing-nnf" target="_blank">Code</a> /
+              <a href="data/bib/visapp2017_dehaze.txt" target="_blank">bibtex</a>
+              <br>
+              <p></p>
+              <p>
+                Our haze regularization exploits non-local information from nearest-neighbor fields and shows the state-of-the-art performance.
+              </p>
+            </td>
+          </tr>
+    <!-- <tr onmouseout="zipnerf_stop()" onmouseover="zipnerf_start()"  bgcolor="#ffffd0">
+      <td style="padding:20px;width:25%;vertical-align:middle">
+        <div class="one">
+          <div class="two" id='zipnerf_image'><video  width=100% height=100% muted autoplay loop>
+          <source src="images/zipnerf.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+          </video></div>
+          <img src='images/zipnerf.jpg' width="160">
+        </div>
+        <script type="text/javascript">
+          function zipnerf_start() {
+            document.getElementById('zipnerf_image').style.opacity = "1";
+          }
+
+          function zipnerf_stop() {
+            document.getElementById('zipnerf_image').style.opacity = "0";
+          }
+          zipnerf_stop()
+        </script>
+      </td>
+      <td style="padding:20px;width:75%;vertical-align:middle">
+        <a href="http://jonbarron.info/zipnerf">
+          <papertitle>Zip-NeRF: Anti-Aliased Grid-Based Neural Radiance Fields</papertitle>
+        </a>
+        <br>
+        <strong>Jonathan T. Barron</strong>,
+        <a href="https://bmild.github.io/">Ben Mildenhall</a>,
+        <a href="https://scholar.harvard.edu/dorverbin/home">Dor Verbin</a>,
+        <a href="https://pratulsrinivasan.github.io/">Pratul Srinivasan</a>,
+        <a href="https://phogzone.com/">Peter Hedman</a>
+        <br>
+        <em>ICCV</em>, 2023
+        <br>
+        <a href="http://jonbarron.info/zipnerf">project page</a>
+        /
+        <a href="https://www.youtube.com/watch?v=xrrhynRzC8k">video</a>
+        /
+        <a href="https://arxiv.org/abs/2304.06706">arXiv</a>
+        <p></p>
+        <p>
+        Combining mip-NeRF 360 and grid-based models like Instant NGP lets us reduce error rates by 8%&ndash;77% and accelerate training by 24x.
+        </p>
+      </td>
+    </tr>
+    
+		
+    <tr onmouseout="db3d_stop()" onmouseover="db3d_start()">
+      <td style="padding:20px;width:25%;vertical-align:middle">
+        <div class="one">
+          <div class="two" id='db3d_image'><video  width=100% height=100% muted autoplay loop>
+          <source src="images/owl.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+          </video></div>
+          <img src='images/owl.png' width="160">
+        </div>
+        <script type="text/javascript">
+          function db3d_start() {
+            document.getElementById('db3d_image').style.opacity = "1";
+          }
+
+          function db3d_stop() {
+            document.getElementById('db3d_image').style.opacity = "0";
+          }
+          db3d_stop()
+        </script>
+      </td>
+      <td style="padding:20px;width:75%;vertical-align:middle">
+				<a href="https://dreambooth3d.github.io/">
+          <papertitle>DreamBooth3D: Subject-Driven Text-to-3D Generation</papertitle>
+        </a>
+        <br>
+        
+<a href="https://amitraj93.github.io/">Amit Raj</a>, <a href="https://www.linkedin.com/in/srinivas-kaza-64223b74">Srinivas Kaza</a>, <a href="https://poolio.github.io/">Ben Poole</a>, <a href="https://m-niemeyer.github.io/">Michael Niemeyer</a>, <a href="https://natanielruiz.github.io/">Nataniel Ruiz</a>, 
+<a href="https://bmild.github.io/">Ben Mildenhall</a>, <a href="https://scholar.google.com/citations?user=I2qheksAAAAJ">Shiran Zada</a>, <a href="https://kfiraberman.github.io/">Kfir Aberman</a>, <a href="http://people.csail.mit.edu/mrub/">Michael Rubinstein</a>, 
+         <strong>Jonathan T. Barron</strong>, <a href="http://people.csail.mit.edu/yzli/">Yuanzhen Li</a>, <a href="https://varunjampani.github.io/">Varun Jampani</a>
+        <br>
+        <em>ICCV</em>, 2023
+        <br>
+				<a href="https://dreambooth3d.github.io/">project page</a> / 
+				<a href="https://arxiv.org/abs/2303.13508">arXiv</a>
+        <p></p>
+        <p>Combining DreamBooth (personalized text-to-image) and DreamFusion (text-to-3D) yields high-quality, subject-specific 3D assets with text-driven modifications</p>
+      </td>
+    </tr>
+    !-->
+    
+
+        </tbody></table>
+
+				
+        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
+          <tr>
+            <td class="heading">
+              <heading>Misc</heading>
+            </td>
+          </tr>
+        </tbody></table>
+        <table width="100%" align="center" border="0" cellpadding="20"><tbody>
+					
+          <!-- <tr>
+            <td style="padding:20px;width:25%;vertical-align:middle"><img src="images/cvf.jpg"></td>
+            <td width="75%" valign="center">
+              <a href="https://cvpr2023.thecvf.com/Conferences/2023/Organizers">Demo Chair, CVPR 2023</a>
+			  <br>
+              <a href="https://cvpr2022.thecvf.com/area-chairs">Area Chair, CVPR 2022</a>
+              <br>
+              <a href="http://cvpr2021.thecvf.com/area-chairs">Area Chair & Longuet-Higgins Award Committee Member, CVPR 2021</a>
+              <br>
+              <a href="http://cvpr2019.thecvf.com/area_chairs">Area Chair, CVPR 2019</a>
+              <br>
+              <a href="http://cvpr2018.thecvf.com/organizers/area_chairs">Area Chair, CVPR 2018</a>
+            </td>
+          </tr> -->
+          <!-- <tr>
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <img src="images/cs188.jpg" alt="cs188">
+            </td>
+            <td width="75%" valign="center">
+              <a href="http://inst.eecs.berkeley.edu/~cs188/sp11/announcements.html">Graduate Student Instructor, CS188 Spring 2011</a>
+              <br>
+              <a href="http://inst.eecs.berkeley.edu/~cs188/fa10/announcements.html">Graduate Student Instructor, CS188 Fall 2010</a>
+              <br>
+              <a href="http://aima.cs.berkeley.edu/">Figures, "Artificial Intelligence: A Modern Approach", 3rd Edition</a>
+            </td>
+          </tr> -->
+					
+
+          <!-- <tr>
+            <td align="center" style="padding:20px;width:25%;vertical-align:middle">
+							<heading>Basically <br> Blog Posts</heading>
+            </td>
+            <td width="75%" valign="middle">
+              <a href="https://arxiv.org/abs/2112.11687">Squareplus: A Softplus-Like Algebraic Rectifier</a>
+              <br>
+              <a href="https://arxiv.org/abs/2010.09714">A Convenient Generalization of Schlick's Bias and Gain Functions</a>
+              <br>
+              <a href="https://arxiv.org/abs/1704.07483">Continuously Differentiable Exponential Linear Units</a>
+            </td>
+          </tr> -->
+					
+					
+        </tbody></table>
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+            <td style="padding:0px">
+              <br>
+              <p style="text-align:right;font-size:small;">
+                My website has been built upon Dr <a class="footnote" href="https://jonbarron.info/" target="_blank">Jon Barron</a>'s <a class="footnote" href="https://github.com/jonbarron/website" target="_blank">source code</a>.
+              </p>
+            </td>
+          </tr>
+        </tbody></table>
+      </td>
+    </tr>
+  </table>
+</body>
+<script>
+  // Javascript code here
+</script>
+</html>
