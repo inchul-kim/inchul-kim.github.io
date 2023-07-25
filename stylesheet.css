@@ -105,41 +105,44 @@ name {
   font-size: 32px;
 }
 
-/* .img_papers_temp{
-  width: 160px;
-  height: 160px;
-  position: relative;
-} */
-
-.one {
+.paperImg {
   width: 180px;
   height: 180px;
   position: relative;
 }
 
-.two {
+.paperImg img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.paperImg video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.coverImg {
   width: 180px;
   height: 180px;
-  position: absolute;
-  transition: opacity .2s ease-in-out;
-  -moz-transition: opacity .2s ease-in-out;
-  -webkit-transition: opacity .2s ease-in-out;
-}
-
-.one_profile {
-  width: 160px;
-  height: 160px;
   position: relative;
-  margin: 0 auto;
 }
 
-.two_profile {
-  width: 160px;
-  height: 160px;
+.hoverImg {
   position: absolute;
+  left: 0;
+  top: 0;
+  display: none;
+  opacity: 0;
   transition: opacity .2s ease-in-out;
   -moz-transition: opacity .2s ease-in-out;
   -webkit-transition: opacity .2s ease-in-out;
+}
+
+.paperImg:hover .hoverImg {
+  display: block;
+  opacity: 1;
 }
 
 .fade {
@@ -182,34 +185,44 @@ span.highlight {
 
   td{
       display:block;
-      width:100%;
+      width: 100% !important;
       margin: 0 auto;
   }
 
   tr{
       display:block;
       margin-bottom:30px;
+      text-align: center;
   }
-
-  /* .img_papers{
-    width: 250px;
-    height: 250px;
-    position: relative;
-  } */
+  .td_contents{
+    text-align: left;
+  }
   
-
-  .one{
-    margin-left: auto;
-    margin-right: auto;
-    right: 50%;
-    width: 180px;
-    height: 180px;
+  .paperImg {
+    display: block;
+    margin-left: 0 auto;
+    margin-right: 0 auto;
+    position: relative;
+    width: 350px;
+    height: 350px;
   }
 
-  .two{
-    margin-left: auto;
-    margin-right: auto;
+  .paperImg img{
+    display: block;
+    margin-left: 0 auto;
+    margin-right: 0 auto;
+    width: 350px;
+    height: 350px;
   }
+
+  .paperImg video{
+    display: block;
+    margin-left: 0 auto;
+    margin-right: 0 auto;
+    width: 350px;
+    height: 350px;
+  }
+
 
   .heading{
     text-align: center;
