@@ -179,8 +179,21 @@ span.highlight {
 } */
 
 @media all and (max-width:420px){
+  html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensure proper box-sizing */
+  }
+
+  .centered-content {
+    width: 90%; /* Set an explicit width for the container */
+    margin: 0 auto;
+    overflow: auto;
+  }
+
   table{
       width:100%;
+      margin: 0 auto;
   }
 
   td{
@@ -193,34 +206,45 @@ span.highlight {
       display:block;
       margin-bottom:30px;
       text-align: center;
+      margin: 0 auto;
   }
+
+  .heading {
+    margin-top: 10%;
+    margin-bottom: 10%;
+  }
+
+  .imgCell{
+    padding: 0px !important;
+    margin: 0 auto;
+  }
+
   .td_contents{
     text-align: left;
   }
   
   .paperImg {
     display: block;
-    margin-left: 0 auto;
-    margin-right: 0 auto;
+    margin: 0 auto;
     position: relative;
-    width: 350px;
-    height: 350px;
+    width: 320px;
+    height: 320px;
   }
 
   .paperImg img{
     display: block;
     margin-left: 0 auto;
     margin-right: 0 auto;
-    width: 350px;
-    height: 350px;
+    width: 320px;
+    height: 320px;
   }
 
   .paperImg video{
     display: block;
     margin-left: 0 auto;
     margin-right: 0 auto;
-    width: 350px;
-    height: 350px;
+    width: 320px;
+    height: 320px;
   }
 
 
