@@ -188,7 +188,7 @@ span.highlight {
   .centered-content {
     width: 90%; /* Set an explicit width for the container */
     margin: 0 auto;
-    overflow: auto;
+    overflow: initial;
   }
 
   table{
