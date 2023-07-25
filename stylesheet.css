@@ -178,7 +178,7 @@ name {
   -webkit-transition: opacity .2s ease-in-out;
 }
 
-.paperImg:hover .hoverImg {
+.publicationRow:hover .hoverImg {
   display: block;
   opacity: 1;
 }
