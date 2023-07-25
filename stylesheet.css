@@ -248,8 +248,8 @@ span.highlight {
   }
 
   .heading {
-    margin-top: 50px;
-    margin-bottom: 30px;
+    display: block;
+    margin-bottom: 20px;
     width: 100%;
     vertical-align: middle;
     padding: 0px;
@@ -257,7 +257,7 @@ span.highlight {
   }
 
   .imgCell{
-    display:block;
+    display: block;
     padding: 0px;
     margin: 0 auto;
     width: 100%;
