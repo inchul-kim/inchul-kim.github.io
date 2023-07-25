@@ -204,14 +204,18 @@ span.highlight {
 
   tr{
       display:block;
-      margin-bottom:30px;
+      /* margin-bottom: 30px; */
       text-align: center;
       margin: 0 auto;
   }
 
+  .publicationRow{
+    margin-bottom: 30px !important;
+  }
+
   .heading {
-    margin-top: 10%;
-    margin-bottom: 10%;
+    margin-top: 50px;
+    margin-bottom: 30px;
   }
 
   .imgCell{
@@ -222,29 +226,39 @@ span.highlight {
   .td_contents{
     text-align: left;
   }
+
+  .profileImg {
+    padding: 0px !important;
+    margin: 0 auto;
+    margin-bottom: 30px;
+  }
+
+  .profileImg img{
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    width: 240px;
+    height: auto;
+  }
   
   .paperImg {
     display: block;
     margin: 0 auto;
     position: relative;
-    width: 320px;
-    height: 320px;
+    width: 280px;
+    height: 280px;
   }
 
   .paperImg img{
     display: block;
-    margin-left: 0 auto;
-    margin-right: 0 auto;
-    width: 320px;
-    height: 320px;
+    width: 280px;
+    height: 280px;
   }
 
   .paperImg video{
     display: block;
-    margin-left: 0 auto;
-    margin-right: 0 auto;
-    width: 320px;
-    height: 320px;
+    width: 280px;
+    height: 280px;
   }
 
 
