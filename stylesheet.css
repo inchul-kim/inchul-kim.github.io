@@ -223,6 +223,7 @@ span.highlight {
 }
 
 .footnote {
+  text-align: right;
   font-size: small;
 }
 
