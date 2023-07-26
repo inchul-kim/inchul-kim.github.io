@@ -18,21 +18,24 @@
     <img id="img_back_to_top" src="./images/misc/up-arrow-svgrepo-com-steelblue.svg" width="40px" height="40px"/>
   </button>
   
-  <div class="toggle_wrapper">
-    <input type="checkbox" class="toggle_dark" id="toggle_darkmode">
-    <label for="toggle_darkmode" class="toggle_dark-label">
-      <i class="fas fa-moon"></i>
-      <i class="fas fa-sun"></i>
-      <span class="ball"></span>
-    </label>
-  </div>
-
+  <!-- profile section -->
   <table style="width:100%;max-width:1000px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
     <tbody>
     <tr style="padding:0px">
       <td style="padding:0px">
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
           <tbody>
+            <tr>
+              <!-- dark mode toggle -->
+              <div class="toggle_wrapper">
+                <input type="checkbox" class="toggle_dark" id="toggle_darkmode">
+                <label for="toggle_darkmode" class="toggle_dark-label">
+                  <i class="fas fa-moon"></i>
+                  <i class="fas fa-sun"></i>
+                  <span class="ball"></span>
+                </label>
+              </div>
+            </tr>
             <tr style="padding:0px">
               <td style="padding:2.5%;width:63%;vertical-align:middle" class="td_contents">
                 <p style="text-align:center">
@@ -59,7 +62,7 @@
         </table>
 
 
-
+        <!-- publications -->
         <table class="headingTable">
           <tbody>
             <tr>
@@ -373,11 +376,6 @@
       localStorage.setItem("dark-mode", "disabled");
     }
   }
-  // function setDarkMode() {
-  //   document.body.classList.add("dark");
-  //   document.getElementById("img_back_to_top").src = "./images/misc/up-arrow-svgrepo-com-tangerine.svg";
-  //   localStorage.setItem("dark-mode", "enabled");
-  // }
 
   const darkModeToggle = document.getElementById("toggle_darkmode");
   darkModeToggle.addEventListener("change", () => {
