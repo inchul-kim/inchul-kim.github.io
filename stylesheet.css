@@ -71,16 +71,19 @@
 }
 
 a {
-  color: #1772d0;
+  color: var(--light-link-text);
   text-decoration: none;
 }
 
 a:focus,
 a:hover {
-  color: #f09228;
+  color: var(--light-link-hover-text);
   text-decoration: none;
 }
 
+body {
+  background-color: var(--light-background);
+}
 body,
 td,
 th,

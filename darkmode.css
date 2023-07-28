@@ -1,47 +1,54 @@
-body {
-  transition: background 0.2s linear;
-}
-
-body.dark {background-color: #0d0e11;} /* #9b59b6 */
-
-body.dark td,
-body.dark p {
-  color: #9b9b9b;
-  text-decoration: none;
-}
-
-body.dark strong,
-body.dark heading,
-body.dark name {
-  color: #ffffff;
-  text-decoration: none;
-}
-
-
-body.dark papertitle,
-body.dark a {
-  color: #cf8026;
-  text-decoration: none;
-}
-
-body.dark papertitle {
-  color: #f59a31;
-  text-decoration: none;
-}
-
-body.dark papertitle:focus,
-body.dark papertitle:hover,
-body.dark a:focus,
-body.dark a:hover {
-  color: #8e2680;
-  text-decoration: none;
-}
-
-.toggle_wrapper {
-  margin-top: 10px;
-}
-
-.toggle_dark {
+@media (prefers-color-scheme: dark) {
+  body {
+    transition: background 0.2s linear;
+  }
+  
+  body.dark {background-color: var(--dark-background);} /* #9b59b6 */
+  
+  body.dark td,
+  body.dark p {
+    color: var(--dark-text);
+    text-decoration: none;
+  }
+  
+  body.dark strong,
+  body.dark heading,
+  body.dark name {
+    color: var(--dark-heading-text);
+    text-decoration: none;
+  }
+  
+  
+  body.dark a {
+    color: var(--dark-code-text);
+    text-decoration: none;
+  }
+  
+  body.dark papertitle {
+    color: var(--dark-papertitle-text);
+    text-decoration: none;
+  }
+  
+  body.dark papertitle:focus,
+  body.dark papertitle:hover,
+  body.dark a:focus,
+  body.dark a:hover {
+    color: var(--dark-link-hover-text);
+    text-decoration: none;
+  }
+  
+  /* body.dark darkImg {
+    content: attr(data-dark-src);
+  } */
+  
+  
+  /* dark mode toggle checkbox */
+  
+  .toggle_wrapper {
+    margin-top: 10px;
+  }
+  
+  .toggle_dark {
     opacity: 0;
     position: absolute;
   }
@@ -79,5 +86,7 @@ body.dark a:hover {
   .toggle_dark:checked + .toggle_dark-label .ball {
     transform: translateX(24px);
   }
-
+  
   * {box-sizing: border-box;}
+}
+
