@@ -1,0 +1,154 @@
+/* mobile phone */
+@media all and (max-width:600px) {
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      /* Ensure proper box-sizing */
+    }
+  
+    .centered-content {
+      width: 90%;
+      /* Set an explicit width for the container */
+      margin: 0 auto;
+      overflow: initial;
+    }
+  
+    table {
+      width: 100%;
+      margin: 0 auto;
+    }
+  
+    .table_publications {
+      margin-bottom: 0px;
+    }
+  
+    tr {
+      display: block;
+      /* margin-bottom: 30px; */
+      text-align: center;
+      margin: 0 auto;
+    }
+  
+    .publicationRow {
+      margin-bottom: 30px;
+    }
+  
+    .heading {
+      display: block;
+      margin-bottom: 20px;
+      margin-left: 0px;
+      width: 100%;
+      padding: 0px;
+      text-align: center;
+    }
+  
+    .heading heading {
+      padding-left: 0px;
+    }
+  
+    .profileImg {
+      display: block;
+      padding: 0px;
+      margin: 0 auto;
+      margin-bottom: 30px;
+    }
+  
+    .profileImg img {
+      display: block;
+      margin: 0 auto;
+      position: relative;
+      width: 240px;
+      height: auto;
+    }
+    
+    .imgCell {
+      display: block;
+      padding: 0px;
+      margin: 0 auto;
+      width: 100%;
+      padding-bottom: 10px;
+    }
+  
+    .paperImg {
+      display: block;
+      margin: 0 auto;
+      position: relative;
+      width: 280px;
+      height: 280px;
+    }
+  
+    .paperImg img {
+      display: block;
+      width: 280px;
+      height: 280px;
+    }
+  
+    .paperImg video {
+      display: block;
+      width: 280px;
+      height: 280px;
+    }
+  
+    .td_contents {
+      text-align: left;
+      width: 90% !important;
+    }
+  
+    .paperContents {
+      margin: 0 auto;
+    }
+  }
+  
+  /* IPad, tablets, folderbles */
+  @media all and (min-width:601px) and (max-width:1000px) {
+    .heading heading {
+      padding-left: 0px;
+    }
+  
+    .publicationRow {
+      height: 250px;
+    }
+  
+    .imgCell {
+      padding: 10px;
+      margin: 0 auto;
+      width: 250px;
+      vertical-align: middle;
+      position: relative;
+    }
+    
+    .td_contents {
+      padding: 5px;
+      width: 75%;
+      vertical-align: middle
+    }
+    
+    .paperImg {
+      display: absolute;
+      min-width: 100%;
+      min-height: 100%;
+      margin-left: 0 auto;
+      position: relative;
+    }
+    
+    .paperImg img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+    
+    .paperImg video {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+    
+    .coverImg {
+      width: 250px;
+      height: 250px;
+      position: relative;
+    }
+  }
