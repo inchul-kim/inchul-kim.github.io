@@ -130,14 +130,14 @@ name {
 }
 
 .centered-content {
-  max-width: 1000px;
+  max-width: var(--main-content-width);
   position: relative;
   overflow: auto;
   margin: 0 auto;
 }
 
 .table_general {
-  max-width: 1000px;
+  max-width: var(--main-content-width);
   width: 100%;
   border: 0px;
   border-spacing: 0px;

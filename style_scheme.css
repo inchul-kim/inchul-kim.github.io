@@ -10,11 +10,13 @@
     --dark-background: #1d2631;
     --dark-text: #9b9b9b;
     --dark-heading-text: #ffffff;
-    --dark-papertitle-text: #ff9b44;
-    --dark-link-text: #feb676;
+    --dark-papertitle-text: #fd9439;
+    --dark-link-text: #febd84;
     --dark-link-hover-text: #8e2680;
     --dark-heading-text: #fff;
     --dark-anchor-text: #0076d1;
     --dark-code-background: #161f27;
     --dark-code-text: #ffbe85;
+
+    --main-content-width: 1000px;
   }
