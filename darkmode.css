@@ -1,6 +1,6 @@
 @media (prefers-color-scheme: dark) {
   body {
-    transition: background 0.2s linear;
+    transition: background var(--dark-toggle-transition-time) linear;
   }
   
   body.dark {background-color: var(--dark-background);} /* #9b59b6 */

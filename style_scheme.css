@@ -18,5 +18,7 @@
     --dark-code-background: #161f27;
     --dark-code-text: #ffbe85;
 
+    --dark-toggle-transition-time: 0.2s;
+
     --main-content-width: 1000px;
   }

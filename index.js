@@ -70,7 +70,9 @@ darkModeToggle.addEventListener("change", () => {
 
 // Save the dark mode setting to a local browser.
 if (localStorage.getItem("dark-mode") === "enabled") {
+    const bodyStyleTransition = document.body.style.transition;
     document.getElementById("toggle_darkmode").click();
+    document.body.style.transition = bodyStyleTransition;
 }
 else {
     setLightDark("light");
