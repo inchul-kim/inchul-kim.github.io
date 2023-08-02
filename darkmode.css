@@ -20,7 +20,7 @@
   
   
   body.dark a {
-    color: var(--dark-code-text);
+    color: var(--dark-link-text);
     text-decoration: none;
   }
   
