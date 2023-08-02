@@ -80,7 +80,7 @@
     left: 2px;
     top: 2px;
     border-radius: 50%;
-    transition: transform 0.2s linear;
+    transition: transform var(--dark-toggle-transition-time) linear;
   }
   
   .toggle_dark:checked + .toggle_dark-label .ball {
