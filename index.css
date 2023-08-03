@@ -113,6 +113,11 @@ strong {
   font-size: 15px;
 }
 
+.redStress {
+  font-weight: bold !important;
+  color: red !important;
+}
+
 heading {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
   font-size: 24px;
