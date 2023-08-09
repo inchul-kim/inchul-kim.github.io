@@ -1,11 +1,20 @@
-$(document).ready(function()
-{
-  $.get("element_htmls/back_to_top_btn.html", function(btnHtml)
-   {
-    document.getElementById("main_div").innerHTML += btnHtml;
-   },'html');    // this is the change now its working
-});
+// $(document).ready(function()
+// {
+//   $.get("element_htmls/back_to_top_btn.html", function(btnHtml)
+//    {
+//     document.getElementById("main_div").innerHTML += btnHtml;
+//    },'html');    // this is the change now its working
+// });
 
+
+$.ajax({
+    url : "element_htmls/back_to_top_btn.html",
+    type : "get",
+    async: false,
+    success : function(btnHtml) {
+        document.getElementById("main_div").innerHTML += btnHtml;
+    },
+ });
 // const btnHtml = `
 // <!-- back to top button -->
 // <button onclick="topFunction()" id="btn_back_to_top" title="Go to top">
