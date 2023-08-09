@@ -27,5 +27,10 @@ xhr.onload = () => {
         function topFunction() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
+
+        // button click listener
+        mybutton.addEventListener("click", function() {
+            topFunction();
+        });
     }
 }
