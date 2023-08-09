@@ -1,6 +1,6 @@
 let xhr = new XMLHttpRequest();
 
-xhr.open("GET", "element_htmls/back_to_top_btn.html", true);
+xhr.open("GET", "element_htmls/back_to_top_btn.html", false);
 xhr.send();
 xhr.onload = () => {
     if (xhr.status == 200) {
