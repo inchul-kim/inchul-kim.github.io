@@ -182,8 +182,8 @@ name {
 }
 
 .publicationRow td {
-  padding-top: 3%;
-  padding-bottom: 3%;
+  padding-top: 1.5%;
+  padding-bottom: 1.5%;
 }
 
 
@@ -195,7 +195,7 @@ name {
 }
 
 .td_contents {
-  padding: 5px;
+  padding: 10px;
   width: 75%;
   vertical-align: middle
 }
