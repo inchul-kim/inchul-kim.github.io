@@ -1,12 +1,8 @@
-// btnHtml = '';
-
-let btnHtml = '';
-
 $(document).ready(function()
 {
-  $.get("element_htmls/back_to_top_btn.html", function(html_string)
+  $.get("element_htmls/back_to_top_btn.html", function(btnHtml)
    {
-      btnHtml = html_string;
+      document.getElementById("main_div").appendChild(btnHtml);
    },'html');    // this is the change now its working
 });
 
@@ -18,4 +14,3 @@ fetch("element_htmls/back_to_top_btn.html")
   .catch((e) => console.error(e));
 
 
-document.getElementById("main_div").appendChild(btnHtml);
