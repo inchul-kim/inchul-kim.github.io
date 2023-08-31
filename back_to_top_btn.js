@@ -39,9 +39,9 @@ const btnHtml = `
 <!-- back to top button -->
 <button id="btn_back_to_top" title="Go to top">
   <picture>
-    <source srcset="./images/misc/up-arrow-svgrepo-com-dark.svg" media="(prefers-color-scheme: dark)">
-    <source srcset="./images/misc/up-arrow-svgrepo-com-light.svg" media="(prefers-color-scheme: light)">
-    <img id="img_back_to_top" src="./images/misc/up-arrow-svgrepo-com-light.svg" width="40px" height="40px"/>
+    <source srcset="data/images/misc/up-arrow-svgrepo-com-dark.svg" media="(prefers-color-scheme: dark)">
+    <source srcset="data/images/misc/up-arrow-svgrepo-com-light.svg" media="(prefers-color-scheme: light)">
+    <img id="img_back_to_top" src="data/images/misc/up-arrow-svgrepo-com-light.svg" width="40px" height="40px"/>
   </picture>
 </button>
 `;
