@@ -18,7 +18,7 @@ const links = [
 // Loop through the array and update the links and text in the HTML
 for (let i = 0; i < links.length; i++) {
     let linkInfo = links[i];
-    let linkElements = document.getElementsByClassName("custom-link " + linkInfo.className);
+    let linkElements = document.getElementsByClassName("author-link " + linkInfo.className);
 
     for (let j = 0; j < linkElements.length; j++) {
         let linkElement = linkElements[j];
