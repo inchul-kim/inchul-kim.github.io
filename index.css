@@ -241,6 +241,26 @@ name {
   opacity: 1;
 }
 
+.imgCellSmall {
+  padding: 10px;
+  margin: 0 auto;
+  width: 150px;
+  vertical-align: middle;
+}
+
+.paperImgSmall {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.paperImgSmall img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 .fade {
   transition: opacity .2s ease-in-out;
   -moz-transition: opacity .2s ease-in-out;
