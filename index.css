@@ -89,6 +89,8 @@ a {
   text-decoration: none;
 }
 
+papertitle:focus,
+papertitle:hover,
 a:focus,
 a:hover {
   color: var(--light-link-hover-text);
