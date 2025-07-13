@@ -275,6 +275,9 @@
       {% if entry.code %}
         <a href="{{ entry.code }}" target="_blank" class="btn btn-sm z-depth-0" role="button">Code</a>
       {% endif %}
+      {% if entry.dataset %}
+        <a href="{{ entry.dataset }}" target="_blank" class="btn btn-sm z-depth-0" role="button">Dataset</a>
+      {% endif %}
       {% if entry.poster %}
         {% if entry.poster contains '://' %}
           <a href="{{ entry.poster }}" class="btn btn-sm z-depth-0" role="button">Poster</a>
