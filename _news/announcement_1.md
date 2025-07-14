@@ -5,4 +5,4 @@ inline: true
 related_posts: true
 ---
 
-Our NLOS paper has been accepted to <span style="font-weight: 900;">SIGGRAPH Asia</span> 2023.
+Our NLOS paper has been accepted to <span style="font-weight: 900;">SIGGRAPH Asia</span> 2023. [Click]({{ '/publications/#nlos:siga:2023' | relative_url }}).
