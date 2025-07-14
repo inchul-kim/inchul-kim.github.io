@@ -36,10 +36,10 @@ ninja.data = [{
           section: "Books",handler: () => {
               window.location.href = "/books/the_godfather/";
             },},{id: "news-our-dual-pixel-paper-has-been-accepted-to-cvpr-2023-click",
-          title: 'Our dual-pixel paper has been accepted to CVPR 2023. Click.',
+          title: 'Our dual-pixel paper has been accepted to CVPR 2023. [Click]',
           description: "",
           section: "News",},{id: "news-our-nlos-paper-has-been-accepted-to-siggraph-asia-2023-click",
-          title: 'Our NLOS paper has been accepted to SIGGRAPH Asia 2023. Click.',
+          title: 'Our NLOS paper has been accepted to SIGGRAPH Asia 2023. [Click]',
           description: "",
           section: "News",},{id: "projects-project-1",
           title: 'project 1',
