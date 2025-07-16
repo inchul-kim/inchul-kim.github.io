@@ -1,0 +1,32 @@
+- role: Teaching Assistant at KAIST
+  courses:
+    - title: Introduction to Computer Vision
+      code: CS484
+      term: Fall 2024
+      school: KAIST
+      description: An undergraduate-level course covering basic concepts in computer vision.
+      url: https://vclab.kaist.ac.kr/cs484/index.html
+      image: /assets/img/KAIST_TA/cs484.png
+
+    - title: Machine Learning for Computer Vision
+      code: CS485
+      term: Fall 2023
+      school: KAIST
+      description: An undergraduate course that studies concepts, theories and state-of-the-art methods for visual learning and recognition.
+      image: /assets/img/KAIST_TA/cs485.png
+
+    - title: Computer Graphics
+      code: CS580
+      term: Spring 2023
+      school: KAIST
+      description: A graduate course that covers advanced topics in computer graphics (beyond OpenGL-based graphics). Covered topics include the physics of light, Monte Carlo methods, path-tracing, radiosity, and other hybrid algorithms in depth.
+      url: https://vclab.kaist.ac.kr/cs580/index.html
+      image: /assets/img/KAIST_TA/cs580.png
+
+    - title: Interactive Computer Graphics
+      code: CS482
+      term: Fall 2022
+      school: KAIST
+      description: An undergraduate team project-based course that builds an interactive OpenGL video game on a mobile platform.
+      url: https://vclab.kaist.ac.kr/cs482/index.html
+      image: /assets/img/KAIST_TA/cs482.png
