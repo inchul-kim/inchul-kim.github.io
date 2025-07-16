@@ -60,9 +60,15 @@
   margin: 0 auto;
 }
 
-@media (max-width: 767.98px) {
+@media (max-width: 768px) {
   .thumbnail-img {
     max-width: 90%; // allow image to grow wider on small screens
   }
+}
+
+
+// bibtex thumbnail size
+.preview {
+  max-width: 300px !important;
 }
 
