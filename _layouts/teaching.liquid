@@ -14,29 +14,33 @@ layout: default
     
     {% for course in group.courses %}
       <div class="card mt-3 p-3">
-        <div class="row g-3">
-          {% if course.image %}
-            <div class="col-md-2 col-sm-3 col-4 d-flex align-items-center">
-              <img src="{{ course.image }}" alt="{{ course.title }} thumbnail" style="max-width: 100%; height: auto; border-radius: 4px;">
+        <div class="row g-3 align-items-center">
+            {% if course.image %}
+            <!-- Image Column -->
+            <div class="col-12 col-md-3 text-center px-3 mb-2 mb-md-0">
+                <img src="{{ course.image }}"
+                    alt="{{ course.title }} thumbnail"
+                    class="img-fluid rounded shadow-sm"
+                    style="width: 100%; max-width: 100%;">
             </div>
-          {% endif %}
-          <div class="col d-flex align-items-center">
-            <div>
-              <h5 class="mb-1">
+            {% endif %}
+
+            <!-- Text Column -->
+            <div class="col-12 col-md-9">
+            <h5 class="mb-1">
                 {% if course.url %}
-                  <a href="{{ course.url }}">{{ course.title }}</a>
+                <a href="{{ course.url }}">{{ course.title }}</a>
                 {% else %}
-                  {{ course.title }}
+                {{ course.title }}
                 {% endif %}
-              </h5>
-              <p class="text-muted mb-1">{{ course.code }} · {{ course.term }} · {{ course.school }}</p>
-              {% if course.description %}
+            </h5>
+            <p class="text-muted mb-1">{{ course.code }} · {{ course.term }} · {{ course.school }}</p>
+            {% if course.description %}
                 <p class="mb-0">{{ course.description }}</p>
-              {% endif %}
+            {% endif %}
             </div>
-          </div>
         </div>
-      </div>
+        </div>
     {% endfor %}
   {% endfor %}
 </div>
