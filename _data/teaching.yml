@@ -19,7 +19,7 @@
       code: CS580
       term: Spring 2023
       school: KAIST
-      description: A graduate course that covers advanced topics in computer graphics (beyond OpenGL-based graphics). Covered topics include the physics of light, Monte Carlo methods, path-tracing, radiosity, and other hybrid algorithms in depth.
+      description: A graduate course that covers advanced topics in computer graphics such as Monte Carlo methods, path-tracing, radiosity, and other hybrid algorithms.
       url: https://vclab.kaist.ac.kr/cs580/index.html
       image: /assets/img/KAIST_TA/cs580.png
 

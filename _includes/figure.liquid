@@ -21,7 +21,7 @@
     {% if site.imagemagick.enabled %}
       {% unless include.avoid_scaling %}
         <source
-          class="responsive-img-srcset"
+          class="responsive-img-srcset w-100"
           {% if ext == 'gif' or ext == 'jpeg' or ext == 'jpg' or ext == 'png' or ext == 'tiff' %}
             srcset="{% for i in site.imagemagick.widths %}{{ img_path | relative_url }}-{{ i }}.webp {{ i }}w,{% endfor %}"
             type="image/webp"
@@ -39,7 +39,7 @@
     <img
       src="{% if include.url %}{{ include.url }}{% elsif include.cache_bust %}{{ include.path | relative_url | bust_file_cache }}{% else %}{{ include.path | relative_url }}{% endif %}"
       {% if include.class %}
-        class="{{ include.class }}"
+        class="{{ include.class }} w-100"
       {% endif %}
       {% if include.width %}
         width="{{ include.width }}"

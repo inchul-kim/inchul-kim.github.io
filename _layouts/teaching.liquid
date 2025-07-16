@@ -27,15 +27,17 @@ layout: default
             <div class="row g-3 align-items-center">
                 {% if course.image %}
                 <!-- Image Column -->
-                <div class="col-12 col-md-3 d-flex justify-content-center align-items-center px-4 mb-3 mb-md-0">
-                <img src="{{ course.image }}"
-                    alt="{{ course.title }} thumbnail"
-                    class="thumbnail-img img-fluid rounded shadow-sm">
+                <div class="col-12 col-sm-3 d-flex justify-content-center align-items-center px-2">
+                    <div class="p-2 mb-3 mb-sm-0 w-100">
+                        <img src="{{ course.image }}"
+                            alt="{{ course.title }} thumbnail"
+                            class="thumbnail-img img-fluid rounded shadow-sm w-100">
+                    </div>
                 </div>
                 {% endif %}
 
                 <!-- Text Column -->
-                <div class="col-12 col-md-9">
+                <div class="col-12 col-sm-9">
                 <h5 class="mb-1">
                     {% if course.url %}
                     <a href="{{ course.url }}">{{ course.title }}</a>
