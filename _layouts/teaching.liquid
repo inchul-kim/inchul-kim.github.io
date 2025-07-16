@@ -8,38 +8,53 @@ layout: default
   </style>
 {% endif %}
 
-<div class="teaching-list">
-  {% for group in site.data.teaching %}
-    <h4 class="mt-5 mb-3 font-weight-bold">{{ group.role }}</h4>
-    
-    {% for course in group.courses %}
-      <div class="card mt-3 p-3">
-        <div class="row g-3 align-items-center">
-            {% if course.image %}
-            <!-- Image Column -->
-            <div class="col-12 col-md-3 d-flex justify-content-center align-items-center px-4 mb-3 mb-md-0">
-            <img src="{{ course.image }}"
-                alt="{{ course.title }} thumbnail"
-                class="thumbnail-img img-fluid rounded shadow-sm">
-            </div>
-            {% endif %}
+<div class="post">
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+    <p class="post-description">{{ page.description }}</p>
+  </header>
 
-            <!-- Text Column -->
-            <div class="col-12 col-md-9">
-            <h5 class="mb-1">
-                {% if course.url %}
-                <a href="{{ course.url }}">{{ course.title }}</a>
-                {% else %}
-                {{ course.title }}
+  <article>
+    {{ content }}
+  </article>
+
+  <div class="teaching-list">
+    {% for group in site.data.teaching %}
+        <h4 class="mt-5 mb-3 font-weight-bold">{{ group.role }}</h4>
+        
+        {% for course in group.courses %}
+        <div class="card mt-3 p-3">
+            <div class="row g-3 align-items-center">
+                {% if course.image %}
+                <!-- Image Column -->
+                <div class="col-12 col-md-3 d-flex justify-content-center align-items-center px-4 mb-3 mb-md-0">
+                <img src="{{ course.image }}"
+                    alt="{{ course.title }} thumbnail"
+                    class="thumbnail-img img-fluid rounded shadow-sm">
+                </div>
                 {% endif %}
-            </h5>
-            <p class="text-muted mb-1">{{ course.code }} · {{ course.term }} · {{ course.school }}</p>
-            {% if course.description %}
-                <p class="mb-0">{{ course.description }}</p>
-            {% endif %}
+
+                <!-- Text Column -->
+                <div class="col-12 col-md-9">
+                <h5 class="mb-1">
+                    {% if course.url %}
+                    <a href="{{ course.url }}">{{ course.title }}</a>
+                    {% else %}
+                    {{ course.title }}
+                    {% endif %}
+                </h5>
+                <p class="text-muted mb-1">{{ course.code }} · {{ course.term }} · {{ course.school }}</p>
+                {% if course.description %}
+                    <p class="mb-0">{{ course.description }}</p>
+                {% endif %}
+                </div>
             </div>
-        </div>
-        </div>
+            </div>
+        {% endfor %}
     {% endfor %}
-  {% endfor %}
+    </div>
+
+  {% if site.giscus and page.giscus_comments %}
+    {% include giscus.liquid %}
+  {% endif %}
 </div>

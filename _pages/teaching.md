@@ -7,4 +7,3 @@ nav: true
 nav_order: 5
 display_categories: [KAIST]
 ---
-TBA

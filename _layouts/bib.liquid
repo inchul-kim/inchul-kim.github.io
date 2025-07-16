@@ -1,8 +1,19 @@
 ---
 ---
+<style>
+  @media (min-width: 576px) {
+    .abbr video,
+    .abbr img {
+      max-height: 200px;
+      width: auto;
+      max-width: 100%;
+      object-fit: contain;
+    }
+  }
+</style>
 <div class="row">
   {% if site.enable_publication_thumbnails %}
-    <div class="col col-sm-2 abbr">
+    <div class="col col-sm-3 abbr py-3" style="display: flex; align-items: center; justify-content: center; margin: 0;">
       {%- if entry.abbr -%}
         {%- if site.data.venues[entry.abbr] -%}
           {% assign venue_style = null %}
@@ -35,11 +46,11 @@
         {% endif %}
 
         {% if is_video == '.mp4' %}
-          <figure class="figure">
+          <figure class="figure" style="margin: 0;">
             <a href="{{ entry_path }}" class="zoomable" target="_blank">
               <video class="figure-img img-fluid z-depth-1 rounded"
                     autoplay muted loop playsinline
-                    style="width: 100%; height: auto; object-fit: cover;">
+                    style="width: 100%; height: auto; object-fit: cover; margin: 0;">
                 <source src="{{ entry_path }}" type="video/mp4">
               </video>
             </a>
@@ -51,6 +62,7 @@
             path=entry_path
             sizes="200px"
             class="preview z-depth-1 rounded"
+            margin="0"
             zoomable=true
             avoid_scaling=true
             alt=entry.preview
@@ -64,7 +76,7 @@
   {% endif %}
 
   <!-- Entry bib key -->
-  <div id="{{ entry.key }}" class="{% if site.enable_publication_thumbnails %}col-sm-8{% else %}col-sm-10{% endif %}">
+  <div id="{{ entry.key }}" class="{% if site.enable_publication_thumbnails %}col-sm-8{% else %}col-sm-10{% endif %} d-flex flex-column justify-content-center">
     <!-- Title -->
     <div class="title"><span style="font-weight: 900;">{{ entry.title }}</span></div>
     <!-- Author -->
