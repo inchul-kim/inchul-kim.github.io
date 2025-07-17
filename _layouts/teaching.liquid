@@ -20,7 +20,7 @@ layout: default
 
   <div class="teaching-list">
     {% for group in site.data.teaching %}
-        <h4 class="mt-5 mb-3 font-weight-bold">{{ group.role }}</h4>
+        <h4 class="mt-5 mb-3">{{ group.role }}</h4>
         
         {% for course in group.courses %}
         <div class="card mt-3 p-3">
