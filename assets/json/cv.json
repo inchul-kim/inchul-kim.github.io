@@ -5,7 +5,7 @@
       "position": "Software Engineer",
       "startDate": "2021-01",
       "endDate": "2022-01",
-      "summary": "Front-end and back-end web development."
+      "highlights": "Front-end and back-end web development."
     },
     {
       "name": "Graphics and Imaging Lab, Universidad de Zaragoza, Spain",
@@ -13,13 +13,13 @@
       "url": "https://graphics.unizar.es/index.html",
       "startDate": "2017-07-01",
       "endDate": "2018-07-31",
-      "summary": "Research on reducing visual discomfort in virtual reality video playbacks. <a href=\"/publications#vrmotion:tvcg:2019\">[Click]</a>"
+      "highlights": "Research on reducing visual discomfort in virtual reality video playbacks. <a href=\"/publications#vrmotion:tvcg:2019\">[Click]</a>"
     },
     {
       "name": "Republic of Korea Air Force",
       "startDate": "2010-02-22",
       "endDate": "2012-03-05",
-      "summary": "Compulsory military service"
+      "highlights": "Compulsory military service"
     }
   ],
   "education": [
@@ -57,7 +57,7 @@
     {
       "name": "Hyperspectral Imaging System",
       "institution": "National Research Foundation of Korea (NRF), South Korea",
-      "summary": "Developing a real-time hyperspectral video capture and reconstruction system.",
+      "highlights": "Developing a real-time hyperspectral video capture and reconstruction system.",
       // "highlights": ["Quantum Teleportation", "Quantum Cryptography"],
       "startDate": "2024"
       // "endDate": "2024"
@@ -66,7 +66,7 @@
     {
       "name": "Intra-oral Scanner System",
       "institution": "Dentium, South Korea",
-      "summary": "Research on a robust, real-time 3D reconstruction using an RGBD camera.",
+      "highlights": "Research on a robust, real-time 3D reconstruction using an RGBD camera.",
       // "highlights": ["Quantum Teleportation", "Quantum Cryptography"],
       "startDate": "2022",
       "endDate": "2024"
@@ -75,7 +75,7 @@
     {
       "name": "High Dynamic Range Video Codec",
       "institution": "Electronics and Telecommunications Research Institute (ETRI), South Korea",
-      "summary": "Research on a next-generation codec for high dynamic range video compression.",
+      "highlights": "Research on a next-generation codec for high dynamic range video compression.",
       // "highlights": ["Quantum Teleportation", "Quantum Cryptography"],
       "startDate": "2016",
       "endDate": "2017"
@@ -86,9 +86,9 @@
     {
       "title": "KAIST Breakthroughs",
       "date": "2017",
-      "awarder": "KAIST",
+      "awarder": "Korea Advanced Institute of Science and Technology (KAIST)",
       "url": "https://breakthroughs.kaist.ac.kr/sub02/view/id/228/",
-      "summary": "Compact hyperspectral imaging at low cost (presented at <a href=\"/publications#prism:siga:2017\">ACM SIGGRAPH Asia 2017</a>).'"
+      "highlights": "Compact hyperspectral imaging at low cost (presented at <a href=\"/publications#prism:siga:2017\">ACM SIGGRAPH Asia 2017</a>)."
     }
   ],
   "contact": {
