@@ -29,6 +29,7 @@ latest_posts:
 
 
 I am a PhD student of the [Visual Computing Lab](https://vclab.kaist.ac.kr/) at the Korea Advanced Institute of Science and Technology (KAIST), South Korea, under supervision of Prof. [Min H. Kim](https://vclab.kaist.ac.kr/minhkim/index.html).
+Click <a href="/cv/">here</a> for the CV.
 
 Current research fields: hyperspectral imaging, learning-based image reconstruction, computational imaging
 
