@@ -315,6 +315,8 @@ filtered_bibtex_keywords:
     pdf,
     poster,
     preview,
+    preview1,
+    preview2,
     selected,
     slides,
     supp,

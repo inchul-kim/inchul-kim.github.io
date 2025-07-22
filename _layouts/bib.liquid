@@ -10,7 +10,81 @@
       object-fit: contain;
     }
   }
+
+  /* Make sure hover-preview-wrapper fills container width */
+  .hover-preview-wrapper {
+    width: 100%;
+    position: relative;
+    cursor: pointer;
+  }
+
+  /* Override existing max-height:200px on img/video inside hover-preview-wrapper */
+  .hover-preview-wrapper img,
+  .hover-preview-wrapper video {
+    max-height: none !important;  /* allow to grow */
+    width: 100% !important;       /* fill container width */
+    height: auto !important;      /* keep aspect ratio */
+    object-fit: contain !important;
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    mix-blend-mode: normal;
+    object-fit: unset !important;
+  }
+
+  /* If you want to limit max height on large screens, use media queries */
+  @media (min-width: 576px) {
+    .hover-preview-wrapper img,
+    .hover-preview-wrapper video {
+      max-width: 200px !important;  /* or your desired width */
+      max-height: 200px !important;  /* or your desired height */
+    }
+  }
+
+  .hover-preview-wrapper img,
+  .hover-preview-wrapper video,
+  .hover-preview-wrapper figure {
+    filter: none;
+    opacity: 1;
+    will-change: opacity, transform;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+  }
+
+  /* Figures inside hover-preview-wrapper */
+  .hover-preview-wrapper figure.preview1 {
+    margin: 0;
+    position: static; /* keeps container height */
+    width: 100%;
+    transition: opacity 0.4s ease;
+    opacity: 1;
+    z-index: 2;
+  }
+
+  .hover-preview-wrapper:hover figure.preview1 {
+    opacity: 0;
+    z-index: 1;
+  }
+
+  .hover-preview-wrapper figure.preview2 {
+    margin: 0;
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.4s ease;
+    opacity: 0;
+    z-index: 1;
+  }
+
+  .hover-preview-wrapper:hover figure.preview2 {
+    opacity: 1;
+    z-index: 2;
+  }
 </style>
+
+
 <div class="row">
   {% if site.enable_publication_thumbnails %}
     <div class="col col-sm-3 abbr py-3" style="display: flex; align-items: center; justify-content: center; margin: 0;">
@@ -36,7 +110,74 @@
           <abbr class="badge rounded w-100">{{ entry.abbr }}</abbr>
         {% endif %}
       {% endif %}
-       {% if entry.preview %}
+
+       {% if entry.preview1 and entry.preview2 %}
+        <div class="hover-preview-wrapper">
+
+          {%- comment -%} preview1 {% endcomment -%}
+          {% assign is_video1 = entry.preview1 | downcase | slice: -4, 4 %}
+          {% assign safe_preview1 = entry.preview1 | replace: '[', '%5B' | replace: ']', '%5D' %}
+          {% if entry.preview1 contains '://' %}
+            {% assign entry_path1 = safe_preview1 %}
+          {% else %}
+            {% assign entry_path1 = safe_preview1 | prepend: '/assets/publication/' %}
+          {% endif %}
+
+          <figure class="figure preview1" style="margin: 0;">
+            {% if is_video1 == '.mp4' %}
+              <video class="figure-img img-fluid z-depth-1 rounded w-100"
+                      autoplay muted loop playsinline
+                      style="width: 100%; height: auto; object-fit: cover; margin: 0;">
+                <source src="{{ entry_path1 }}" type="video/mp4" />
+              </video>
+            {% else %}
+              {%
+                include figure.liquid
+                loading="eager"
+                path=entry_path1
+                sizes="200px"
+                class="preview z-depth-1 rounded"
+                margin="0"
+                zoomable=false
+                avoid_scaling=true
+                alt=entry.preview1
+              %}
+            {% endif %}
+          </figure>
+
+          {%- comment -%} preview2 {% endcomment -%}
+          {% assign is_video2 = entry.preview2 | downcase | slice: -4, 4 %}
+          {% assign safe_preview2 = entry.preview2 | replace: '[', '%5B' | replace: ']', '%5D' %}
+          {% if entry.preview2 contains '://' %}
+            {% assign entry_path2 = safe_preview2 %}
+          {% else %}
+            {% assign entry_path2 = safe_preview2 | prepend: '/assets/publication/' %}
+          {% endif %}
+
+          <figure class="figure preview2" style="margin: 0;">
+            {% if is_video2 == '.mp4' %}
+              <video class="figure-img img-fluid z-depth-1 rounded w-100"
+                      autoplay muted loop playsinline
+                      style="width: 100%; height: auto; object-fit: cover; margin: 0;">
+                <source src="{{ entry_path2 }}" type="video/mp4" />
+              </video>
+            {% else %}
+              {%
+                include figure.liquid
+                loading="eager"
+                path=entry_path2
+                sizes="200px"
+                class="preview z-depth-1 rounded"
+                margin="0"
+                zoomable=false
+                avoid_scaling=true
+                alt=entry.preview2
+              %}
+            {% endif %}
+          </figure>
+        </div>
+
+       {% elsif entry.preview %}
         {% assign is_video = entry.preview | downcase | slice: -4, 4 %}
         {% assign safe_preview = entry.preview | replace: '[', '%5B' | replace: ']', '%5D' %}
         {% if entry.preview contains '://' %}
