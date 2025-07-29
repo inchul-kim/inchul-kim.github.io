@@ -62,7 +62,7 @@
     z-index: 2;
   }
 
-  .hover-preview-wrapper:hover figure.preview1 {
+  .publication-row:hover .hover-preview-wrapper figure.preview1 {
     opacity: 0;
     z-index: 1;
   }
@@ -78,7 +78,7 @@
     z-index: 1;
   }
 
-  .hover-preview-wrapper:hover figure.preview2 {
+  .publication-row:hover .hover-preview-wrapper figure.preview2 {
     opacity: 1;
     z-index: 2;
   }
@@ -92,7 +92,7 @@
 </style>
 
 
-<div class="row">
+<div class="row publication-row">
   {% if site.enable_publication_thumbnails %}
     <div class="col col-sm-3 abbr py-3" style="display: flex; align-items: center; justify-content: center; margin: 0;">
       {%- if entry.abbr -%}
