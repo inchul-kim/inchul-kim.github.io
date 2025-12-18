@@ -97,7 +97,7 @@
 </style>
 
 
-<div class="row publication-row">
+<div class="row publication-row" id="{{ entry.key }}">
   {% if site.enable_publication_thumbnails %}
     <div class="col col-sm-3 abbr py-3" style="display: flex; align-items: center; justify-content: center; margin: 0;">
       {%- if entry.abbr -%}
@@ -229,7 +229,7 @@
   {% endif %}
 
   <!-- Entry bib key -->
-  <div id="{{ entry.key }}" class="{% if site.enable_publication_thumbnails %}col-sm-9{% else %}col-sm-10{% endif %} d-flex flex-column justify-content-center">
+  <div class="{% if site.enable_publication_thumbnails %}col-sm-9{% else %}col-sm-10{% endif %} d-flex flex-column justify-content-center">
     <!-- Title -->
     <div class="title"><span style="font-weight: 900; font-size: 1.25rem;">{{ entry.title }}</span></div>
     <!-- Author -->
