@@ -22,8 +22,7 @@
 
 .media-layer {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -31,24 +30,28 @@
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
   pointer-events: none;
-  z-index: 1;
+  will-change: opacity;
+  transform: translateZ(0);
 }
 
 .default-layer {
   opacity: 1;
+  z-index: 1;
+}
+
+.hover-layer {
+  opacity: 0;
   z-index: 2;
-  pointer-events: auto;
 }
 
 .row:hover .media-preview-wrapper .hover-layer {
   opacity: 1;
-  z-index: 3;
 }
 
 .row:hover .media-preview-wrapper .default-layer {
   opacity: 0;
-  z-index: 1;
 }
+
 
 // for teaching thumbnails
 .thumbnail-img {
