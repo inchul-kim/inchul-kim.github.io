@@ -10,6 +10,12 @@ choi:
   - firstname: ["Dongyoung"]
     url: https://vclab.kaist.ac.kr/dychoi/
 
+cho:
+  - firstname: ["Jaemin"]
+    url: https://vclab.kaist.ac.kr/jmcho/index.html
+  - firstname: ["Hyeongjun"]
+    url: https://vclab.kaist.ac.kr/hjcho/index.html
+
 marco:
   - firstname: ["Julio"]
     url: https://webdiis.unizar.es/~juliom/
