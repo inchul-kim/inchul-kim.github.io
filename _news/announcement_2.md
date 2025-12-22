@@ -5,4 +5,4 @@ inline: true
 related_posts: true
 ---
 
-Our dual-pixel paper has been accepted to <span style="font-weight: 900;">CVPR</span> 2023. [\[Click\]]({{ '/publications/#dp:cvpr:2023' | relative_url }})
+Our dual-pixel paper has been accepted to **CVPR** 2023. [\[Click\]]({{ '/publications/#dp:cvpr:2023' | relative_url }})

@@ -5,4 +5,4 @@ inline: true
 related_posts: true
 ---
 
-Our CBCT metal artifact reduction paper has been accepted to <span style="font-weight: 900;">Eurographics</span> 2026. [\[Click\]]({{ '/publications/#cbctmar:cgf:2026' | relative_url }})
+Our CBCT metal artifact reduction paper has been accepted to **Eurographics** 2026. [\[Click\]]({{ '/publications/#cbctmar:cgf:2026' | relative_url }})
