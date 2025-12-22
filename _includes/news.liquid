@@ -16,8 +16,21 @@
         {% endif %}
         {% for item in news limit: news_limit %}
           <tr>
-            <th scope="row" style="width: 20%">{{ item.date | date: '%B, %Y' }}</th>
-            <td>
+            <th
+              scope="row"
+              style="width: 20%"
+              data-aos="fade-up"
+              data-aos-duration="400"
+              data-aos-once="true"
+            >
+              {{ item.date | date: '%B, %Y' }}
+            </th>
+
+            <td
+              data-aos="fade-up"
+              data-aos-duration="400"
+              data-aos-once="true"
+            >
               {% if item.inline %}
                 {{ item.content | remove: '<p>' | remove: '</p>' | emojify }}
               {% else %}
