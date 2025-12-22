@@ -63,6 +63,24 @@
   margin: 0 auto;
 }
 
+/* =========================================================
+   Fix transition for bold text and links in News section
+   ========================================================= */
+
+/* Force all children to inherit the wrapper animation */
+.news,
+.news * {
+  opacity: inherit;
+  transform: inherit;
+  transition: inherit;
+}
+
+/* Links are inline by default; inline elements don't animate transforms */
+.news a {
+  display: inline-block;
+}
+
+
 // @media (max-width: 768px) {
 //   .thumbnail-img {
 //     max-width: 90%; // allow image to grow wider on small screens
