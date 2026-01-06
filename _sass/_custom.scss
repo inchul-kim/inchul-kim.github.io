@@ -63,6 +63,38 @@
   margin: 0 auto;
 }
 
+/* =========================================
+   News inline animation (KEYFRAMES)
+   ========================================= */
+
+/* Initial state */
+.news-content span,
+.news-content a,
+.news-content strong {
+  opacity: 0;
+  transform: translateY(6px);
+}
+
+/* When AOS activates the cell */
+.news-content.aos-animate span,
+.news-content.aos-animate a,
+.news-content.aos-animate strong {
+  animation: newsInlineFadeUp 0.45s ease forwards;
+}
+
+/* Keyframes are NOT affected by transition: all !important */
+@keyframes newsInlineFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+
 // @media (max-width: 768px) {
 //   .thumbnail-img {
 //     max-width: 90%; // allow image to grow wider on small screens

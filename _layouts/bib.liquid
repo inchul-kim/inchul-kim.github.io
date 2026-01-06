@@ -11,90 +11,103 @@
     }
   }
 
-  /* Make sure hover-preview-wrapper fills container width */
+  /* ===============================
+     Hover preview wrapper (MASK)
+     =============================== */
   .hover-preview-wrapper {
-    width: 100%;
     position: relative;
+    width: 100%;
     cursor: pointer;
+    overflow: hidden;
+
+    /* CRITICAL:
+       Opaque background masks preview1
+       when preview2 fades in.
+       Change color if you want letterboxing.
+    */
+    background: var(--global-bg-color);
   }
 
-  /* Override existing max-height:200px on img/video inside hover-preview-wrapper */
+  /* ===============================
+     Media sizing
+     =============================== */
   .hover-preview-wrapper img,
   .hover-preview-wrapper video {
-    max-height: none !important;  /* allow to grow */
-    width: 100% !important;       /* fill container width */
-    height: auto !important;      /* keep aspect ratio */
-    object-fit: contain !important;
+    max-height: none !important;
+    width: 100% !important;
+    height: auto !important;
     display: block !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    mix-blend-mode: normal;
-    object-fit: unset !important;
+    margin: 0 auto !important;
+    object-fit: contain !important;
   }
 
-  /* If you want to limit max height on large screens, use media queries */
   @media (min-width: 576px) {
     .hover-preview-wrapper img,
     .hover-preview-wrapper video {
-      max-width: 200px !important;  /* or your desired width */
-      max-height: 200px !important;  /* or your desired height */
+      max-width: 200px !important;
+      max-height: 200px !important;
     }
   }
 
-  .hover-preview-wrapper img,
-  .hover-preview-wrapper video,
-  .hover-preview-wrapper figure {
-    filter: none;
-    opacity: 1;
-    will-change: opacity, transform;
-    backface-visibility: hidden;
-    transform: translateZ(0);
-    -webkit-backface-visibility: hidden;
-    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out !important;
-  }
-
-  .hover-preview-wrapper {
-    position: relative;
-    width: 100%;
-    cursor: pointer;
-  }
-
-  /* Image (shown first) */
+  /* ===============================
+     preview1 (default)
+     NEVER hidden, NEVER fades
+     =============================== */
   .hover-preview-wrapper figure.preview1 {
     position: relative;
     z-index: 1;
-    //transition: opacity 0.4s ease;
+    opacity: 1;
     pointer-events: auto;
-  }
 
-  /* Video (initially hidden) */
-  .hover-preview-wrapper figure.preview2 {
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    opacity: 0;
-    z-index: 2;
-    transition: opacity 0.4s ease;
-    pointer-events: none;
-  }
-
-  /* On hover of .publication-row (not just wrapper) */
-  .publication-row:hover .hover-preview-wrapper figure.preview1 {
-    opacity: 1;
-    pointer-events: none;
-  }
-
-  .publication-row:hover .hover-preview-wrapper figure.preview2 {
-    opacity: 1;
-  }
-
-
-  .hover-preview-wrapper figure.preview1,
-  .hover-preview-wrapper figure.preview2 {
     display: flex;
     align-items: center;
     justify-content: center;
   }
+
+  /* ===============================
+     preview2 (hover overlay)
+     OPAQUE MASK + FADE IN
+     =============================== */
+  .hover-preview-wrapper figure.preview2 {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+
+    opacity: 0;
+    pointer-events: none;
+
+    /* OPAQUE COVER — prevents any bleed */
+    background: var(--global-bg-color);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  /* ===============================
+     Hover trigger (IMPORTANT)
+     Hover the wrapper itself
+     =============================== */
+  /* Hover anywhere on the publication row */
+  .publication-row:hover .hover-preview-wrapper figure.preview2 {
+    opacity: 1;
+  }
+
+  /* ===============================
+     Mobile safety (video scroll ghosting)
+     =============================== */
+  @media (max-width: 768px) {
+    .hover-preview-wrapper video {
+      transform: none !important;
+      will-change: auto !important;
+      backface-visibility: visible !important;
+      -webkit-backface-visibility: visible !important;
+    }
+  }
 </style>
+
 
 
 <div class="row publication-row" id="{{ entry.key }}">
