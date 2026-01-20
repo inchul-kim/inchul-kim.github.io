@@ -32,7 +32,9 @@
       "startDate": "2022-08",
       // "endDate": "1905-01-01",
       "score": "10",
-      "courses": ["Supervisor: <a href=\"https://vclab.kaist.ac.kr/minhkim/index.html\">Prof. Min H. Kim</a>"]
+      "courses": [
+        "Supervisor: <a href=\"https://vclab.kaist.ac.kr/minhkim/index.html\">Prof. Min H. Kim</a>"
+      ]
     },
     {
       "institution": "Korea Advanced Institute of Science and Technology (KAIST)",
@@ -41,7 +43,9 @@
       "studyType": "MSc in Computer Science",
       "startDate": "2015-03",
       "endDate": "2017-02",
-      "courses": ["Supervisor: <a href=\"https://vclab.kaist.ac.kr/minhkim/index.html\">Prof. Min H. Kim</a>"]
+      "courses": [
+        "Supervisor: <a href=\"https://vclab.kaist.ac.kr/minhkim/index.html\">Prof. Min H. Kim</a>"
+      ]
     },
     {
       "institution": "Hanyang University",
@@ -50,7 +54,9 @@
       "studyType": "BSc in Computer Science",
       "startDate": "2009-03",
       "endDate": "2015-02",
-      "courses": ["Summa Cum Laude"]
+      "courses": [
+        "Summa Cum Laude"
+      ]
     }
   ],
   "projects": [
@@ -80,9 +86,16 @@
       "startDate": "2016",
       "endDate": "2017"
       // "url": "https://example.com"
-    }    
+    }
   ],
   "awards": [
+    {
+      "title": "Outstanding Teaching Assistant Award (in Korean)",
+      "date": "2023",
+      "awarder": "Korea Advanced Institute of Science and Technology (KAIST)",
+      "url": "/assets/pdf/outstanding_ta_award_spring_2023.pdf"
+      // "highlights": "Compact hyperspectral imaging at low cost (presented at <a href=\"/publications#prism:siga:2017\">ACM SIGGRAPH Asia 2017</a>)."
+    },
     {
       "title": "KAIST Breakthroughs",
       "date": "2017",
