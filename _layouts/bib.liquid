@@ -112,7 +112,7 @@
 
 <div class="row publication-row" id="{{ entry.key }}">
   {% if site.enable_publication_thumbnails %}
-    <div class="col col-sm-3 abbr py-3" style="display: flex; align-items: center; justify-content: center; margin: 0;">
+    <div class="col col-sm-3 abbr py-3 py-md-2" style="display: flex; align-items: center; justify-content: center; margin: 0;">
       {%- if entry.abbr -%}
         {%- if site.data.venues[entry.abbr] -%}
           {% assign venue_style = null %}
