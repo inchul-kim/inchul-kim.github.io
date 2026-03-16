@@ -5,4 +5,4 @@ inline: true
 related_posts: true
 ---
 
-Our paper on compact attenuation modelling has been accepted to <span style="font-weight: 900;">CVPR</span> 2026. [\[Click\]]({{ '/publications/#cbct_mar:cvpr:2026' | relative_url }})
+Our CBCT paper on compact attenuation modelling has been accepted to <span style="font-weight: 900;">CVPR</span> 2026. [\[Click\]]({{ '/publications/#cbct_mar:cvpr:2026' | relative_url }})
