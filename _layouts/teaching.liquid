@@ -18,9 +18,9 @@ layout: default
     {{ content }}
   </article>
 
-  <div class="teaching-list">
+  <div class="teaching-list publications">
     {% for group in site.data.teaching %}
-        <h4 class="mt-5 mb-3">{{ group.role }}</h4>
+        <h2 class="bibliography text-left"><span>{{ group.role }}</span></h2>
         
         {% for course in group.courses %}
         <div class="card mt-3 p-3">
