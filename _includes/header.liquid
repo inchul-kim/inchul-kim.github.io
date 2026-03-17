@@ -124,6 +124,22 @@
               {% endif %}
             {% endif %}
           {% endfor %}
+
+          {% if site.external_nav_links %}
+            {% assign sorted_external_nav_links = site.external_nav_links | sort: 'order' %}
+            {% for link in sorted_external_nav_links %}
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="{% if link.url contains '://' %}{{ link.url }}{% else %}{{ link.url | relative_url }}{% endif %}"
+                  {% if link.target %}target="{{ link.target }}"{% endif %}
+                  {% if link.target == '_blank' %}rel="noopener noreferrer"{% endif %}
+                >
+                  {{- link.title -}}
+                </a>
+              </li>
+            {% endfor %}
+          {% endif %}
           {% if site.search_enabled %}
             <!-- Search -->
             <li class="nav-item">
