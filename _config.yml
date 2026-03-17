@@ -23,11 +23,11 @@ impressum_path: # set to path to include impressum link in the footer, use the s
 back_to_top: true # set to false to disable the back to top button
 
 # Optional external navbar links (not backed by pages)
-external_nav_links:
-  - title: CV
-    url: /assets/pdf/ickim_cv_latest.pdf
-    target: _blank
-    order: 8
+# external_nav_links:
+#   - title: CV
+#     url: /assets/pdf/ickim_cv_latest.pdf
+#     target: _blank
+#     order: 8
 
 # -----------------------------------------------------------------------------
 # Theme

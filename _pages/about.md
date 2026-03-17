@@ -1,6 +1,6 @@
 ---
 layout: about
-title: About
+title: Home
 permalink: /
 subtitle: <a href='https://vclab.kaist.ac.kr/'>KAIST Visual Computing Lab</a>
 
@@ -14,12 +14,12 @@ subtitle: <a href='https://vclab.kaist.ac.kr/'>KAIST Visual Computing Lab</a>
 #     <p>Your City, State 12345</p>
 
 selected_papers: false # includes a list of papers marked as "selected={true}"
-social: true # includes social icons at the bottom of the page
+social: false # includes social icons at the bottom of the page
 
 announcements:
   enabled: true # includes a list of news items
   scrollable: false # adds a vertical scroll bar if there are more than 3 news items
-  limit: 4 # leave blank to include all the news in the `_news` folder
+  limit: 5 # leave blank to include all the news in the `_news` folder
 
 latest_posts:
   enabled: false
@@ -28,10 +28,10 @@ latest_posts:
 ---
 
 
-I am a PhD student of the [Visual Computing Lab](https://vclab.kaist.ac.kr/) at the Korea Advanced Institute of Science and Technology (KAIST), South Korea, under supervision of Prof. [Min H. Kim](https://vclab.kaist.ac.kr/minhkim/index.html).
-Click <a href="{{ '/assets/pdf/ickim_cv_latest.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer">here</a> for the CV.
+<!-- I am a PhD student of the [Visual Computing Lab](https://vclab.kaist.ac.kr/) at the Korea Advanced Institute of Science and Technology (KAIST), South Korea, under supervision of Prof. [Min H. Kim](https://vclab.kaist.ac.kr/minhkim/index.html). -->
+<!-- Click <a href="{{ '/assets/pdf/ickim_cv_latest.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer">here</a> for the CV. -->
 
-Current research fields: hyperspectral imaging, learning-based image reconstruction, computational imaging
+<!-- Current research fields: hyperspectral imaging, learning-based image reconstruction, computational imaging -->
 
 
 <!-- ABCDE Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
