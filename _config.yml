@@ -192,6 +192,7 @@ exclude:
   - package.json
   - package-lock.json
   - _pages/about_einstein.md
+  - _posts/2023-07-04-jupyter-notebook.md
   - purgecss.config.js
   - README.md
   - readme_preview/
@@ -207,15 +208,22 @@ plugins:
   - jekyll-feed
   - jekyll-get-json
   - jekyll-imagemagick
-  - jekyll-jupyter-notebook
+  # - jekyll-jupyter-notebook
   - jekyll-link-attributes
-  - jekyll-minifier
+  # NOTE:
+  # jekyll-minifier can interfere with local JS asset output in some setups.
+  # Disable for local development to keep static assets copied as-is.
+  # - jekyll-minifier
   - jekyll-paginate-v2
   - jekyll-regex-replace
   - jekyll/scholar
   - jekyll-sitemap
   - jekyll-tabs
-  - jekyll-terser
+  # NOTE:
+  # jekyll-terser can drop non-minified files from /assets/js in some local
+  # Windows setups, causing runtime 404s for files like theme.js/common.js.
+  # Keep it disabled for local development unless you have a verified setup.
+  # - jekyll-terser
   - jekyll-toc
   - jekyll-twitter-plugin
   - jemoji
@@ -358,7 +366,7 @@ external_links:
 # MAKE SURE imagemagick is installed and on your PATH before enabling imagemagick. In a terminal, run:
 #   convert -version
 imagemagick:
-  enabled: true # enables responsive images for your site (recommended, see https://github.com/alshedivat/al-folio/issues/537)
+  enabled: false # disabled for local Windows builds (ImageMagick path/arg issues)
   widths:
     - 480
     - 800
