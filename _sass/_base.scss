@@ -539,6 +539,33 @@ footer.sticky-bottom {
   background-color: var(--global-theme-color) !important;
 }
 
+#bio-cv-highlights.cv-compact section {
+  margin-top: 1.25rem !important;
+}
+
+#bio-cv-highlights.cv-compact .list-group-item {
+  padding: 0.45rem 0.75rem;
+}
+
+#bio-cv-highlights.cv-compact h6 {
+  margin-bottom: 0.3rem;
+  line-height: 1.25;
+}
+
+#bio-cv-highlights.cv-compact .items {
+  margin-top: 0.3rem;
+  margin-bottom: 0;
+  padding-left: 1.35rem;
+}
+
+#bio-cv-highlights.cv-compact .items li {
+  padding-left: 0.2rem;
+}
+
+#bio-cv-highlights.cv-compact p.location {
+  margin-bottom: 0.1rem;
+}
+
 .table-cv-map {
   background-color: transparent;
   border: none;

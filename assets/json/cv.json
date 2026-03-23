@@ -1,21 +1,25 @@
 {
   "appointments": [
     {
-      "name": "Visual Computing Lab at KAIST, South Korea",
+      "name": "Visual Computing Lab at KAIST",
+      "location": "Daejeon, South Korea",
       "position": "Research Assistant",
+      "url": "https://vclab.kaist.ac.kr/",
       "startDate": "2022-08",
       // "endDate": "2022-01",
       "highlights": "Research on various topics in computer vision and graphics."
     },
     {
-      "name": "PTERS company (currently ALOGIC), South Korea",
+      "name": "PTERS company (currently ALOGIC)",
+      "location": "Seoul, South Korea",
       "position": "Software Engineer",
       "startDate": "2021-01",
       "endDate": "2022-01",
       "highlights": "Front-end and back-end web development."
     },
     {
-      "name": "Graphics and Imaging Lab, Universidad de Zaragoza, Spain",
+      "name": "Graphics and Imaging Lab, Universidad de Zaragoza",
+      "location": "Zaragoza, Spain",
       "position": "Research Assistant",
       "url": "https://graphics.unizar.es/index.html",
       "startDate": "2017-07-01",
@@ -24,6 +28,7 @@
     },
     {
       "name": "Republic of Korea Air Force",
+      "location": "South Korea",
       "startDate": "2010-02-22",
       "endDate": "2012-03-05",
       "highlights": "Compulsory military service"

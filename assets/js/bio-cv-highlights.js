@@ -260,7 +260,7 @@
     var source = container.getAttribute("data-cv-source");
     if (!source) return;
 
-    fetch(source)
+    fetch(source, { cache: "no-store" })
       .then(function (response) {
         if (!response.ok) {
           throw new Error("Failed to load CV JSON (" + response.status + ")");

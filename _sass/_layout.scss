@@ -2,6 +2,11 @@
  * Content
  ******************************************************************************/
 
+html {
+  // Reserve vertical scrollbar space across pages to prevent horizontal layout shift.
+  overflow-y: scroll;
+}
+
 body {
   padding-bottom: 70px;
   color: var(--global-text-color);

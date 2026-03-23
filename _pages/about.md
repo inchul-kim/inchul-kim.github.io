@@ -2,7 +2,7 @@
 layout: about
 title: Home
 permalink: /
-subtitle: <a href='https://vclab.kaist.ac.kr/'>KAIST Visual Computing Lab</a>
+# subtitle: <a href='https://vclab.kaist.ac.kr/'>KAIST Visual Computing Lab</a>
 
 # profile:
 #   align: right
