@@ -1,7 +1,7 @@
 {
   "appointments": [
     {
-      "name": "Visual Computing Lab at KAIST",
+      "name": "Visual Computing Lab, Korea Advanced Institute of Science and Technology (KAIST)",
       "location": "Daejeon, South Korea",
       "position": "Research Assistant",
       "url": "https://vclab.kaist.ac.kr/",
@@ -24,7 +24,7 @@
       "url": "https://graphics.unizar.es/index.html",
       "startDate": "2017-07-01",
       "endDate": "2018-07-31",
-      "highlights": "Research on reducing visual discomfort in virtual reality video playbacks. <a href=\"/publications#vrmotion:tvcg:2019\">[Click]</a>"
+      "highlights": "Research on reducing visual discomfort 360° video playbacks on HMDs. <a href=\"/publications#vrmotion:tvcg:2019\">[Click]</a>"
     },
     {
       "name": "Republic of Korea Air Force",
