@@ -1,6 +1,13 @@
 {
   "appointments": [
     {
+      "name": "Visual Computing Lab at KAIST, South Korea",
+      "position": "Research Assistant",
+      "startDate": "2022-08",
+      // "endDate": "2022-01",
+      "highlights": "Research on various topics in computer vision and graphics."
+    },
+    {
       "name": "PTERS company (currently ALOGIC), South Korea",
       "position": "Software Engineer",
       "startDate": "2021-01",

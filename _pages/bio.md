@@ -13,4 +13,7 @@ I am a PhD student of the [Visual Computing Lab](https://vclab.kaist.ac.kr/) at 
 
 My current research interests include hyperspectral imaging, learning-based image reconstruction, and computational imaging.
 
-You can view my CV <a href="{{ '/assets/pdf/ickim_cv_latest.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer">here</a>.
+You can find my CV <a href="{{ '/assets/pdf/ickim_cv_latest.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer">here</a>.
+
+
+{% include bio/cv-highlights.liquid %}

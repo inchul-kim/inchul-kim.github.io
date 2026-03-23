@@ -528,6 +528,17 @@ footer.sticky-bottom {
   }
 }
 
+#bio-cv-highlights .list-group-item {
+  background-color: transparent;
+  border-color: var(--global-divider-color);
+  color: var(--global-text-color);
+}
+
+#bio-cv-highlights .list-group-item .badge {
+  color: var(--global-hover-text-color) !important;
+  background-color: var(--global-theme-color) !important;
+}
+
 .table-cv-map {
   background-color: transparent;
   border: none;
