@@ -1,13 +1,26 @@
 import { highlightSearchTerm } from "./highlight-search-term.js";
 
 document.addEventListener("DOMContentLoaded", function () {
+  const metadataSelectors = [".title", ".author", ".periodical", ".abbr"];
+
+  const getSearchableText = (element) => {
+    const chunks = metadataSelectors.flatMap((selector) =>
+      Array.from(element.querySelectorAll(selector)).map((node) => node.textContent || "")
+    );
+    return chunks.join(" ").toLowerCase();
+  };
+
   // actual bibsearch logic
   const filterItems = (searchTerm) => {
     document.querySelectorAll(".bibliography, .unloaded").forEach((element) => element.classList.remove("unloaded"));
 
     // highlight-search-term
     if (CSS.highlights) {
-      const nonMatchingElements = highlightSearchTerm({ search: searchTerm, selector: ".bibliography > li" });
+      const nonMatchingElements = highlightSearchTerm({
+        search: searchTerm,
+        selector: ".bibliography > li",
+        includeSelectors: metadataSelectors,
+      });
       if (nonMatchingElements == null) {
         return;
       }
@@ -16,8 +29,8 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     } else {
       // Simply add unloaded class to all non-matching items if Browser does not support CSS highlights
-      document.querySelectorAll(".bibliography > li").forEach((element, index) => {
-        const text = element.innerText.toLowerCase();
+      document.querySelectorAll(".bibliography > li").forEach((element) => {
+        const text = getSearchableText(element);
         if (text.indexOf(searchTerm) == -1) {
           element.classList.add("unloaded");
         }
@@ -61,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("bibsearch").addEventListener("input", function () {
     clearTimeout(timeoutId); // Clear the previous timeout
     const searchTerm = this.value.toLowerCase();
-    timeoutId = setTimeout(filterItems(searchTerm), 300);
+    timeoutId = setTimeout(() => filterItems(searchTerm), 300);
   });
 
   window.addEventListener("hashchange", updateInputField); // Update the filter when the hash changes

@@ -3,7 +3,7 @@
     {
       "name": "Visual Computing Lab, Korea Advanced Institute of Science and Technology (KAIST)",
       "location": "Daejeon, South Korea",
-      "position": "Research Assistant",
+      "position": "PhD Research Assistant",
       "url": "https://vclab.kaist.ac.kr/",
       "startDate": "2022-08",
       // "endDate": "2022-01",
@@ -29,6 +29,7 @@
     {
       "name": "Republic of Korea Air Force",
       "location": "South Korea",
+      "position": "Military Service",
       "startDate": "2010-02-22",
       "endDate": "2012-03-05",
       "highlights": "Compulsory military service"
