@@ -535,8 +535,13 @@ footer.sticky-bottom {
 }
 
 #bio-cv-highlights .list-group-item .badge {
-  color: var(--global-hover-text-color) !important;
-  background-color: var(--global-theme-color) !important;
+  color: var(--global-text-color) !important;
+  background-color: transparent !important;
+  border: 1px solid var(--global-divider-color);
+  font-weight: 600 !important;
+  font-size: 0.75rem;
+  letter-spacing: 0.01em;
+  text-transform: none !important;
 }
 
 #bio-cv-highlights.cv-compact section {
@@ -1269,6 +1274,52 @@ ninja-keys::part(ninja-input-wrapper) {
   box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px;
   border-radius: 6px;
   padding: 8px 12px;
+}
+
+.post-header-with-actions .post-header-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.post-header-with-actions .post-header-row .post-title {
+  margin-bottom: 0;
+}
+
+.post-header-with-actions .post-header-action {
+  display: flex;
+  justify-content: flex-end;
+  flex: 0 1 360px;
+}
+
+.post-header-with-actions .post-header-action .bibsearch-form-input {
+  margin-right: 0;
+  max-width: 260px;
+  padding: 7px 10px;
+}
+
+html[data-theme="dark"] .post-header-with-actions .post-header-action .bibsearch-form-input {
+  background: var(--global-card-bg-color);
+  color: var(--global-text-color);
+  border-color: var(--global-divider-color);
+}
+
+html[data-theme="dark"] .post-header-with-actions .post-header-action .bibsearch-form-input::placeholder {
+  color: var(--global-text-color-light);
+}
+
+@media (max-width: 576px) {
+  .post-header-with-actions .post-header-action {
+    width: 100%;
+    flex-basis: 100%;
+    justify-content: flex-start;
+  }
+
+  .post-header-with-actions .post-header-action .bibsearch-form-input {
+    max-width: 100%;
+  }
 }
 
 .newsletter-form-input:focus {

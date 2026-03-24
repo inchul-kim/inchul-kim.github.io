@@ -9,8 +9,15 @@ layout: default
 {% endif %}
 
 <div class="post">
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
+  <header class="post-header{% if page.bib_search_in_header %} post-header-with-actions{% endif %}">
+    <div class="post-header-row">
+      <h1 class="post-title">{{ page.title }}</h1>
+      {% if page.bib_search_in_header and site.bib_search %}
+        <div class="post-header-action">
+          {% include bib_search.liquid %}
+        </div>
+      {% endif %}
+    </div>
     <p class="post-description">{{ page.description }}</p>
   </header>
 

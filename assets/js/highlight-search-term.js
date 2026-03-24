@@ -39,7 +39,7 @@
  *   highlightSearchTerm({ search: search.value, selector: ".content" });
  * });
  */
-const highlightSearchTerm = ({ search, selector, customHighlightName = "search" }) => {
+const highlightSearchTerm = ({ search, selector, customHighlightName = "search", includeSelectors = [] }) => {
   if (!selector) {
     throw new Error("The selector argument is required");
   }
@@ -58,14 +58,30 @@ const highlightSearchTerm = ({ search, selector, customHighlightName = "search" 
   const elements = document.querySelectorAll(selector);
   Array.from(elements).map((element) => {
     let match = false;
-    getTextNodesInElementContainingText(element, search).forEach((node) => {
-      // Modified variant of highlight-search-term
-      // We return the non-matching elements in addition.
-      const rangesForSearch = getRangesForSearchTermInNode(node, search);
-      ranges.push(...rangesForSearch);
-      if (rangesForSearch.length > 0) {
-        match = true;
+    let searchRoots = [element];
+    if (includeSelectors && includeSelectors.length > 0) {
+      searchRoots = includeSelectors.flatMap((selector) => {
+        const matched = Array.from(element.querySelectorAll(selector));
+        if (element.matches(selector)) {
+          matched.unshift(element);
+        }
+        return matched;
+      });
+      if (searchRoots.length === 0) {
+        searchRoots = [element];
       }
+    }
+
+    searchRoots.forEach((root) => {
+      getTextNodesInElementContainingText(root, search).forEach((node) => {
+        // Modified variant of highlight-search-term
+        // We return the non-matching elements in addition.
+        const rangesForSearch = getRangesForSearchTermInNode(node, search);
+        ranges.push(...rangesForSearch);
+        if (rangesForSearch.length > 0) {
+          match = true;
+        }
+      });
     });
     if (!match) {
       nonMatchingElements.push(element);
@@ -83,6 +99,10 @@ const getTextNodesInElementContainingText = (element, text) => {
   const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT);
   let node;
   while ((node = walker.nextNode())) {
+    const parentTag = node.parentElement ? node.parentElement.tagName : "";
+    if (parentTag === "STYLE" || parentTag === "SCRIPT" || parentTag === "NOSCRIPT" || parentTag === "TEMPLATE") {
+      continue;
+    }
     if (node.textContent && node.textContent.toLowerCase().includes(text)) {
       nodes.push(node);
     }
