@@ -77,6 +77,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const updateInputField = () => {
     const hashValue = decodeURIComponent(window.location.hash.substring(1)); // Remove the '#' character
+    // Keep anchor navigation working:
+    // if hash matches an element id (e.g., a bib entry key), do not treat it as a search query.
+    if (hashValue && document.getElementById(hashValue)) {
+      bibsearchInput.value = "";
+      filterItems("");
+      syncClearButton();
+      return;
+    }
+
     bibsearchInput.value = hashValue;
     filterItems(hashValue);
     syncClearButton();
