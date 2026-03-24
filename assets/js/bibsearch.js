@@ -2,6 +2,18 @@ import { highlightSearchTerm } from "./highlight-search-term.js";
 
 document.addEventListener("DOMContentLoaded", function () {
   const metadataSelectors = [".title", ".author", ".periodical", ".abbr"];
+  const bibsearchInput = document.getElementById("bibsearch");
+  if (!bibsearchInput) return;
+
+  const bibsearchClear = document.getElementById("bibsearch-clear");
+  const bibsearchContainer = bibsearchInput.closest(".bibsearch-container");
+
+  const syncClearButton = () => {
+    if (!bibsearchClear || !bibsearchContainer) return;
+    const hasValue = bibsearchInput.value.length > 0;
+    bibsearchContainer.classList.toggle("has-value", hasValue);
+    bibsearchClear.hidden = !hasValue;
+  };
 
   const getSearchableText = (element) => {
     const chunks = metadataSelectors.flatMap((selector) =>
@@ -65,17 +77,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const updateInputField = () => {
     const hashValue = decodeURIComponent(window.location.hash.substring(1)); // Remove the '#' character
-    document.getElementById("bibsearch").value = hashValue;
+    bibsearchInput.value = hashValue;
     filterItems(hashValue);
+    syncClearButton();
   };
 
   // Sensitive search. Only start searching if there's been no input for 300 ms
   let timeoutId;
-  document.getElementById("bibsearch").addEventListener("input", function () {
+  bibsearchInput.addEventListener("input", function () {
     clearTimeout(timeoutId); // Clear the previous timeout
     const searchTerm = this.value.toLowerCase();
     timeoutId = setTimeout(() => filterItems(searchTerm), 300);
+    syncClearButton();
   });
+
+  if (bibsearchClear) {
+    bibsearchClear.addEventListener("click", function () {
+      bibsearchInput.value = "";
+      clearTimeout(timeoutId);
+      filterItems("");
+      syncClearButton();
+      bibsearchInput.focus();
+    });
+  }
 
   window.addEventListener("hashchange", updateInputField); // Update the filter when the hash changes
 

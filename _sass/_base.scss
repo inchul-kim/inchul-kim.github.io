@@ -1276,6 +1276,48 @@ ninja-keys::part(ninja-input-wrapper) {
   padding: 8px 12px;
 }
 
+.bibsearch-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 350px;
+}
+
+.bibsearch-container .bibsearch-form-input {
+  margin-right: 0;
+  max-width: none;
+  padding-right: 30px;
+}
+
+.bibsearch-clear {
+  position: absolute;
+  right: 8px;
+  border: none;
+  background: transparent;
+  color: var(--global-text-color-light);
+  width: 20px;
+  height: 20px;
+  line-height: 1;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 16px;
+}
+
+.bibsearch-clear:hover {
+  color: var(--global-text-color);
+  background: rgba(127, 127, 127, 0.14);
+}
+
+.bibsearch-clear:focus-visible {
+  outline: 2px solid var(--global-theme-color);
+  outline-offset: 1px;
+}
+
 .post-header-with-actions .post-header-row {
   display: flex;
   align-items: flex-end;
@@ -1294,10 +1336,13 @@ ninja-keys::part(ninja-input-wrapper) {
   flex: 0 1 360px;
 }
 
-.post-header-with-actions .post-header-action .bibsearch-form-input {
-  margin-right: 0;
+.post-header-with-actions .post-header-action .bibsearch-container {
   max-width: 260px;
+}
+
+.post-header-with-actions .post-header-action .bibsearch-form-input {
   padding: 7px 10px;
+  padding-right: 30px;
 }
 
 html[data-theme="dark"] .post-header-with-actions .post-header-action .bibsearch-form-input {
@@ -1317,7 +1362,7 @@ html[data-theme="dark"] .post-header-with-actions .post-header-action .bibsearch
     justify-content: flex-start;
   }
 
-  .post-header-with-actions .post-header-action .bibsearch-form-input {
+  .post-header-with-actions .post-header-action .bibsearch-container {
     max-width: 100%;
   }
 }
