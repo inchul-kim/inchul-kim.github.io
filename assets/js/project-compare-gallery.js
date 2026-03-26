@@ -20,9 +20,7 @@
       const leftText = thumb.getAttribute("data-left-label");
       const rightText = thumb.getAttribute("data-right-label");
       const captionText = thumb.getAttribute("data-caption");
-      const dividerPosition =
-        thumb.getAttribute("data-divider-position") ??
-        thumb.getAttribute("data-value");
+      const dividerPosition = thumb.getAttribute("data-divider-position") ?? thumb.getAttribute("data-value");
 
       if (leftImage) firstImage.setAttribute("src", leftImage);
       if (rightImage) secondImage.setAttribute("src", rightImage);
