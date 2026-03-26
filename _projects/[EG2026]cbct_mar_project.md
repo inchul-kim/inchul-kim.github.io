@@ -6,7 +6,7 @@ importance: 100
 category: work
 published: true
 permalink: /projects/eg2026_cbct_mar/
-img: "assets/publication/[CVPR2023]dual_pixel/dual_pixel.png"
+# img: "assets/publication/[CVPR2023]dual_pixel/dual_pixel.png"
 project_kicker: "Computer Graphics Forum (presented at Eurographics 2026)"
 # project_subtitle: "A test page to verify sections, media, links, and typography."
 authors:
@@ -41,7 +41,7 @@ project_links:
   #   icon: ai ai-arxiv
   - label: DOI
     # url: https://doi.org/xx.xxxx/xxxxx
-    icon: ai ai-doi  
+    icon: ai ai-doi
   # - label: Demo Video
   #   url: /assets/publication/[CVPR2026]cbct_pose/ours_broccoli.mp4
   #   icon: fa-solid fa-film
@@ -117,7 +117,7 @@ giscus_comments: false
 
 <!-- ## Method
 
-This is a dry-run page to make future project page imports fast.  
+This is a dry-run page to make future project page imports fast.
 You can replace this section with adapted HTML blocks from the reference template. -->
 
 ## Results
@@ -129,6 +129,8 @@ The teaser section above should autoplay muted, and this image should load from 
 {% endcomment %}
 
 We show four real (broccoli, chicken, paprika, and walnut) and two synthetic metal-artifact reduction results.
+Compared with the results from FDK, our method reduces metal-induced streaky artifacts consistently across scenes.
+
 <!-- Thumbnail-based multi-example slider: -->
 
 {% include project_compare_gallery.liquid
@@ -137,7 +139,6 @@ We show four real (broccoli, chicken, paprika, and walnut) and two synthetic met
   thumb_label="Test comparisons"
   max_width="700px"
 %}
-
 
 <!-- ## Notes
 

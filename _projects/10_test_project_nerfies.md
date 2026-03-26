@@ -105,7 +105,6 @@ Thumbnail-based multi-example slider:
   thumb_label="Test comparisons"
 %}
 
-
 ## Notes
 
 When you share the exact repository/page you want to import, we can map each source section to:

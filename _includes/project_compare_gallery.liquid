@@ -23,7 +23,12 @@
   {% assign first_right_label = first_example.right_label | default: include.right_label | default: 'After' %}
   {% assign first_left_alt = first_example.left_alt | default: first_left_label %}
   {% assign first_right_alt = first_example.right_alt | default: first_right_label %}
-  {% assign first_divider_position = first_example.divider_position | default: first_example.value | default: include.divider_position | default: include.value | default: 50 %}
+  {% assign first_divider_position = first_example.divider_position
+    | default: first_example.value
+    | default: include.divider_position
+    | default: include.value
+    | default: 50
+  %}
   {% assign first_caption = first_example.caption | default: include.caption | default: '' %}
 
   <div
@@ -76,7 +81,12 @@
         {% assign left_alt = example.left_alt | default: left_label %}
         {% assign right_alt = example.right_alt | default: right_label %}
         {% assign caption = example.caption | default: include.caption | default: '' %}
-        {% assign divider_position = example.divider_position | default: example.value | default: include.divider_position | default: include.value | default: 50 %}
+        {% assign divider_position = example.divider_position
+          | default: example.value
+          | default: include.divider_position
+          | default: include.value
+          | default: 50
+        %}
 
         <button
           type="button"

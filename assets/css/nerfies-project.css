@@ -11,10 +11,11 @@
 
 .nerfies-kicker {
   margin-bottom: 0.75rem;
-  font-size: 0.82rem;
-  text-transform: uppercase;
-  letter-spacing: 0.11em;
-  color: var(--global-theme-color);
+  font-size: 1.2rem;
+  text-transform: none;
+  letter-spacing: 0.01em;
+  color: var(--global-text-color);
+  opacity: 0.5;
   font-weight: 700;
 }
 
@@ -34,6 +35,16 @@
 .nerfies-affiliations,
 .nerfies-venue {
   margin: 0.35rem 0;
+}
+
+.nerfies-authors {
+  font-size: 1.2rem;
+  line-height: 1.45;
+}
+
+.nerfies-affiliations {
+  font-size: 1.05rem;
+  line-height: 1.4;
 }
 
 .nerfies-authors a {
@@ -93,14 +104,25 @@
 }
 
 .nerfies-link-disabled {
-  opacity: 0.72;
-  cursor: default;
+  opacity: 0.5;
+  cursor: not-allowed;
+  color: var(--global-text-color-light);
+  border-color: var(--global-divider-color);
+  background: transparent;
 }
 
 .nerfies-link-disabled:hover {
   transform: none;
   border-color: var(--global-divider-color);
-  color: var(--global-text-color);
+  color: var(--global-text-color-light);
+}
+
+.nerfies-link-disabled i {
+  opacity: 0.55;
+}
+
+.nerfies-link-disabled span {
+  opacity: 0.8;
 }
 
 .nerfies-section {
@@ -180,10 +202,10 @@
   border-radius: 12px;
   overflow: hidden;
   background: var(--global-card-bg-color);
-  --divider-width: 2px;
-  --divider-color: rgba(255, 255, 255, 0.95);
-  --default-handle-opacity: 1;
-  --default-handle-color: rgba(17, 17, 17, 0.9);
+  --divider-width: 1px;
+  --divider-color: rgba(255, 255, 255, 0.32);
+  --default-handle-opacity: 0.72;
+  --default-handle-color: rgba(255, 255, 255, 0.14);
   --default-handle-width: 56px;
 }
 
@@ -207,28 +229,28 @@
   height: 38px;
   padding: 0 0.45rem;
   border-radius: 999px;
-  background: rgba(17, 17, 17, 0.72);
-  color: #fff;
+  background: rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.5);
   border: 1px solid rgba(255, 255, 255, 0.9);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+  box-shadow: none;
   font-size: 0.7rem;
   line-height: 1;
-  color: #fff !important;
-  -webkit-text-fill-color: #fff;
+  color: rgba(255, 255, 255, 0.92) !important;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.92);
 }
 
 .nerfies-compare__handle-arrow {
   display: inline-block;
   font-weight: 700;
-  color: #fff !important;
-  -webkit-text-fill-color: #fff;
-  text-shadow: 0 0 1px rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.95) !important;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 0 1px rgba(255, 255, 255, 0.35);
 }
 
 .nerfies-compare__handle-bar {
   width: 2px;
   height: 16px;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.9);
 }
 
 .nerfies-compare-thumbs {
@@ -296,13 +318,42 @@
   white-space: pre-wrap;
 }
 
+.nerfies-credit {
+  margin-top: 2.25rem;
+  text-align: center;
+  font-size: 0.92rem;
+  color: var(--global-text-color-light);
+}
+
+.nerfies-credit a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.nerfies-credit a:hover {
+  color: var(--global-theme-color);
+}
+
 @media (max-width: 768px) {
   .nerfies-title {
     font-size: 2rem;
   }
 
+  .nerfies-kicker {
+    font-size: 1rem;
+  }
+
   .nerfies-subtitle {
     font-size: 1rem;
+  }
+
+  .nerfies-authors {
+    font-size: 1rem;
+  }
+
+  .nerfies-affiliations {
+    font-size: 0.9rem;
   }
 
   .nerfies-links {

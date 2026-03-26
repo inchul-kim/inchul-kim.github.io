@@ -75,7 +75,8 @@ Use regular markdown sections and include media from `assets/publication/[PROJEC
 {% raw %}
 
 ```liquid
-{% include project_compare_slider.liquid
+{%
+  include project_compare_slider.liquid
   left_image="assets/publication/[PROJECT_TAG]/result_before.png"
   right_image="assets/publication/[PROJECT_TAG]/result_after.png"
   left_label="Baseline"
@@ -86,7 +87,8 @@ Use regular markdown sections and include media from `assets/publication/[PROJEC
 ```
 
 ```liquid
-{% include project_compare_gallery.liquid
+{%
+  include project_compare_gallery.liquid
   id="qualitative-gallery"
   examples=page.compare_gallery_examples
   thumb_label="Qualitative comparisons"
