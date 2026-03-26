@@ -27,12 +27,10 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-
 <!-- I am a PhD student of the [Visual Computing Lab](https://vclab.kaist.ac.kr/) at the Korea Advanced Institute of Science and Technology (KAIST), South Korea, under supervision of Prof. [Min H. Kim](https://vclab.kaist.ac.kr/minhkim/index.html). -->
 <!-- Click <a href="{{ '/assets/pdf/ickim_cv_latest.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer">here</a> for the CV. -->
 
 <!-- Current research fields: hyperspectral imaging, learning-based image reconstruction, computational imaging -->
-
 
 <!-- ABCDE Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
 

@@ -108,8 +108,6 @@
   }
 </style>
 
-
-
 <div class="row publication-row" id="{{ entry.key }}">
   {% if site.enable_publication_thumbnails %}
     <div class="col col-sm-3 abbr py-3 py-md-2" style="display: flex; align-items: center; justify-content: center; margin: 0;">
@@ -136,10 +134,9 @@
         {% endif %}
       {% endif %}
 
-       {% if entry.preview1 and entry.preview2 %}
+      {% if entry.preview1 and entry.preview2 %}
         <div class="hover-preview-wrapper">
-
-          {%- comment -%} preview1 {% endcomment -%}
+          {%- comment -%} preview1 {%- endcomment -%}
           {% assign is_video1 = entry.preview1 | downcase | slice: -4, 4 %}
           {% assign safe_preview1 = entry.preview1 | replace: '[', '%5B' | replace: ']', '%5D' %}
           {% if entry.preview1 contains '://' %}
@@ -150,10 +147,15 @@
 
           <figure class="figure preview1" style="margin: 0;">
             {% if is_video1 == '.mp4' %}
-              <video class="figure-img img-fluid z-depth-1 rounded w-100"
-                      autoplay muted loop playsinline
-                      style="width: 100%; height: auto; object-fit: cover; margin: 0;">
-                <source src="{{ entry_path1 }}" type="video/mp4" />
+              <video
+                class="figure-img img-fluid z-depth-1 rounded w-100"
+                autoplay
+                muted
+                loop
+                playsinline
+                style="width: 100%; height: auto; object-fit: cover; margin: 0;"
+              >
+                <source src="{{ entry_path1 }}" type="video/mp4">
               </video>
             {% else %}
               {%
@@ -170,7 +172,7 @@
             {% endif %}
           </figure>
 
-          {%- comment -%} preview2 {% endcomment -%}
+          {%- comment -%} preview2 {%- endcomment -%}
           {% assign is_video2 = entry.preview2 | downcase | slice: -4, 4 %}
           {% assign safe_preview2 = entry.preview2 | replace: '[', '%5B' | replace: ']', '%5D' %}
           {% if entry.preview2 contains '://' %}
@@ -181,10 +183,15 @@
 
           <figure class="figure preview2" style="margin: 0;">
             {% if is_video2 == '.mp4' %}
-              <video class="figure-img img-fluid z-depth-1 rounded w-100"
-                      autoplay muted loop playsinline
-                      style="width: 100%; height: auto; object-fit: cover; margin: 0;">
-                <source src="{{ entry_path2 }}" type="video/mp4" />
+              <video
+                class="figure-img img-fluid z-depth-1 rounded w-100"
+                autoplay
+                muted
+                loop
+                playsinline
+                style="width: 100%; height: auto; object-fit: cover; margin: 0;"
+              >
+                <source src="{{ entry_path2 }}" type="video/mp4">
               </video>
             {% else %}
               {%
@@ -202,7 +209,7 @@
           </figure>
         </div>
 
-       {% elsif entry.preview %}
+      {% elsif entry.preview %}
         {% assign is_video = entry.preview | downcase | slice: -4, 4 %}
         {% assign safe_preview = entry.preview | replace: '[', '%5B' | replace: ']', '%5D' %}
         {% if entry.preview contains '://' %}
@@ -214,9 +221,14 @@
         {% if is_video == '.mp4' %}
           <figure class="figure" style="margin: 0;">
             <a href="{{ entry_path }}" class="zoomable" target="_blank">
-              <video class="figure-img img-fluid z-depth-1 rounded w-100"
-                    autoplay muted loop playsinline
-                    style="width: 100%; height: auto; object-fit: cover; margin: 0;">
+              <video
+                class="figure-img img-fluid z-depth-1 rounded w-100"
+                autoplay
+                muted
+                loop
+                playsinline
+                style="width: 100%; height: auto; object-fit: cover; margin: 0;"
+              >
                 <source src="{{ entry_path }}" type="video/mp4">
               </video>
             </a>
@@ -235,16 +247,15 @@
           %}
         {% endif %}
       {% endif %}
-
-
-
     </div>
   {% endif %}
 
   <!-- Entry bib key -->
   <div class="{% if site.enable_publication_thumbnails %}col-sm-9{% else %}col-sm-10{% endif %} d-flex flex-column justify-content-center">
     <!-- Title -->
-    <div class="title"><span style="font-weight: 900; font-size: 1.25rem;">{{ entry.title }}</span></div>
+    <div class="title">
+      <span style="font-weight: 900; font-size: 1.25rem;">{{ entry.title }}</span>
+    </div>
     <!-- Author -->
     <div class="author">
       {% assign author_array_size = entry.author_array | size %}
@@ -281,9 +292,12 @@
           {%- if forloop.last and author_array_limit == author_array_size %}and {% endif -%}
         {% endif %}
         {%- if author_is_self -%}
-          <strong><span style="text-decoration: underline;">
-            {{- author.first }} {{ author_last_html -}}
-          </span></strong>
+          <strong
+            ><span style="text-decoration: underline;">
+              {{- author.first }}
+              {{ author_last_html -}}
+            </span></strong
+          >
         {%- else -%}
           {%- if coauthor_url -%}
             <a href="{{ coauthor_url }}">
@@ -343,7 +357,6 @@
       {% endif %}
     </div>
 
-
     <!-- Journal/Book title and date -->
     {% assign proceedings = 'inproceedings,incollection' | split: ',' %}
     {% assign thesis = 'thesis,mastersthesis,phdthesis' | split: ',' %}
@@ -386,7 +399,6 @@
       </div>
     {% endif %}
 
-
     <!-- Links/Buttons -->
     <div class="links">
       {% if entry.summary %}
@@ -399,7 +411,9 @@
         {% if entry.pdf contains '://' %}
           <a href="{{ entry.pdf }}" class="btn btn-sm z-depth-0" role="button">PDF</a>
         {% else %}
-          <a href="{{ entry.pdf | prepend: '/assets/publication/' | relative_url }}" target="_blank" class="btn btn-sm z-depth-0" role="button">PDF</a>
+          <a href="{{ entry.pdf | prepend: '/assets/publication/' | relative_url }}" target="_blank" class="btn btn-sm z-depth-0" role="button"
+            >PDF</a
+          >
         {% endif %}
       {% endif %}
       {% if entry.supp %}
@@ -408,7 +422,9 @@
           {% assign supp_item = supp_item_raw | strip %}
           {% assign supp_index = forloop.index %}
           {% if supp_item contains '://' %}
-            <a href="{{ supp_item }}" class="btn btn-sm z-depth-0" role="button">Supp{% if supp_list.size > 1 %}{{ supp_index }}{% endif %}</a>
+            <a href="{{ supp_item }}" class="btn btn-sm z-depth-0" role="button"
+              >Supp{% if supp_list.size > 1 %}{{ supp_index }}{% endif -%}
+            </a>
           {% else %}
             {% assign supp_url = supp_item | prepend: '/assets/publication/' | relative_url %}
             <a href="{{ supp_url }}" target="_blank" class="btn btn-sm z-depth-0" role="button">
@@ -421,7 +437,9 @@
         {% if entry.slides contains '://' %}
           <a href="{{ entry.slides }}" class="btn btn-sm z-depth-0" role="button">Slides</a>
         {% else %}
-          <a href="{{ entry.slides | prepend: '/assets/publication/' | relative_url }}" target="_blank" class="btn btn-sm z-depth-0" role="button">Slides</a>
+          <a href="{{ entry.slides | prepend: '/assets/publication/' | relative_url }}" target="_blank" class="btn btn-sm z-depth-0" role="button"
+            >Slides</a
+          >
         {% endif %}
       {% endif %}
       {% if entry.video and site.enable_video_embedding %}

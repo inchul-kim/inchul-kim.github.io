@@ -6,10 +6,8 @@
   {% if include.slot %}
     slot="{{ include.slot }}"
   {% endif %}
-  {% if include['margin'] %}
-    style="
-      margin: {{ include.margin }};
-    "
+  {% if include.margin %}
+    style="      margin: {{ include.margin }};"
   {% endif %}
 >
   <picture>
@@ -51,7 +49,7 @@
       {% else %}
         height="auto"
       {% endif %}
-      {% if include['min-width'] or include['min-height'] or include['max-width'] or include['max-height']%}
+      {% if include['min-width'] or include['min-height'] or include['max-width'] or include['max-height'] %}
         style="
           {% if include['min-width'] %}
             min-width: {{ include.min-width }};

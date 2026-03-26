@@ -13,7 +13,7 @@
 
 .media-preview-wrapper {
   position: relative;
-  width: 100px;         // preview size
+  width: 100px; // preview size
   height: 100px;
   flex-shrink: 0;
   overflow: hidden;
@@ -51,7 +51,6 @@
 .row:hover .media-preview-wrapper .default-layer {
   opacity: 0;
 }
-
 
 // for teaching thumbnails
 .thumbnail-img {
@@ -94,16 +93,13 @@
   }
 }
 
-
 // @media (max-width: 768px) {
 //   .thumbnail-img {
 //     max-width: 90%; // allow image to grow wider on small screens
 //   }
 // }
 
-
 // // bibtex thumbnail size
 // .preview {
 //   max-width: 300px !important;
 // }
-

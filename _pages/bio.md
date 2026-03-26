@@ -15,5 +15,4 @@ My current research interests include hyperspectral imaging, learning-based imag
 
 You can find my CV <a href="{{ '/assets/pdf/ickim_cv_latest.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer">here</a>.
 
-
 {% include bio/cv-highlights.liquid %}

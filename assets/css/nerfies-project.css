@@ -1,0 +1,169 @@
+.nerfies-project-page {
+  max-width: 980px;
+  margin: 0 auto;
+  padding-bottom: 2.5rem;
+}
+
+.nerfies-hero {
+  text-align: center;
+  padding: 0.5rem 0 1.5rem;
+}
+
+.nerfies-kicker {
+  margin-bottom: 0.75rem;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.11em;
+  color: var(--global-theme-color);
+  font-weight: 700;
+}
+
+.nerfies-title {
+  margin-bottom: 0.6rem;
+  line-height: 1.2;
+}
+
+.nerfies-subtitle {
+  margin: 0 auto 1rem;
+  max-width: 780px;
+  font-size: 1.08rem;
+  color: var(--global-text-color-light);
+}
+
+.nerfies-authors,
+.nerfies-affiliations,
+.nerfies-venue {
+  margin: 0.35rem 0;
+}
+
+.nerfies-authors a {
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.nerfies-authors a:hover {
+  color: var(--global-theme-color);
+  border-bottom-color: var(--global-theme-color);
+}
+
+.nerfies-separator {
+  margin: 0 0.4rem;
+  color: var(--global-divider-color);
+}
+
+.nerfies-dot {
+  margin: 0 0.45rem;
+  color: var(--global-divider-color);
+}
+
+.nerfies-venue {
+  color: var(--global-theme-color);
+  font-weight: 600;
+}
+
+.nerfies-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.55rem;
+  margin-top: 1rem;
+}
+
+.nerfies-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.48rem 0.9rem;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 999px;
+  background: var(--global-card-bg-color);
+  color: var(--global-text-color);
+  text-decoration: none;
+  font-size: 0.92rem;
+  transition:
+    transform 0.15s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.nerfies-link:hover {
+  transform: translateY(-1px);
+  border-color: var(--global-theme-color);
+  color: var(--global-theme-color);
+}
+
+.nerfies-section {
+  margin-top: 2rem;
+}
+
+.nerfies-section h2 {
+  margin-bottom: 0.8rem;
+}
+
+.nerfies-teaser-media {
+  border: 1px solid var(--global-divider-color);
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--global-card-bg-color);
+}
+
+.nerfies-teaser-media video,
+.nerfies-teaser-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.nerfies-caption {
+  margin-top: 0.55rem;
+  color: var(--global-text-color-light);
+  font-size: 0.92rem;
+}
+
+.nerfies-prose > :first-child {
+  margin-top: 0;
+}
+
+.nerfies-prose > :last-child {
+  margin-bottom: 0;
+}
+
+.nerfies-highlights {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.nerfies-highlights li p {
+  margin: 0.2rem 0 0.55rem;
+}
+
+.nerfies-bibtex {
+  margin: 0;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 10px;
+  padding: 1rem;
+  background: var(--global-card-bg-color);
+  color: var(--global-text-color);
+}
+
+.nerfies-bibtex code {
+  white-space: pre-wrap;
+}
+
+@media (max-width: 768px) {
+  .nerfies-title {
+    font-size: 2rem;
+  }
+
+  .nerfies-subtitle {
+    font-size: 1rem;
+  }
+
+  .nerfies-links {
+    gap: 0.45rem;
+  }
+
+  .nerfies-link {
+    font-size: 0.87rem;
+  }
+}

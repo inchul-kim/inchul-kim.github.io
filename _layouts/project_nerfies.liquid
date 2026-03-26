@@ -1,0 +1,164 @@
+---
+layout: default
+---
+<article class="nerfies-project-page">
+  <link rel="stylesheet" href="{{ '/assets/css/nerfies-project.css' | relative_url | bust_file_cache }}">
+
+  <header class="nerfies-hero">
+    {% if page.project_kicker %}
+      <p class="nerfies-kicker">{{ page.project_kicker }}</p>
+    {% endif %}
+    <h1 class="nerfies-title">{{ page.title }}</h1>
+    {% if page.project_subtitle %}
+      <p class="nerfies-subtitle">{{ page.project_subtitle }}</p>
+    {% endif %}
+
+    {% if page.authors %}
+      <p class="nerfies-authors">
+        {% assign first_author = true %}
+        {% for author in page.authors %}
+          {% unless first_author %}
+            <span class="nerfies-separator">|</span>
+          {% endunless %}
+          {% if author.name %}
+            {% if author.url %}
+              {% assign author_url = author.url %}
+              {% assign author_external = false %}
+              {% if author_url contains '://' %}
+                {% assign author_external = true %}
+              {% else %}
+                {% assign author_url = author_url | relative_url %}
+              {% endif %}
+              <a
+                href="{{ author_url }}"
+                {% if author_external %}
+                  target="_blank" rel="noopener noreferrer"
+                {% endif %}
+              >
+                {{ author.name }}
+              </a>
+            {% else %}
+              {{ author.name }}
+            {% endif %}
+          {% else %}
+            {{ author }}
+          {% endif %}
+          {% assign first_author = false %}
+        {% endfor %}
+      </p>
+    {% endif %}
+
+    {% if page.affiliations %}
+      <p class="nerfies-affiliations">
+        {% for affiliation in page.affiliations %}
+          <span>{{ affiliation }}</span>
+          {% unless forloop.last %}
+            <span class="nerfies-dot">-</span>
+          {% endunless %}
+        {% endfor %}
+      </p>
+    {% endif %}
+
+    {% if page.venue %}
+      <p class="nerfies-venue">{{ page.venue }}</p>
+    {% endif %}
+
+    {% if page.project_links %}
+      <div class="nerfies-links">
+        {% for link in page.project_links %}
+          {% if link.url %}
+            {% assign link_url = link.url %}
+            {% assign external_link = false %}
+            {% if link_url contains '://' %}
+              {% assign external_link = true %}
+            {% else %}
+              {% assign link_url = link_url | relative_url %}
+            {% endif %}
+            <a
+              class="nerfies-link"
+              href="{{ link_url }}"
+              {% if external_link %}
+                target="_blank" rel="noopener noreferrer"
+              {% endif %}
+            >
+              {% if link.icon %}
+                <i class="{{ link.icon }}"></i>
+              {% endif %}
+              <span>{{ link.label | default: 'Link' }}</span>
+            </a>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+  </header>
+
+  {% if page.teaser_video or page.teaser_image %}
+    <section class="nerfies-section">
+      <h2>Teaser</h2>
+      <div class="nerfies-teaser-media">
+        {% if page.teaser_video %}
+          {% assign teaser_video_url = page.teaser_video %}
+          {% unless teaser_video_url contains '://' %}
+            {% assign teaser_video_url = teaser_video_url | relative_url %}
+          {% endunless %}
+          <video autoplay loop muted playsinline controls preload="metadata">
+            <source src="{{ teaser_video_url }}" type="{{ page.teaser_video_type | default: 'video/mp4' }}">
+          </video>
+        {% else %}
+          {% assign teaser_image_url = page.teaser_image %}
+          {% unless teaser_image_url contains '://' %}
+            {% assign teaser_image_url = teaser_image_url | relative_url %}
+          {% endunless %}
+          <img src="{{ teaser_image_url }}" alt="{{ page.title }} teaser image">
+        {% endif %}
+      </div>
+      {% if page.teaser_caption %}
+        <p class="nerfies-caption">{{ page.teaser_caption }}</p>
+      {% endif %}
+    </section>
+  {% endif %}
+
+  {% if page.abstract %}
+    <section class="nerfies-section">
+      <h2>Abstract</h2>
+      <div class="nerfies-prose">{{ page.abstract | markdownify }}</div>
+    </section>
+  {% endif %}
+
+  {% if page.highlights %}
+    <section class="nerfies-section">
+      <h2>Highlights</h2>
+      <ul class="nerfies-highlights">
+        {% for item in page.highlights %}
+          <li>{{ item | markdownify }}</li>
+        {% endfor %}
+      </ul>
+    </section>
+  {% endif %}
+
+  {% unless content == blank %}
+    <section class="nerfies-section nerfies-prose">
+      {{ content }}
+    </section>
+  {% endunless %}
+
+  {% if page.citation %}
+    <section class="nerfies-section">
+      <h2>BibTeX</h2>
+      <pre class="nerfies-bibtex"><code>{{ page.citation }}</code></pre>
+    </section>
+  {% endif %}
+
+  {% if page.related_publications %}
+    <section class="nerfies-section">
+      <h2>References</h2>
+      <div class="publications">
+        {% bibliography --cited_in_order %}
+      </div>
+    </section>
+  {% endif %}
+
+  {% if site.giscus and page.giscus_comments %}
+    {% include giscus.liquid %}
+  {% endif %}
+</article>

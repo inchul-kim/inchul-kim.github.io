@@ -45,9 +45,7 @@
       "startDate": "2022-08",
       // "endDate": "1905-01-01",
       "score": "10",
-      "courses": [
-        "Supervisor: <a href=\"https://vclab.kaist.ac.kr/minhkim/index.html\">Prof. Min H. Kim</a>"
-      ]
+      "courses": ["Supervisor: <a href=\"https://vclab.kaist.ac.kr/minhkim/index.html\">Prof. Min H. Kim</a>"]
     },
     {
       "institution": "Korea Advanced Institute of Science and Technology (KAIST)",
@@ -56,9 +54,7 @@
       "studyType": "MSc in Computer Science",
       "startDate": "2015-03",
       "endDate": "2017-02",
-      "courses": [
-        "Supervisor: <a href=\"https://vclab.kaist.ac.kr/minhkim/index.html\">Prof. Min H. Kim</a>"
-      ]
+      "courses": ["Supervisor: <a href=\"https://vclab.kaist.ac.kr/minhkim/index.html\">Prof. Min H. Kim</a>"]
     },
     {
       "institution": "Hanyang University",
@@ -67,9 +63,7 @@
       "studyType": "BSc in Computer Science",
       "startDate": "2009-03",
       "endDate": "2015-02",
-      "courses": [
-        "Summa Cum Laude"
-      ]
+      "courses": ["Summa Cum Laude"]
     }
   ],
   "projects": [

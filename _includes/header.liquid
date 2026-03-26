@@ -111,8 +111,12 @@
                   <a
                     class="nav-link"
                     href="{% if url contains '://' %}{{ url }}{% else %}{{ url | relative_url }}{% endif %}"
-                    {% if p.nav_target %}target="{{ p.nav_target }}"{% endif %}
-                    {% if p.nav_target == '_blank' %}rel="noopener noreferrer"{% endif %}
+                    {% if p.nav_target %}
+                      target="{{ p.nav_target }}"
+                    {% endif %}
+                    {% if p.nav_target == '_blank' %}
+                      rel="noopener noreferrer"
+                    {% endif %}
                   >
                     {{- p.title }}
                     {% if page.url contains p.url %}
@@ -131,8 +135,12 @@
                 <a
                   class="nav-link"
                   href="{% if link.url contains '://' %}{{ link.url }}{% else %}{{ link.url | relative_url }}{% endif %}"
-                  {% if link.target %}target="{{ link.target }}"{% endif %}
-                  {% if link.target == '_blank' %}rel="noopener noreferrer"{% endif %}
+                  {% if link.target %}
+                    target="{{ link.target }}"
+                  {% endif %}
+                  {% if link.target == '_blank' %}
+                    rel="noopener noreferrer"
+                  {% endif %}
                 >
                   {{- link.title -}}
                 </a>

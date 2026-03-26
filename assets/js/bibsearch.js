@@ -16,9 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   const getSearchableText = (element) => {
-    const chunks = metadataSelectors.flatMap((selector) =>
-      Array.from(element.querySelectorAll(selector)).map((node) => node.textContent || "")
-    );
+    const chunks = metadataSelectors.flatMap((selector) => Array.from(element.querySelectorAll(selector)).map((node) => node.textContent || ""));
     return chunks.join(" ").toLowerCase();
   };
 

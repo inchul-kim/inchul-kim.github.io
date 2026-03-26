@@ -4,10 +4,10 @@
 
 title: Inchul Kim # the website title (if blank, full name will be used instead)
 first_name: Inchul
-middle_name: 
+middle_name:
 last_name: Kim
 contact_note: >
-  
+
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Inchul Kim (Incheol Kim)
 footer_text: >
@@ -155,7 +155,7 @@ collections:
       layout: post
     output: true
   projects:
-    output: true
+    output: false
 
 # -----------------------------------------------------------------------------
 # Jekyll settings

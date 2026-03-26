@@ -20,41 +20,45 @@ layout: default
 
   <div class="teaching-list publications">
     {% for group in site.data.teaching %}
-        <h2 class="bibliography text-left"><span>{{ group.role }}</span></h2>
-        
-        {% for course in group.courses %}
-        <div class="card mt-3 p-3">
-            <div class="row g-3 align-items-center">
-                {% if course.image %}
-                <!-- Image Column -->
-                <div class="col-12 col-sm-2 d-flex justify-content-center align-items-center px-2">
-                    <div class="p-2 mb-3 mb-sm-0 w-90">
-                        <img src="{{ course.image }}"
-                            alt="{{ course.title }} thumbnail"
-                            class="thumbnail-img img-fluid rounded shadow-sm w-90">
-                    </div>
-                </div>
-                {% endif %}
+      <h2 class="bibliography text-left">
+        <span>{{ group.role }}</span>
+      </h2>
 
-                <!-- Text Column -->
-                <div class="col-12 col-sm-9">
-                <h5 class="mb-1">
-                    {% if course.url %}
-                    <a href="{{ course.url }}">{{ course.title }}</a>
-                    {% else %}
-                    {{ course.title }}
-                    {% endif %}
-                </h5>
-                <p class="text-muted mb-1">{{ course.code }} · {{ course.term }} · {{ course.school }}</p>
-                {% if course.description %}
-                    <p class="mb-0">{{ course.description }}</p>
-                {% endif %}
+      {% for course in group.courses %}
+        <div class="card mt-3 p-3">
+          <div class="row g-3 align-items-center">
+            {% if course.image %}
+              <!-- Image Column -->
+              <div class="col-12 col-sm-2 d-flex justify-content-center align-items-center px-2">
+                <div class="p-2 mb-3 mb-sm-0 w-90">
+                  <img
+                    src="{{ course.image }}"
+                    alt="{{ course.title }} thumbnail"
+                    class="thumbnail-img img-fluid rounded shadow-sm w-90"
+                  >
                 </div>
+              </div>
+            {% endif %}
+
+            <!-- Text Column -->
+            <div class="col-12 col-sm-9">
+              <h5 class="mb-1">
+                {% if course.url %}
+                  <a href="{{ course.url }}">{{ course.title }}</a>
+                {% else %}
+                  {{ course.title }}
+                {% endif %}
+              </h5>
+              <p class="text-muted mb-1">{{ course.code }} · {{ course.term }} · {{ course.school }}</p>
+              {% if course.description %}
+                <p class="mb-0">{{ course.description }}</p>
+              {% endif %}
             </div>
-            </div>
-        {% endfor %}
+          </div>
+        </div>
+      {% endfor %}
     {% endfor %}
-    </div>
+  </div>
 
   {% if site.giscus and page.giscus_comments %}
     {% include giscus.liquid %}
