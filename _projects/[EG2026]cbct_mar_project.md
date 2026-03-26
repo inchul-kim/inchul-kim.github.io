@@ -31,8 +31,17 @@ project_links:
     url: /assets/publication/[EG2026]cbct_mar/CTGS-beamhardening-supple.pdf
     icon: fa-solid fa-file-pdf
   - label: Code
-    # url: https://github.com/nerfies/nerfies.github.io
+    # url: /tba
     icon: fa-brands fa-github
+  - label: Data
+    # url: https://your-dataset-link
+    icon: fa-solid fa-database
+  # - label: arXiv
+  #   # url: https://arxiv.org/abs/xxxx.xxxxx
+  #   icon: ai ai-arxiv
+  - label: DOI
+    # url: https://doi.org/xx.xxxx/xxxxx
+    icon: ai ai-doi  
   # - label: Demo Video
   #   url: /assets/publication/[CVPR2026]cbct_pose/ours_broccoli.mp4
   #   icon: fa-solid fa-film

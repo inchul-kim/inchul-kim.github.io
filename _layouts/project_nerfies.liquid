@@ -46,24 +46,27 @@ layout: default
         {% for link in page.project_links %}
           {% if link.url %}
             {% assign link_url = link.url %}
-            {% assign external_link = false %}
-            {% if link_url contains '://' %}
-              {% assign external_link = true %}
-            {% else %}
+            {% unless link_url contains '://' %}
               {% assign link_url = link_url | relative_url %}
-            {% endif %}
+            {% endunless %}
             <a
               class="nerfies-link"
               href="{{ link_url }}"
-              {% if external_link %}
-                target="_blank" rel="noopener noreferrer"
-              {% endif %}
+              target="_blank"
+              rel="noopener noreferrer"
             >
               {% if link.icon %}
                 <i class="{{ link.icon }}"></i>
               {% endif %}
               <span>{{ link.label | default: 'Link' }}</span>
             </a>
+          {% elsif link.label or link.icon %}
+            <span class="nerfies-link nerfies-link-disabled" aria-disabled="true">
+              {% if link.icon %}
+                <i class="{{ link.icon }}"></i>
+              {% endif %}
+              <span>{{ link.label | default: 'Link' }}</span>
+            </span>
           {% endif %}
         {% endfor %}
       </div>

@@ -92,6 +92,17 @@
   color: var(--global-theme-color);
 }
 
+.nerfies-link-disabled {
+  opacity: 0.72;
+  cursor: default;
+}
+
+.nerfies-link-disabled:hover {
+  transform: none;
+  border-color: var(--global-divider-color);
+  color: var(--global-text-color);
+}
+
 .nerfies-section {
   margin-top: 2rem;
 }
