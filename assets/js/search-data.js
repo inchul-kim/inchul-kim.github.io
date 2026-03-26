@@ -100,6 +100,11 @@ ninja.data = [{
           description: "another project with an image 🎉",
           section: "Projects",handler: () => {
               window.location.href = "/projects/9_project/";
+            },},{id: "projects-splat-based-metal-artifact-reduction-in-cone-beam-ct-via-polychromatic-modeling",
+          title: 'Splat-based Metal Artifact Reduction in Cone-Beam CT via Polychromatic Modeling',
+          description: "Splat-based Metal Artifact Reduction in Cone-Beam CT via Polychromatic Modeling",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/eg2026_cbct_mar/";
             },},{
       id: 'light-theme',
       title: 'Change theme to light',
