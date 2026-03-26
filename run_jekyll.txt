@@ -5,3 +5,9 @@ no jekyll -> bundle install
 Conversion error: JekyllJupyterNotebook::Converter encountered an error while converting 'assets/jupyter/blog.ipynb':
                     No such file or directory - jupyter
                     => pip install notebook
+
+Every commit:
+# (First time only)
+npm install --save-dev prettier @shopify/prettier-plugin-liquid
+# Format all files
+npx prettier . --write

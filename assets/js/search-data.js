@@ -50,7 +50,12 @@ ninja.data = [{
           section: "News",},{id: "news-our-cbct-paper-on-compact-attenuation-modelling-has-been-accepted-to-cvpr-2026-click",
           title: 'Our CBCT paper on compact attenuation modelling has been accepted to CVPR 2026....',
           description: "",
-          section: "News",},{id: "projects-project-1",
+          section: "News",},{id: "projects-test-project-page-nerfies-style",
+          title: 'Test Project Page (Nerfies Style)',
+          description: "Sandbox page to validate the Nerfies-like project template in this site.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/test-nerfies-page/";
+            },},{id: "projects-project-1",
           title: 'project 1',
           description: "with background image",
           section: "Projects",handler: () => {

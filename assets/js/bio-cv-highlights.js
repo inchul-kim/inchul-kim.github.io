@@ -54,7 +54,7 @@
         continue;
       }
 
-      if (current === "\"" || current === "'") {
+      if (current === '"' || current === "'") {
         inString = true;
         quoteChar = current;
         output += current;
@@ -215,7 +215,7 @@
       if (mapped.location) {
         var location = document.createElement("p");
         location.className = "location";
-        location.innerHTML = "<i class=\"fa-solid fa-location-dot iconlocation\"></i> " + mapped.location;
+        location.innerHTML = '<i class="fa-solid fa-location-dot iconlocation"></i> ' + mapped.location;
         dateColumn.appendChild(location);
       }
 
