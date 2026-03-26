@@ -181,17 +181,6 @@
   height: auto;
 }
 
-.nerfies-compare__slider--fixed-height figure,
-.nerfies-compare__slider--fixed-height picture,
-.nerfies-compare__slider--fixed-height img {
-  height: 100%;
-}
-
-.nerfies-compare__slider--fixed-height img {
-  object-fit: contain;
-  object-position: center;
-}
-
 .nerfies-compare__handle {
   display: inline-flex;
   align-items: center;
