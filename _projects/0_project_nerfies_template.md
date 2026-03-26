@@ -10,13 +10,22 @@ project_kicker: "Conference 2026"
 project_subtitle: "Short subtitle that mirrors the top line from the Nerfies template."
 authors:
   - name: First Author
-    url: https://example.com
+    self: true
   - name: Second Author
   - name: Third Author
+# Author link behavior:
+# - `self: true` keeps your own name unlinked.
+# - For others, link is auto-resolved from `_data/coauthors.yml` via name matching.
+# - If multiple people share the same name, add either:
+#     coauthor_id: unique-id-in-coauthors-yml
+#   or
+#     coauthor_index: 2  # 1-based index in that last-name group
 affiliations:
   - KAIST
   - Collaborator Lab
 venue: "CVPR 2026"
+images:
+  compare: true
 project_links:
   - label: Paper
     url: /assets/publication/[PROJECT_TAG]/paper.pdf
@@ -33,6 +42,12 @@ project_links:
 teaser_video: /assets/publication/[PROJECT_TAG]/teaser.mp4
 teaser_video_type: video/mp4
 teaser_caption: "Optional teaser caption."
+# Use one of the teaser fields below:
+# teaser_video: /assets/publication/[PROJECT_TAG]/teaser.mp4
+# teaser_image: /assets/publication/[PROJECT_TAG]/teaser.svg # png/jpg/svg all supported
+# teaser_pdf: /assets/publication/[PROJECT_TAG]/teaser.pdf
+# teaser_pdf_preview: /assets/publication/[PROJECT_TAG]/teaser_page1.png
+# teaser_pdf_height: 560
 abstract: >
   Paste your abstract here. This renders as the dedicated abstract section.
 highlights:
@@ -56,6 +71,71 @@ Add your method narrative here. You can write in markdown or paste adapted HTML 
 ## Results
 
 Use regular markdown sections and include media from `assets/publication/[PROJECT_TAG]/`.
+
+{% raw %}
+
+```liquid
+{% include project_compare_slider.liquid
+  left_image="assets/publication/[PROJECT_TAG]/result_before.png"
+  right_image="assets/publication/[PROJECT_TAG]/result_after.png"
+  left_label="Baseline"
+  right_label="Ours"
+  caption="Drag the slider to compare outputs."
+  max_width="900px"
+  max_height="520px"
+%}
+```
+
+```liquid
+{% include project_compare_gallery.liquid
+  id="qualitative-gallery"
+  examples=page.compare_gallery_examples
+  thumb_label="Qualitative comparisons"
+  max_width="900px"
+  max_height="520px"
+%}
+```
+
+{% endraw %}
+
+You can also set a page-level default width in frontmatter:
+
+{% raw %}
+
+```yaml
+compare_gallery_max_width: 900px
+compare_slider_max_width: 900px
+compare_gallery_max_height: 520px
+compare_slider_max_height: 520px
+```
+
+{% endraw %}
+
+Add this to frontmatter for thumbnail-based multi-example compare:
+
+{% raw %}
+
+```yaml
+compare_gallery_examples:
+  - title: Example 1
+    left_image: assets/publication/[PROJECT_TAG]/example1_before.png
+    right_image: assets/publication/[PROJECT_TAG]/example1_after.png
+    thumb: assets/publication/[PROJECT_TAG]/example1_thumb.png
+    left_label: Baseline
+    right_label: Ours
+    caption: Example 1 description.
+    divider_position: 50 # initial divider position (0 = all left image, 100 = all right image)
+  - title: Example 2
+    left_image: assets/publication/[PROJECT_TAG]/example2_before.png
+    right_image: assets/publication/[PROJECT_TAG]/example2_after.png
+    thumb: assets/publication/[PROJECT_TAG]/example2_thumb.png
+    left_label: Baseline
+    right_label: Ours
+    caption: Example 2 description.
+    divider_position: 42
+```
+
+{% endraw %}
 
 ```html
 <video controls autoplay muted loop playsinline>

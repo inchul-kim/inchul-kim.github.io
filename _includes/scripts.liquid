@@ -271,6 +271,7 @@
       integrity="{{ site.third_party_libraries.img-comparison-slider.integrity.js }}"
       crossorigin="anonymous"
     ></script>
+    <script defer src="{{ '/assets/js/project-compare-gallery.js' | relative_url | bust_file_cache }}"></script>
   {% endif %}
   {% if page.images.lightbox2 %}
     <script

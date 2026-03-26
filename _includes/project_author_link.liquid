@@ -1,0 +1,125 @@
+{% assign author_entry = include.author %}
+{% assign author_name = author_entry.name | default: author_entry | strip %}
+{% assign explicit_url = author_entry.url | default: '' | strip %}
+
+{% assign parsed_first = author_entry.first_name | default: '' | strip %}
+{% assign parsed_last = author_entry.last_name | default: '' | strip %}
+
+{% if parsed_first == blank or parsed_last == blank %}
+  {% if author_name contains ',' %}
+    {% assign comma_parts = author_name | split: ',' %}
+    {% if parsed_last == blank %}
+      {% assign parsed_last = comma_parts[0] | strip %}
+    {% endif %}
+    {% if parsed_first == blank and comma_parts.size > 1 %}
+      {% assign parsed_first = comma_parts[1] | strip %}
+    {% endif %}
+  {% else %}
+    {% assign name_parts = author_name | split: ' ' %}
+    {% assign parts_count = name_parts | size %}
+    {% if parts_count > 1 %}
+      {% if parsed_last == blank %}
+        {% assign parsed_last = name_parts | last | strip %}
+      {% endif %}
+      {% if parsed_first == blank %}
+        {% assign first_parts_count = parts_count | minus: 1 %}
+        {% capture parsed_first %}{% for token in name_parts limit: first_parts_count %}{{ token }}{% unless forloop.last %} {% endunless %}{% endfor %}{% endcapture %}
+        {% assign parsed_first = parsed_first | strip %}
+      {% endif %}
+    {% elsif parts_count == 1 and parsed_last == blank %}
+      {% assign parsed_last = name_parts[0] | strip %}
+    {% endif %}
+  {% endif %}
+{% endif %}
+
+{% assign parsed_first_clean = parsed_first | downcase | remove_accents | strip %}
+{% assign parsed_last_clean = parsed_last | downcase | remove_accents | strip %}
+{% assign author_name_clean = author_name | downcase | remove_accents | strip %}
+
+{% assign site_first_clean = site.first_name | downcase | remove_accents | strip %}
+{% assign site_last_clean = site.last_name | downcase | remove_accents | strip %}
+{% capture site_full_name %}{{ site.first_name }}{% if site.middle_name %} {{ site.middle_name }}{% endif %} {{ site.last_name }}{% endcapture %}
+{% assign site_full_name_clean = site_full_name | downcase | remove_accents | strip %}
+
+{% assign author_is_self = false %}
+{% if author_entry.self or author_entry.is_self %}
+  {% assign author_is_self = true %}
+{% elsif parsed_last_clean != blank and parsed_last_clean == site_last_clean and parsed_first_clean != blank and (parsed_first_clean contains site_first_clean or site_first_clean contains parsed_first_clean) %}
+  {% assign author_is_self = true %}
+{% elsif author_name_clean == site_full_name_clean %}
+  {% assign author_is_self = true %}
+{% endif %}
+
+{% assign resolved_url = '' %}
+{% if explicit_url != blank %}
+  {% assign resolved_url = explicit_url %}
+{% elsif author_is_self == false and parsed_last_clean != blank and site.data.coauthors[parsed_last_clean] %}
+  {% assign candidate_coauthors = site.data.coauthors[parsed_last_clean] %}
+  {% assign requested_coauthor_id = author_entry.coauthor_id | default: '' | strip %}
+  {% assign requested_coauthor_index = author_entry.coauthor_index | default: '' | strip %}
+  {% assign requested_coauthor_index_num = requested_coauthor_index | plus: 0 %}
+
+  {% if requested_coauthor_id != blank %}
+    {% for coauthor in candidate_coauthors %}
+      {% if coauthor.id and coauthor.id == requested_coauthor_id %}
+        {% assign resolved_url = coauthor.url %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+  {% elsif requested_coauthor_index != blank %}
+    {% for coauthor in candidate_coauthors %}
+      {% if forloop.index == requested_coauthor_index_num %}
+        {% assign resolved_url = coauthor.url %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+  {% else %}
+    {% assign match_count = 0 %}
+    {% assign first_match_url = '' %}
+    {% for coauthor in candidate_coauthors %}
+      {% assign coauthor_match = false %}
+      {% if parsed_first_clean != blank and coauthor.firstname %}
+        {% for alias in coauthor.firstname %}
+          {% assign alias_clean = alias | downcase | remove_accents | strip %}
+          {% if parsed_first_clean == alias_clean or parsed_first_clean contains alias_clean or alias_clean contains parsed_first_clean %}
+            {% assign coauthor_match = true %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+
+      {% if coauthor_match %}
+        {% assign match_count = match_count | plus: 1 %}
+        {% if match_count == 1 %}
+          {% assign first_match_url = coauthor.url %}
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+
+    {% if match_count == 1 %}
+      {% assign resolved_url = first_match_url %}
+    {% endif %}
+  {% endif %}
+{% endif %}
+
+{% if author_is_self %}
+  <strong>{{ author_name }}</strong>
+{% elsif resolved_url == blank %}
+  {{ author_name }}
+{% else %}
+  {% assign author_external = false %}
+  {% assign author_url = resolved_url %}
+  {% if author_url contains '://' %}
+    {% assign author_external = true %}
+  {% else %}
+    {% assign author_url = author_url | relative_url %}
+  {% endif %}
+  <a
+    href="{{ author_url }}"
+    {% if author_external %}
+      target="_blank" rel="noopener noreferrer"
+    {% endif %}
+  >
+    {{ author_name }}
+  </a>
+{% endif %}

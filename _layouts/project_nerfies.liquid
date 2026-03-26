@@ -20,29 +20,7 @@ layout: default
           {% unless first_author %}
             <span class="nerfies-separator">|</span>
           {% endunless %}
-          {% if author.name %}
-            {% if author.url %}
-              {% assign author_url = author.url %}
-              {% assign author_external = false %}
-              {% if author_url contains '://' %}
-                {% assign author_external = true %}
-              {% else %}
-                {% assign author_url = author_url | relative_url %}
-              {% endif %}
-              <a
-                href="{{ author_url }}"
-                {% if author_external %}
-                  target="_blank" rel="noopener noreferrer"
-                {% endif %}
-              >
-                {{ author.name }}
-              </a>
-            {% else %}
-              {{ author.name }}
-            {% endif %}
-          {% else %}
-            {{ author }}
-          {% endif %}
+          {% include project_author_link.liquid author=author %}
           {% assign first_author = false %}
         {% endfor %}
       </p>
@@ -92,10 +70,16 @@ layout: default
     {% endif %}
   </header>
 
-  {% if page.teaser_video or page.teaser_image %}
+  {% if page.teaser_video or page.teaser_pdf or page.teaser_image %}
     <section class="nerfies-section">
-      <h2>Teaser</h2>
       <div class="nerfies-teaser-media">
+        {% if page.teaser_pdf %}
+          {% assign teaser_pdf_url = page.teaser_pdf %}
+          {% unless teaser_pdf_url contains '://' %}
+            {% assign teaser_pdf_url = teaser_pdf_url | relative_url %}
+          {% endunless %}
+        {% endif %}
+
         {% if page.teaser_video %}
           {% assign teaser_video_url = page.teaser_video %}
           {% unless teaser_video_url contains '://' %}
@@ -104,14 +88,60 @@ layout: default
           <video autoplay loop muted playsinline controls preload="metadata">
             <source src="{{ teaser_video_url }}" type="{{ page.teaser_video_type | default: 'video/mp4' }}">
           </video>
-        {% else %}
+        {% elsif page.teaser_image %}
           {% assign teaser_image_url = page.teaser_image %}
           {% unless teaser_image_url contains '://' %}
             {% assign teaser_image_url = teaser_image_url | relative_url %}
           {% endunless %}
-          <img src="{{ teaser_image_url }}" alt="{{ page.title }} teaser image">
+          {% if teaser_pdf_url %}
+            <a
+              class="nerfies-teaser-pdf-preview"
+              href="{{ teaser_pdf_url }}"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open teaser PDF in a new tab"
+            >
+              <img src="{{ teaser_image_url }}" alt="{{ page.title }} teaser image">
+            </a>
+          {% else %}
+            <img src="{{ teaser_image_url }}" alt="{{ page.title }} teaser image">
+          {% endif %}
+        {% elsif page.teaser_pdf %}
+          {% assign teaser_pdf_rendered = true %}
+          {% if page.teaser_pdf_preview %}
+            {% assign teaser_pdf_preview_url = page.teaser_pdf_preview %}
+            {% unless teaser_pdf_preview_url contains '://' %}
+              {% assign teaser_pdf_preview_url = teaser_pdf_preview_url | relative_url %}
+            {% endunless %}
+            <a
+              class="nerfies-teaser-pdf-preview"
+              href="{{ teaser_pdf_url }}"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open teaser PDF in a new tab"
+            >
+              <img src="{{ teaser_pdf_preview_url }}" alt="{{ page.title }} teaser preview">
+            </a>
+          {% else %}
+            <object
+              data="{{ teaser_pdf_url }}"
+              type="application/pdf"
+              aria-label="{{ page.title }} teaser PDF"
+              style="height: {{ page.teaser_pdf_height | default: 560 }}px;"
+            >
+              <p>
+                PDF preview is unavailable.
+                <a href="{{ teaser_pdf_url }}" target="_blank" rel="noopener noreferrer">Open the PDF teaser</a>.
+              </p>
+            </object>
+          {% endif %}
         {% endif %}
       </div>
+      {% if teaser_pdf_rendered or (teaser_pdf_url and page.teaser_image == blank) %}
+        <p class="nerfies-teaser-pdf-link">
+          <a href="{{ teaser_pdf_url }}" target="_blank" rel="noopener noreferrer">Open teaser PDF in a new tab</a>
+        </p>
+      {% endif %}
       {% if page.teaser_caption %}
         <p class="nerfies-caption">{{ page.teaser_caption }}</p>
       {% endif %}

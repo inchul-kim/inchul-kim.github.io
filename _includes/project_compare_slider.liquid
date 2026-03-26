@@ -1,0 +1,41 @@
+{% assign left_label = include.left_label | default: 'Before' %}
+{% assign right_label = include.right_label | default: 'After' %}
+{% assign left_alt = include.left_alt | default: left_label %}
+{% assign right_alt = include.right_alt | default: right_label %}
+{% assign compare_max_width = include.max_width | default: page.compare_slider_max_width | default: '' %}
+{% assign compare_max_height = include.max_height | default: page.compare_slider_max_height | default: '' %}
+
+<div
+  class="nerfies-compare"
+  {% if compare_max_width != blank %}
+    style="max-width: {{ compare_max_width }}; margin-left: auto; margin-right: auto;"
+  {% endif %}
+>
+  <div class="nerfies-compare__overlay">
+    <span class="nerfies-compare__label nerfies-compare__label--left">{{ left_label }}</span>
+    <span class="nerfies-compare__label nerfies-compare__label--right">{{ right_label }}</span>
+  </div>
+
+  <img-comparison-slider
+    class="nerfies-compare__slider{% if compare_max_height != blank %} nerfies-compare__slider--fixed-height{% endif %}"
+    {% assign divider_position = include.divider_position | default: include.value %}
+    {% if divider_position %}
+      value="{{ divider_position }}"
+    {% endif %}
+    {% if compare_max_height != blank %}
+      style="height: {{ compare_max_height }};"
+    {% endif %}
+  >
+    {% include figure.liquid path=include.left_image slot="first" class="nerfies-compare__image" alt=left_alt loading="eager" margin="0" %}
+    {% include figure.liquid path=include.right_image slot="second" class="nerfies-compare__image" alt=right_alt loading="eager" margin="0" %}
+    <span slot="handle" class="nerfies-compare__handle" aria-hidden="true">
+      <span class="nerfies-compare__handle-arrow">&#9664;</span>
+      <span class="nerfies-compare__handle-bar"></span>
+      <span class="nerfies-compare__handle-arrow">&#9654;</span>
+    </span>
+  </img-comparison-slider>
+
+  {% if include.caption %}
+    <p class="nerfies-caption">{{ include.caption }}</p>
+  {% endif %}
+</div>

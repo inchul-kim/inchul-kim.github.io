@@ -1,0 +1,105 @@
+{% assign examples = include.examples %}
+{% assign first_example = examples | first %}
+{% assign compare_max_width = include.max_width | default: page.compare_gallery_max_width | default: '' %}
+{% assign compare_max_height = include.max_height | default: page.compare_gallery_max_height | default: '' %}
+
+{% if first_example %}
+  {% assign gallery_id = include.id | default: first_example.left_image | slugify %}
+
+  {% assign first_left_image = first_example.left_image %}
+  {% assign first_right_image = first_example.right_image %}
+  {% assign first_thumb_image = first_example.thumb | default: first_left_image %}
+
+  {% unless first_left_image contains '://' %}
+    {% assign first_left_image = first_left_image | relative_url %}
+  {% endunless %}
+  {% unless first_right_image contains '://' %}
+    {% assign first_right_image = first_right_image | relative_url %}
+  {% endunless %}
+  {% unless first_thumb_image contains '://' %}
+    {% assign first_thumb_image = first_thumb_image | relative_url %}
+  {% endunless %}
+
+  {% assign first_left_label = first_example.left_label | default: include.left_label | default: 'Before' %}
+  {% assign first_right_label = first_example.right_label | default: include.right_label | default: 'After' %}
+  {% assign first_left_alt = first_example.left_alt | default: first_left_label %}
+  {% assign first_right_alt = first_example.right_alt | default: first_right_label %}
+  {% assign first_divider_position = first_example.divider_position | default: first_example.value | default: include.divider_position | default: include.value | default: 50 %}
+  {% assign first_caption = first_example.caption | default: include.caption | default: '' %}
+
+  <div
+    id="{{ gallery_id }}"
+    class="nerfies-compare-gallery"
+    data-compare-gallery
+    {% if compare_max_width != blank %}
+      style="max-width: {{ compare_max_width }}; margin-left: auto; margin-right: auto;"
+    {% endif %}
+  >
+    <div class="nerfies-compare">
+      <div class="nerfies-compare__overlay">
+        <span class="nerfies-compare__label nerfies-compare__label--left" data-compare-left-label>{{ first_left_label }}</span>
+        <span class="nerfies-compare__label nerfies-compare__label--right" data-compare-right-label>{{ first_right_label }}</span>
+      </div>
+
+      <img-comparison-slider
+        class="nerfies-compare__slider{% if compare_max_height != blank %} nerfies-compare__slider--fixed-height{% endif %}"
+        value="{{ first_divider_position }}"
+        {% if compare_max_height != blank %}
+          style="height: {{ compare_max_height }};"
+        {% endif %}
+      >
+        <img slot="first" src="{{ first_left_image }}" alt="{{ first_left_alt }}" loading="eager">
+        <img slot="second" src="{{ first_right_image }}" alt="{{ first_right_alt }}" loading="eager">
+        <span slot="handle" class="nerfies-compare__handle" aria-hidden="true">
+          <span class="nerfies-compare__handle-arrow">&#9664;</span>
+          <span class="nerfies-compare__handle-bar"></span>
+          <span class="nerfies-compare__handle-arrow">&#9654;</span>
+        </span>
+      </img-comparison-slider>
+
+      <p class="nerfies-caption" data-compare-caption>{{ first_caption }}</p>
+    </div>
+
+    <div class="nerfies-compare-thumbs" role="list" aria-label="{{ include.thumb_label | default: 'Comparison examples' }}">
+      {% for example in examples %}
+        {% assign left_image = example.left_image %}
+        {% assign right_image = example.right_image %}
+        {% assign thumb_image = example.thumb | default: left_image %}
+        {% unless left_image contains '://' %}
+          {% assign left_image = left_image | relative_url %}
+        {% endunless %}
+        {% unless right_image contains '://' %}
+          {% assign right_image = right_image | relative_url %}
+        {% endunless %}
+        {% unless thumb_image contains '://' %}
+          {% assign thumb_image = thumb_image | relative_url %}
+        {% endunless %}
+
+        {% assign left_label = example.left_label | default: include.left_label | default: 'Before' %}
+        {% assign right_label = example.right_label | default: include.right_label | default: 'After' %}
+        {% assign left_alt = example.left_alt | default: left_label %}
+        {% assign right_alt = example.right_alt | default: right_label %}
+        {% assign caption = example.caption | default: include.caption | default: '' %}
+        {% assign divider_position = example.divider_position | default: example.value | default: include.divider_position | default: include.value | default: 50 %}
+
+        <button
+          type="button"
+          class="nerfies-compare-thumb{% if forloop.first %} is-active{% endif %}"
+          data-compare-thumb
+          data-left-image="{{ left_image }}"
+          data-right-image="{{ right_image }}"
+          data-left-alt="{{ left_alt }}"
+          data-right-alt="{{ right_alt }}"
+          data-left-label="{{ left_label }}"
+          data-right-label="{{ right_label }}"
+          data-caption="{{ caption }}"
+          data-divider-position="{{ divider_position }}"
+          aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}"
+          aria-label="{{ example.title | default: caption | default: 'Comparison example' }}"
+        >
+          <img src="{{ thumb_image }}" alt="{{ example.title | default: 'Comparison thumbnail' }}" loading="lazy">
+        </button>
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}
