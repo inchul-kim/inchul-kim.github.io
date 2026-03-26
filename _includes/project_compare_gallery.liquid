@@ -1,7 +1,6 @@
 {% assign examples = include.examples %}
 {% assign first_example = examples | first %}
 {% assign compare_max_width = include.max_width | default: page.compare_gallery_max_width | default: '' %}
-{% assign compare_max_height = include.max_height | default: page.compare_gallery_max_height | default: '' %}
 
 {% if first_example %}
   {% assign gallery_id = include.id | default: first_example.left_image | slugify %}
@@ -42,11 +41,8 @@
       </div>
 
       <img-comparison-slider
-        class="nerfies-compare__slider{% if compare_max_height != blank %} nerfies-compare__slider--fixed-height{% endif %}"
+        class="nerfies-compare__slider"
         value="{{ first_divider_position }}"
-        {% if compare_max_height != blank %}
-          style="height: {{ compare_max_height }};"
-        {% endif %}
       >
         <img slot="first" src="{{ first_left_image }}" alt="{{ first_left_alt }}" loading="eager">
         <img slot="second" src="{{ first_right_image }}" alt="{{ first_right_alt }}" loading="eager">

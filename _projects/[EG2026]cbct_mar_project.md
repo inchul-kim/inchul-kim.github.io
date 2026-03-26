@@ -127,7 +127,6 @@ We show four real (broccoli, chicken, paprika, and walnut) and two synthetic met
   examples=page.compare_gallery_examples
   thumb_label="Test comparisons"
   max_width="700px"
-  max_height="700px"
 %}
 
 

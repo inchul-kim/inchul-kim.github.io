@@ -82,7 +82,6 @@ Use regular markdown sections and include media from `assets/publication/[PROJEC
   right_label="Ours"
   caption="Drag the slider to compare outputs."
   max_width="900px"
-  max_height="520px"
 %}
 ```
 
@@ -92,7 +91,6 @@ Use regular markdown sections and include media from `assets/publication/[PROJEC
   examples=page.compare_gallery_examples
   thumb_label="Qualitative comparisons"
   max_width="900px"
-  max_height="520px"
 %}
 ```
 
@@ -105,8 +103,6 @@ You can also set a page-level default width in frontmatter:
 ```yaml
 compare_gallery_max_width: 900px
 compare_slider_max_width: 900px
-compare_gallery_max_height: 520px
-compare_slider_max_height: 520px
 ```
 
 {% endraw %}
