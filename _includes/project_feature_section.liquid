@@ -25,7 +25,8 @@
             {% assign figure_class = figure_item.class | default: 'img-fluid rounded z-depth-1' %}
             {% assign figure_loading = figure_item.loading | default: 'lazy' %}
             <div class="nerfies-feature-figure">
-              {% include figure.liquid
+              {%
+                include figure.liquid
                 path=figure_item.path
                 title=figure_item.title
                 alt=figure_item.alt

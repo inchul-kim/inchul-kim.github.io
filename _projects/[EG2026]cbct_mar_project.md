@@ -127,7 +127,7 @@ giscus_comments: false
 
 <!-- ## Method
 
-This is a dry-run page to make future project page imports fast.  
+This is a dry-run page to make future project page imports fast.
 You can replace this section with adapted HTML blocks from the reference template. -->
 
 ## Results

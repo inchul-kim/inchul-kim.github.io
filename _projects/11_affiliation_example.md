@@ -30,4 +30,3 @@ giscus_comments: false
 ## Notes
 
 This page is intentionally simple and only demonstrates affiliation mapping.
-

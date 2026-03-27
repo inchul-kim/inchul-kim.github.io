@@ -64,7 +64,9 @@ layout: default
             {{ affiliation_name }}
           </span>
           {% unless forloop.last %}
-            <span class="nerfies-dot">{% if use_affiliation_superscripts %};{% else %}-{% endif %}</span>
+            <span class="nerfies-dot">
+              {%- if use_affiliation_superscripts %};{% else %}-{% endif -%}
+            </span>
           {% endunless %}
         {% endfor %}
       </p>
