@@ -3,6 +3,22 @@ layout: default
 ---
 <article class="nerfies-project-page">
   <link rel="stylesheet" href="{{ '/assets/css/nerfies-project.css' | relative_url | bust_file_cache }}">
+  {% assign use_affiliation_superscripts = false %}
+  {% if page.authors %}
+    {% for author in page.authors %}
+      {% assign author_affiliation_ids = author.affiliation_ids | default: author.affiliations %}
+      {% if author_affiliation_ids %}
+        {% assign use_affiliation_superscripts = true %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+  {% if page.affiliations %}
+    {% assign first_affiliation = page.affiliations | first %}
+    {% if first_affiliation.id or first_affiliation.name %}
+      {% assign use_affiliation_superscripts = true %}
+    {% endif %}
+  {% endif %}
 
   <header class="nerfies-hero">
     {% if page.project_kicker %}
@@ -21,6 +37,16 @@ layout: default
             <span class="nerfies-separator">|</span>
           {% endunless %}
           {% include project_author_link.liquid author=author %}
+          {% if use_affiliation_superscripts %}
+            {% assign author_affiliation_ids = author.affiliation_ids | default: author.affiliations %}
+            {% if author_affiliation_ids %}
+              {% assign author_affiliation_text = author_affiliation_ids | join: ',' %}
+              {% if author_affiliation_text == blank %}
+                {% assign author_affiliation_text = author_affiliation_ids %}
+              {% endif %}
+              <sup class="nerfies-author-sup">{{ author_affiliation_text }}</sup>
+            {% endif %}
+          {% endif %}
           {% assign first_author = false %}
         {% endfor %}
       </p>
@@ -29,9 +55,16 @@ layout: default
     {% if page.affiliations %}
       <p class="nerfies-affiliations">
         {% for affiliation in page.affiliations %}
-          <span>{{ affiliation }}</span>
+          {% assign affiliation_name = affiliation.name | default: affiliation %}
+          {% assign affiliation_id = affiliation.id | default: forloop.index %}
+          <span>
+            {% if use_affiliation_superscripts %}
+              <sup class="nerfies-affiliation-sup">{{ affiliation_id }}</sup>
+            {% endif %}
+            {{ affiliation_name }}
+          </span>
           {% unless forloop.last %}
-            <span class="nerfies-dot">-</span>
+            <span class="nerfies-dot">{% if use_affiliation_superscripts %};{% else %}-{% endif %}</span>
           {% endunless %}
         {% endfor %}
       </p>
@@ -96,6 +129,20 @@ layout: default
           {% unless teaser_image_url contains '://' %}
             {% assign teaser_image_url = teaser_image_url | relative_url %}
           {% endunless %}
+          {% assign teaser_image_dark_url = page.teaser_image_dark | default: page.teaser_dark_image %}
+          {% if teaser_image_dark_url %}
+            {% unless teaser_image_dark_url contains '://' %}
+              {% assign teaser_image_dark_url = teaser_image_dark_url | relative_url %}
+            {% endunless %}
+          {% endif %}
+          {% capture teaser_image_markup %}
+            {% if teaser_image_dark_url %}
+              <img class="nerfies-teaser-image nerfies-teaser-image--light" src="{{ teaser_image_url }}" alt="{{ page.title }} teaser image (light theme)">
+              <img class="nerfies-teaser-image nerfies-teaser-image--dark" src="{{ teaser_image_dark_url }}" alt="{{ page.title }} teaser image (dark theme)" onerror="this.style.display='none'; if (this.previousElementSibling) { this.previousElementSibling.style.display='block'; }">
+            {% else %}
+              <img class="nerfies-teaser-image" src="{{ teaser_image_url }}" alt="{{ page.title }} teaser image">
+            {% endif %}
+          {% endcapture %}
           {% if teaser_pdf_url %}
             <a
               class="nerfies-teaser-pdf-preview"
@@ -104,10 +151,10 @@ layout: default
               rel="noopener noreferrer"
               aria-label="Open teaser PDF in a new tab"
             >
-              <img src="{{ teaser_image_url }}" alt="{{ page.title }} teaser image">
+              {{ teaser_image_markup }}
             </a>
           {% else %}
-            <img src="{{ teaser_image_url }}" alt="{{ page.title }} teaser image">
+            {{ teaser_image_markup }}
           {% endif %}
         {% elsif page.teaser_pdf %}
           {% assign teaser_pdf_rendered = true %}
@@ -167,6 +214,10 @@ layout: default
         {% endfor %}
       </ul>
     </section>
+  {% endif %}
+
+  {% if page.feature_section %}
+    {% include project_feature_section.liquid section=page.feature_section %}
   {% endif %}
 
   {% unless content == blank %}

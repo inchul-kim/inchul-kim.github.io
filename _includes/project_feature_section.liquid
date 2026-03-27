@@ -1,0 +1,42 @@
+{% assign section = include.section %}
+{% if section %}
+  {% assign section_type = section.type | default: 'overview' | downcase %}
+  {% assign section_title = section.title %}
+  {% if section_title == blank %}
+    {% if section_type == 'method' %}
+      {% assign section_title = 'Method' %}
+    {% else %}
+      {% assign section_title = 'Overview' %}
+    {% endif %}
+  {% endif %}
+
+  <section class="nerfies-section nerfies-feature-section">
+    <h2>{{ section_title }}</h2>
+
+    {% if section.description %}
+      <div class="nerfies-prose nerfies-feature-description">{{ section.description | markdownify }}</div>
+    {% endif %}
+
+    {% if section.figures %}
+      {% assign figure_count = section.figures | size %}
+      <div class="nerfies-feature-figures{% if figure_count > 1 %} nerfies-feature-figures--grid{% endif %}">
+        {% for figure_item in section.figures %}
+          {% if figure_item.path %}
+            {% assign figure_class = figure_item.class | default: 'img-fluid rounded z-depth-1' %}
+            {% assign figure_loading = figure_item.loading | default: 'lazy' %}
+            <div class="nerfies-feature-figure">
+              {% include figure.liquid
+                path=figure_item.path
+                title=figure_item.title
+                alt=figure_item.alt
+                caption=figure_item.caption
+                class=figure_class
+                loading=figure_loading
+              %}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+  </section>
+{% endif %}

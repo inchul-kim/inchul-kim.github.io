@@ -23,6 +23,20 @@ authors:
 affiliations:
   - KAIST
   - Collaborator Lab
+# For mixed institutions with numeric superscripts, use this shape instead:
+# affiliations:
+#   - id: 1
+#     name: KAIST
+#   - id: 2
+#     name: Collaborator Lab
+# authors:
+#   - name: First Author
+#     self: true
+#     affiliation_ids: [1]
+#   - name: Second Author
+#     affiliation_ids: [1, 2]
+#   - name: Third Author
+#     affiliation_ids: [2]
 venue: "CVPR 2026"
 images:
   compare: true
@@ -45,6 +59,7 @@ teaser_caption: "Optional teaser caption."
 # Use one of the teaser fields below:
 # teaser_video: /assets/publication/[PROJECT_TAG]/teaser.mp4
 # teaser_image: /assets/publication/[PROJECT_TAG]/teaser.svg # png/jpg/svg all supported
+# teaser_image_dark: /assets/publication/[PROJECT_TAG]/teaser_dark.svg # optional dark-theme variant
 # teaser_pdf: /assets/publication/[PROJECT_TAG]/teaser.pdf
 # teaser_pdf_preview: /assets/publication/[PROJECT_TAG]/teaser_page1.png
 # teaser_pdf_height: 560
@@ -53,6 +68,17 @@ abstract: >
 highlights:
   - "Drop-in field for your main claim."
   - "Add one or two measurable takeaways."
+# Show either an `Overview` or `Method` section from frontmatter.
+# Set `type` to `overview` or `method`.
+feature_section:
+  type: overview
+  description: >
+    Add a brief description for this section. You can use markdown here.
+  figures:
+    - path: assets/publication/[PROJECT_TAG]/overview.png
+      title: Overview figure
+      caption: Optional figure caption.
+      loading: eager
 citation: |
   @inproceedings{your2026project,
     title={Project Title},
@@ -64,9 +90,9 @@ related_publications: false
 giscus_comments: false
 ---
 
-## Method
+## Additional Details
 
-Add your method narrative here. You can write in markdown or paste adapted HTML blocks from the Nerfies page.
+Use this markdown area for anything beyond the frontmatter-driven `Overview/Method` section (for example, ablations, implementation notes, or extra visualizations).
 
 ## Results
 

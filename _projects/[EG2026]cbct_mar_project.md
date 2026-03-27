@@ -48,8 +48,9 @@ project_links:
 # teaser_video: "/assets/publication/[CVPR2026]cbct_pose/ours_broccoli.mp4"
 # teaser_video_type: video/mp4
 # teaser_caption: "Local MP4 teaser from existing assets."
-teaser_image: "/assets/publication/[EG2026]cbct_mar/project/teaser.png"
-teaser_pdf: "/assets/publication/[EG2026]cbct_mar/project/teaser.pdf"
+teaser_image: "/assets/publication/[EG2026]cbct_mar/project/teaser.svg"
+teaser_image_dark: "/assets/publication/[EG2026]cbct_mar/project/teaser_dark.svg"
+# teaser_pdf: "/assets/publication/[EG2026]cbct_mar/project/teaser.pdf"
 # teaser_pdf_height: 560
 # teaser_caption: "Our pipeline"
 compare_gallery_examples:
@@ -97,6 +98,15 @@ compare_gallery_examples:
     divider_position: 50
 abstract: >
   Cone-beam computed tomography (CBCT) enables volumetric reconstruction from X-ray projections, but suffers from severe artifacts--especially beam hardening--when imaging materials with high attenuation such as metals. These artifacts arise from the polychromatic nature of X-rays and are not properly addressed by conventional monochromatic reconstruction algorithms. While recent neural representation-based methods offer improved reconstruction quality, they are computationally expensive and often impractical for deployment. We propose a novel physics-inspired, self-calibrating metal artifact reduction method that efficiently reconstructs 3D CBCT volumes while correcting beam hardening artifacts. Our method integrates a polychromatic X-ray projection model, material-dependent attenuation profiles, and system response modeling into a Gaussian Splatting framework. Unlike prior work, we eliminate the need for manual metal masks or strong prior assumptions, and we optimize both reconstruction parameters and X-ray spectral characteristics jointly during training. We further introduce a high-fidelity synthetic CBCT dataset generation pipeline validated on Monte-Carlo x-ray simulation toolbox and release new datasets with severe metal-induced artifacts to support the community. This is the first splat-based method for reducing beam hardening in CBCT. Extensive experiments on both synthetic and real-world datasets demonstrate that our method outperforms state-of-the-art approaches in artifact suppression and reconstruction accuracy.
+feature_section:
+  type: overview
+  description: >
+    Our method jointly models projection and reconstruction by optimizing per-Gaussian material parameters together with the global X-ray response. A physics-based attenuation model decomposes material behavior into Compton and photoelectric components, enabling accurate polychromatic forward projection and effective metal artifact reduction without metal masks.
+  figures:
+    - path: assets/publication/[EG2026]cbct_mar/project/pipeline.png
+      title: Pipeline overview
+      caption: Polychromatic CT reconstruction with differentiable Gaussian primitives.
+      loading: eager
 # highlights:
 #   - "Frontmatter fields map correctly to hero and metadata blocks."
 #   - "Teaser media and action links render with the scoped stylesheet."
@@ -117,7 +127,7 @@ giscus_comments: false
 
 <!-- ## Method
 
-This is a dry-run page to make future project page imports fast.
+This is a dry-run page to make future project page imports fast.  
 You can replace this section with adapted HTML blocks from the reference template. -->
 
 ## Results

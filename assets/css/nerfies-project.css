@@ -42,9 +42,21 @@
   line-height: 1.45;
 }
 
+.nerfies-author-sup {
+  margin-left: 0.1rem;
+  font-size: 0.65em;
+  font-weight: 700;
+}
+
 .nerfies-affiliations {
   font-size: 1.05rem;
   line-height: 1.4;
+}
+
+.nerfies-affiliation-sup {
+  margin-right: 0.22rem;
+  font-size: 0.75em;
+  font-weight: 700;
 }
 
 .nerfies-authors a {
@@ -133,9 +145,38 @@
   margin-bottom: 0.8rem;
 }
 
+.nerfies-project-page img,
+.nerfies-project-page video,
+.nerfies-project-page object {
+  border-radius: 0 !important;
+}
+
+.nerfies-feature-description p {
+  margin-bottom: 0.7rem;
+}
+
+.nerfies-feature-description > :last-child {
+  margin-bottom: 0;
+}
+
+.nerfies-feature-figures {
+  margin-top: 0.7rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.9rem;
+}
+
+.nerfies-feature-figures--grid {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.nerfies-feature-figure figure {
+  margin: 0;
+}
+
 .nerfies-teaser-media {
   border: 1px solid var(--global-divider-color);
-  border-radius: 14px;
+  border-radius: 0;
   overflow: hidden;
   background: var(--global-card-bg-color);
 }
@@ -156,6 +197,28 @@
 .nerfies-teaser-media object {
   height: 560px;
   background: #fff;
+}
+
+.nerfies-teaser-media .nerfies-teaser-image--dark {
+  display: none;
+}
+
+html[data-theme="dark"] .nerfies-teaser-media .nerfies-teaser-image--light {
+  display: none;
+}
+
+html[data-theme="dark"] .nerfies-teaser-media .nerfies-teaser-image--dark {
+  display: block;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme]) .nerfies-teaser-media .nerfies-teaser-image--light {
+    display: none;
+  }
+
+  html:not([data-theme]) .nerfies-teaser-media .nerfies-teaser-image--dark {
+    display: block;
+  }
 }
 
 .nerfies-teaser-pdf-link {
@@ -199,7 +262,7 @@
   display: block;
   width: 100%;
   border: 1px solid var(--global-divider-color);
-  border-radius: 12px;
+  border-radius: 0;
   overflow: hidden;
   background: var(--global-card-bg-color);
   --divider-width: 1px;
@@ -263,7 +326,7 @@
 
 .nerfies-compare-thumb {
   border: 2px solid transparent;
-  border-radius: 8px;
+  border-radius: 0;
   padding: 0;
   background: transparent;
   cursor: pointer;
@@ -275,7 +338,7 @@
   width: 88px;
   height: 58px;
   object-fit: cover;
-  border-radius: 6px;
+  border-radius: 0;
 }
 
 .nerfies-compare-thumb:hover,
