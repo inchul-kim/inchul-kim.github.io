@@ -5931,7 +5931,7 @@ q1zlKle5ylWucpWr/H9RWmv/D6p85Y5sIGW/AAAAAElFTkSuQmCC" transform="matrix(0.1963 0
 		218.9,133.9 147.5,184.3 	"/>
 </g>
 <text transform="matrix(1 0 0 1 9.5778 127.4191)" class="st1 st2 st3" textLength="220" lengthAdjust="spacingAndGlyphs">Dual-pixel image sensor</text>
-<text transform="matrix(1 0 0 1 149.6808 212.2183)"><tspan x="0" y="0" class="st1 st2 st4">Right</tspan><tspan x="0" y="19" class="st1 st2 st4">photodiode</tspan></text>
+<text transform="matrix(1 0 0 1 232 212.2183)" text-anchor="end"><tspan x="0" y="0" class="st1 st2 st4">Right</tspan><tspan x="0" y="19" class="st1 st2 st4">photodiode</tspan></text>
 <g>
 	<g>
 		<line class="st8" x1="93.6" y1="215.7" x2="103.1" y2="196.5"/>
