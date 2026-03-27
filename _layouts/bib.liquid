@@ -41,11 +41,25 @@
     object-fit: contain !important;
   }
 
+  /* Let SVG thumbnails use full available width without desktop 200px cap. */
+  .hover-preview-wrapper img[src$='.svg'] {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain !important;
+  }
+
   @media (min-width: 576px) {
     .hover-preview-wrapper img,
     .hover-preview-wrapper video {
       max-width: 200px !important;
       max-height: 200px !important;
+    }
+
+    .hover-preview-wrapper img[src$='.svg'] {
+      max-width: 100% !important;
+      max-height: none !important;
     }
   }
 
