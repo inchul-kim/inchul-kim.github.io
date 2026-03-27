@@ -161,7 +161,7 @@
 .nerfies-teaser-media {
   border: 1px solid var(--global-divider-color);
   border-radius: 0;
-  overflow: hidden;
+  overflow: visible;
   background: var(--global-card-bg-color);
 }
 
