@@ -159,9 +159,10 @@
 }
 
 .nerfies-teaser-media {
+  --teaser-edge-safe-padding: 4px;
   border: 1px solid var(--global-divider-color);
   border-radius: 0;
-  overflow: visible;
+  overflow: hidden;
   background: var(--global-card-bg-color);
 }
 
@@ -171,9 +172,18 @@
   display: block;
   width: 100%;
   height: auto;
+  box-sizing: border-box;
+  padding-inline: var(--teaser-edge-safe-padding);
+  object-fit: contain;
+}
+
+.nerfies-teaser-media picture {
+  display: block;
+  width: 100%;
 }
 
 .nerfies-teaser-media object {
+  padding-inline: 0;
   height: 560px;
   background: #fff;
 }
