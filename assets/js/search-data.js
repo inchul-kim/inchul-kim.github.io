@@ -55,6 +55,11 @@ ninja.data = [{
           description: "Splat-based Metal Artifact Reduction in Cone-Beam CT via Polychromatic Modeling",
           section: "Projects",handler: () => {
               window.location.href = "/projects/eg2026_cbct_mar/";
+            },},{id: "projects-splat-based-metal-artifact-reduction-in-cone-beam-ct-via-polychromatic-modeling-astro-style-example",
+          title: 'Splat-based Metal Artifact Reduction in Cone-Beam CT via Polychromatic Modeling (Astro-style Example)',
+          description: "Example page using Astro-style features ported into the Jekyll project_nerfies layout.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/eg2026_cbct_mar_astro_example/";
             },},{
       id: 'light-theme',
       title: 'Change theme to light',
