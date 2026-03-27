@@ -86,6 +86,22 @@
     transition: opacity 0.3s ease-in-out;
   }
 
+  /* Ensure theme variants do not both render at once inside preview figures. */
+  .hover-preview-wrapper figure.preview1.only-dark,
+  .hover-preview-wrapper figure.preview2.only-dark {
+    display: none;
+  }
+
+  html[data-theme='dark'] .hover-preview-wrapper figure.preview1.only-light,
+  html[data-theme='dark'] .hover-preview-wrapper figure.preview2.only-light {
+    display: none;
+  }
+
+  html[data-theme='dark'] .hover-preview-wrapper figure.preview1.only-dark,
+  html[data-theme='dark'] .hover-preview-wrapper figure.preview2.only-dark {
+    display: flex;
+  }
+
   /* ===============================
      Hover trigger (IMPORTANT)
      Hover the wrapper itself
@@ -135,18 +151,52 @@
       {% endif %}
 
       {% if entry.preview1 and entry.preview2 %}
+        {% assign preview1_light = entry.preview1 %}
+        {% assign preview2_light = entry.preview2 %}
+
+        {%- comment -%} preview1 (light) {%- endcomment -%}
+        {% assign is_video1_light = preview1_light | downcase | slice: -4, 4 %}
+        {% assign safe_preview1_light = preview1_light | replace: '[', '%5B' | replace: ']', '%5D' %}
+        {% if preview1_light contains '://' %}
+          {% assign entry_path1_light = safe_preview1_light %}
+        {% else %}
+          {% assign entry_path1_light = safe_preview1_light | prepend: '/assets/publication/' %}
+        {% endif %}
+
+        {% if entry.preview1_dark %}
+          {%- comment -%} preview1 (dark, optional) {%- endcomment -%}
+          {% assign is_video1_dark = entry.preview1_dark | downcase | slice: -4, 4 %}
+          {% assign safe_preview1_dark = entry.preview1_dark | replace: '[', '%5B' | replace: ']', '%5D' %}
+          {% if entry.preview1_dark contains '://' %}
+            {% assign entry_path1_dark = safe_preview1_dark %}
+          {% else %}
+            {% assign entry_path1_dark = safe_preview1_dark | prepend: '/assets/publication/' %}
+          {% endif %}
+        {% endif %}
+
+        {%- comment -%} preview2 (light) {%- endcomment -%}
+        {% assign is_video2_light = preview2_light | downcase | slice: -4, 4 %}
+        {% assign safe_preview2_light = preview2_light | replace: '[', '%5B' | replace: ']', '%5D' %}
+        {% if preview2_light contains '://' %}
+          {% assign entry_path2_light = safe_preview2_light %}
+        {% else %}
+          {% assign entry_path2_light = safe_preview2_light | prepend: '/assets/publication/' %}
+        {% endif %}
+
+        {% if entry.preview2_dark %}
+          {%- comment -%} preview2 (dark, optional) {%- endcomment -%}
+          {% assign is_video2_dark = entry.preview2_dark | downcase | slice: -4, 4 %}
+          {% assign safe_preview2_dark = entry.preview2_dark | replace: '[', '%5B' | replace: ']', '%5D' %}
+          {% if entry.preview2_dark contains '://' %}
+            {% assign entry_path2_dark = safe_preview2_dark %}
+          {% else %}
+            {% assign entry_path2_dark = safe_preview2_dark | prepend: '/assets/publication/' %}
+          {% endif %}
+        {% endif %}
+
         <div class="hover-preview-wrapper">
-          {%- comment -%} preview1 {%- endcomment -%}
-          {% assign is_video1 = entry.preview1 | downcase | slice: -4, 4 %}
-          {% assign safe_preview1 = entry.preview1 | replace: '[', '%5B' | replace: ']', '%5D' %}
-          {% if entry.preview1 contains '://' %}
-            {% assign entry_path1 = safe_preview1 %}
-          {% else %}
-            {% assign entry_path1 = safe_preview1 | prepend: '/assets/publication/' %}
-          {% endif %}
-
-          <figure class="figure preview1" style="margin: 0;">
-            {% if is_video1 == '.mp4' %}
+          <figure class="figure preview1{% if entry.preview1_dark %} only-light{% endif %}" style="margin: 0;">
+            {% if is_video1_light == '.mp4' %}
               <video
                 class="figure-img img-fluid z-depth-1 rounded w-100"
                 autoplay
@@ -155,34 +205,54 @@
                 playsinline
                 style="width: 100%; height: auto; object-fit: cover; margin: 0;"
               >
-                <source src="{{ entry_path1 }}" type="video/mp4">
+                <source src="{{ entry_path1_light }}" type="video/mp4">
               </video>
             {% else %}
               {%
                 include figure.liquid
                 loading="eager"
-                path=entry_path1
+                path=entry_path1_light
                 sizes="200px"
                 class="preview z-depth-1 rounded"
                 margin="0"
                 zoomable=false
                 avoid_scaling=true
-                alt=entry.preview1
+                alt=preview1_light
               %}
             {% endif %}
           </figure>
 
-          {%- comment -%} preview2 {%- endcomment -%}
-          {% assign is_video2 = entry.preview2 | downcase | slice: -4, 4 %}
-          {% assign safe_preview2 = entry.preview2 | replace: '[', '%5B' | replace: ']', '%5D' %}
-          {% if entry.preview2 contains '://' %}
-            {% assign entry_path2 = safe_preview2 %}
-          {% else %}
-            {% assign entry_path2 = safe_preview2 | prepend: '/assets/publication/' %}
+          {% if entry.preview1_dark %}
+            <figure class="figure preview1 only-dark" style="margin: 0;">
+              {% if is_video1_dark == '.mp4' %}
+                <video
+                  class="figure-img img-fluid z-depth-1 rounded w-100"
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  style="width: 100%; height: auto; object-fit: cover; margin: 0;"
+                >
+                  <source src="{{ entry_path1_dark }}" type="video/mp4">
+                </video>
+              {% else %}
+                {%
+                  include figure.liquid
+                  loading="eager"
+                  path=entry_path1_dark
+                  sizes="200px"
+                  class="preview z-depth-1 rounded"
+                  margin="0"
+                  zoomable=false
+                  avoid_scaling=true
+                  alt=entry.preview1_dark
+                %}
+              {% endif %}
+            </figure>
           {% endif %}
 
-          <figure class="figure preview2" style="margin: 0;">
-            {% if is_video2 == '.mp4' %}
+          <figure class="figure preview2{% if entry.preview2_dark %} only-light{% endif %}" style="margin: 0;">
+            {% if is_video2_light == '.mp4' %}
               <video
                 class="figure-img img-fluid z-depth-1 rounded w-100"
                 autoplay
@@ -191,22 +261,51 @@
                 playsinline
                 style="width: 100%; height: auto; object-fit: cover; margin: 0;"
               >
-                <source src="{{ entry_path2 }}" type="video/mp4">
+                <source src="{{ entry_path2_light }}" type="video/mp4">
               </video>
             {% else %}
               {%
                 include figure.liquid
                 loading="eager"
-                path=entry_path2
+                path=entry_path2_light
                 sizes="200px"
                 class="preview z-depth-1 rounded"
                 margin="0"
                 zoomable=false
                 avoid_scaling=true
-                alt=entry.preview2
+                alt=preview2_light
               %}
             {% endif %}
           </figure>
+
+          {% if entry.preview2_dark %}
+            <figure class="figure preview2 only-dark" style="margin: 0;">
+              {% if is_video2_dark == '.mp4' %}
+                <video
+                  class="figure-img img-fluid z-depth-1 rounded w-100"
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  style="width: 100%; height: auto; object-fit: cover; margin: 0;"
+                >
+                  <source src="{{ entry_path2_dark }}" type="video/mp4">
+                </video>
+              {% else %}
+                {%
+                  include figure.liquid
+                  loading="eager"
+                  path=entry_path2_dark
+                  sizes="200px"
+                  class="preview z-depth-1 rounded"
+                  margin="0"
+                  zoomable=false
+                  avoid_scaling=true
+                  alt=entry.preview2_dark
+                %}
+              {% endif %}
+            </figure>
+          {% endif %}
         </div>
 
       {% elsif entry.preview %}
