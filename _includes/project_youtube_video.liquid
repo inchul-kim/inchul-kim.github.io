@@ -1,0 +1,36 @@
+{% assign video_id = include.video_id | default: include.youtube_id %}
+{% assign video_title = include.title | default: 'YouTube video player' %}
+{% assign aspect_ratio = include.aspect_ratio | default: '16 / 9' %}
+
+{% if video_id %}
+  {% assign embed_url = 'https://www.youtube-nocookie.com/embed/' | append: video_id %}
+  {% assign start_at = include.start | default: include.start_at %}
+  {% assign end_at = include.end | default: include.end_at %}
+  {% assign query_started = false %}
+
+  {% if start_at %}
+    {% assign embed_url = embed_url | append: '?start=' | append: start_at %}
+    {% assign query_started = true %}
+  {% endif %}
+  {% if end_at %}
+    {% if query_started %}
+      {% assign embed_url = embed_url | append: '&end=' | append: end_at %}
+    {% else %}
+      {% assign embed_url = embed_url | append: '?end=' | append: end_at %}
+    {% endif %}
+  {% endif %}
+
+  <div
+    class="nerfies-youtube"
+    style="--nerfies-aspect-ratio: {{ aspect_ratio }};"
+  >
+    <iframe
+      src="{{ embed_url }}"
+      title="{{ video_title }}"
+      loading="lazy"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+      referrerpolicy="strict-origin-when-cross-origin"
+    ></iframe>
+  </div>
+{% endif %}

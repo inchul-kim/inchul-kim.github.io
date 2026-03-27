@@ -1,0 +1,20 @@
+{% assign path = include.path %}
+{% assign title = include.title %}
+{% assign alt = include.alt | default: title %}
+{% assign caption = include.caption %}
+{% assign figure_class = include.class | default: 'img-fluid rounded z-depth-1' %}
+{% assign loading = include.loading | default: 'lazy' %}
+
+{% if path %}
+  <div class="nerfies-wide">
+    {%
+      include figure.liquid
+      path=path
+      title=title
+      alt=alt
+      caption=caption
+      class=figure_class
+      loading=loading
+    %}
+  </div>
+{% endif %}

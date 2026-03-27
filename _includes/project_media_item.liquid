@@ -1,0 +1,106 @@
+{% assign item = include.item %}
+{% assign default_loading = include.default_loading | default: 'lazy' %}
+
+{% if item %}
+  {% assign image_path = item.image | default: item.path %}
+  {% assign image_title = item.title %}
+  {% assign image_alt = item.alt | default: item.title %}
+  {% assign image_caption = item.caption %}
+  {% assign image_class = item.class | default: 'img-fluid rounded z-depth-1' %}
+  {% assign image_loading = item.loading | default: default_loading %}
+
+  {% assign video_path = item.video %}
+  {% assign video_type = item.video_type | default: 'video/mp4' %}
+  {% assign video_title = item.video_title | default: item.title %}
+  {% assign video_poster = item.poster %}
+  {% assign video_caption = item.caption %}
+  {% assign video_controls = true %}
+  {% if item.controls == false %}
+    {% assign video_controls = false %}
+  {% endif %}
+
+  {% assign youtube_id = item.youtube_id | default: item.video_id %}
+  {% assign model_src = item.model_src | default: item.model %}
+
+  {% if image_path %}
+    {%
+      include figure.liquid
+      path=image_path
+      title=image_title
+      alt=image_alt
+      caption=image_caption
+      class=image_class
+      loading=image_loading
+    %}
+  {% elsif video_path %}
+    {% unless video_path contains '://' %}
+      {% assign video_path = video_path | relative_url %}
+    {% endunless %}
+    {% if video_poster %}
+      {% unless video_poster contains '://' %}
+        {% assign video_poster = video_poster | relative_url %}
+      {% endunless %}
+    {% endif %}
+    <figure class="nerfies-media-video">
+      <video
+        {% if item.autoplay %}
+          autoplay
+        {% endif %}
+        {% if item.loop %}
+          loop
+        {% endif %}
+        {% if item.muted != false %}
+          muted
+        {% endif %}
+        {% if item.playsinline != false %}
+          playsinline
+        {% endif %}
+        {% if video_controls %}
+          controls
+        {% endif %}
+        preload="{{ item.preload | default: 'metadata' }}"
+        {% if video_poster %}
+          poster="{{ video_poster }}"
+        {% endif %}
+        {% if video_title %}
+          title="{{ video_title }}"
+        {% endif %}
+      >
+        <source src="{{ video_path }}" type="{{ video_type }}">
+      </video>
+      {% if video_caption %}
+        <figcaption class="caption">{{ video_caption }}</figcaption>
+      {% endif %}
+    </figure>
+  {% elsif youtube_id %}
+    {%
+      include project_youtube_video.liquid
+      video_id=youtube_id
+      title=item.title
+      aspect_ratio=item.aspect_ratio
+      start=item.start
+      end=item.end
+    %}
+    {% if item.caption %}
+      <p class="nerfies-caption">{{ item.caption }}</p>
+    {% endif %}
+  {% elsif model_src %}
+    {%
+      include project_model_viewer.liquid
+      src=model_src
+      alt=item.alt
+      poster=item.poster
+      auto_rotate=item.auto_rotate
+      autoplay=item.autoplay
+      ar=item.ar
+      reveal=item.reveal
+    %}
+    {% if item.caption %}
+      <p class="nerfies-caption">{{ item.caption }}</p>
+    {% endif %}
+  {% endif %}
+
+  {% if item.markdown %}
+    <div class="nerfies-prose nerfies-media-markdown">{{ item.markdown | markdownify }}</div>
+  {% endif %}
+{% endif %}

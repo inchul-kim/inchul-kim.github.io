@@ -38,6 +38,9 @@ affiliations:
 #   - name: Third Author
 #     affiliation_ids: [2]
 venue: "CVPR 2026"
+author_notes:
+  - symbol: "*"
+    text: Equal contribution.
 images:
   compare: true
 project_links:
@@ -81,6 +84,43 @@ feature_section:
       title: Overview figure
       caption: Optional figure caption.
       loading: eager
+# Optional Astro-style sections ported to Jekyll:
+# highlight_section:
+#   title: "Abstract"
+#   content: >
+#     Put your abstract or key takeaway here. This section is emphasized.
+# tabs_section:
+#   title: "Qualitative Tabs"
+#   tabs:
+#     - label: Ground Truth
+#       image: assets/publication/[PROJECT_TAG]/gt.png
+#       caption: Ground-truth sample.
+#     - label: Ours
+#       image: assets/publication/[PROJECT_TAG]/ours.png
+#       caption: Output from our method.
+# carousel_section:
+#   title: "More Results"
+#   slides:
+#     - image: assets/publication/[PROJECT_TAG]/sample1.png
+#       caption: Sample 1
+#     - image: assets/publication/[PROJECT_TAG]/sample2.png
+#       caption: Sample 2
+# bootstrap_carousel_section:
+#   title: "Image Carousel (Academic Project Template Style)"
+#   items:
+#     - image: assets/publication/[PROJECT_TAG]/sample1.png
+#       caption: First image description.
+#     - image: assets/publication/[PROJECT_TAG]/sample2.png
+#       caption: Second image description.
+# two_columns_section:
+#   title: "Video + 3D Viewer"
+#   left:
+#     youtube_id: wjZofJX0v4M
+#     title: Demo video
+#   right:
+#     model_src: /assets/publication/[PROJECT_TAG]/model.glb
+#     alt: Interactive 3D model
+#     caption: Drag to orbit the model.
 citation: |
   @inproceedings{your2026project,
     title={Project Title},
@@ -118,6 +158,16 @@ Use regular markdown sections and include media from `assets/publication/[PROJEC
 {%
   include project_compare_gallery.liquid
   id="qualitative-gallery"
+  examples=page.compare_gallery_examples
+  thumb_label="Qualitative comparisons"
+  max_width="900px"
+%}
+```
+
+```liquid
+{%
+  include project_compare_gallery_astro.liquid
+  id="qualitative-gallery-astro"
   examples=page.compare_gallery_examples
   thumb_label="Qualitative comparisons"
   max_width="900px"
@@ -168,6 +218,88 @@ compare_gallery_examples:
   <source src="/assets/publication/[PROJECT_TAG]/result.mp4" type="video/mp4" />
 </video>
 ```
+
+## Newly Added Astro-Style Components (Jekyll Includes)
+
+Use these in the markdown body of your project page:
+
+{% raw %}
+
+```liquid
+{%
+  include project_highlight_section.liquid
+  title="Abstract"
+  content=page.abstract
+%}
+```
+
+```liquid
+{%
+  include project_tabs.liquid
+  id="qual-tabs"
+  title="Qualitative Tabs"
+  tabs=page.tabs_section.tabs
+%}
+```
+
+```liquid
+{%
+  include project_carousel.liquid
+  id="result-carousel"
+  title="Carousel"
+  slides=page.carousel_section.slides
+%}
+```
+
+```liquid
+{%
+  include project_bootstrap_carousel.liquid
+  id="result-carousel-bootstrap"
+  title="Image Carousel (Academic Project Template Style)"
+  items=page.bootstrap_carousel_section.items
+%}
+```
+
+```liquid
+{%
+  include project_two_columns.liquid
+  title="Video + Model"
+  left=page.two_columns_section.left
+  right=page.two_columns_section.right
+%}
+```
+
+```liquid
+{%
+  include project_youtube_video.liquid
+  video_id="wjZofJX0v4M"
+  aspect_ratio="16 / 9"
+%}
+```
+
+```liquid
+{%
+  include project_model_viewer.liquid
+  src="/assets/publication/[PROJECT_TAG]/model.glb"
+  alt="Interactive model"
+  auto_rotate=true
+%}
+```
+
+```liquid
+{% include project_notes.liquid notes=page.author_notes %}
+```
+
+```liquid
+{%
+  include project_wide_figure.liquid
+  path="assets/publication/[PROJECT_TAG]/wide_result.png"
+  title="Wide qualitative result"
+  caption="Use this for visuals that should break out wider than the text column."
+%}
+```
+
+{% endraw %}
 
 ## Acknowledgments
 

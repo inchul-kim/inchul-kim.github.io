@@ -1,0 +1,52 @@
+{% assign left_image = include.left_image %}
+{% assign right_image = include.right_image %}
+{% assign left_alt = include.left_alt | default: include.left_label | default: 'Left image' %}
+{% assign right_alt = include.right_alt | default: include.right_label | default: 'Right image' %}
+{% assign compare_max_width = include.max_width | default: page.compare_slider_max_width | default: '' %}
+
+{% if left_image and right_image %}
+  {% unless left_image contains '://' %}
+    {% assign left_image = left_image | relative_url %}
+  {% endunless %}
+  {% unless right_image contains '://' %}
+    {% assign right_image = right_image | relative_url %}
+  {% endunless %}
+
+  <div
+    class="astro-compare-slider"
+    {% if compare_max_width != blank %}
+      style="max-width: {{ compare_max_width }}; margin-left: auto; margin-right: auto;"
+    {% endif %}
+  >
+    <div
+      class="astro-compare-slider__mount"
+      data-astro-compare
+      data-left-src="{{ left_image }}"
+      data-right-src="{{ right_image }}"
+      data-left-alt="{{ left_alt }}"
+      data-right-alt="{{ right_alt }}"
+      aria-label="{{ include.aria_label | default: 'Image comparison slider' }}"
+    ></div>
+
+    <div class="astro-compare-slider__fallback" data-astro-compare-fallback>
+      {%
+        include project_compare_slider.liquid
+        left_image=include.left_image
+        right_image=include.right_image
+        left_label=include.left_label
+        right_label=include.right_label
+        left_alt=include.left_alt
+        right_alt=include.right_alt
+        divider_position=include.divider_position
+        value=include.value
+        max_width=compare_max_width
+      %}
+    </div>
+
+    {% if include.caption %}
+      <p class="nerfies-caption">{{ include.caption }}</p>
+    {% endif %}
+  </div>
+
+  <script defer src="{{ '/assets/js/project-astro-compare.js' | relative_url | bust_file_cache }}"></script>
+{% endif %}

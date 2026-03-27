@@ -76,6 +76,10 @@ layout: default
       <p class="nerfies-venue">{{ page.venue }}</p>
     {% endif %}
 
+    {% if page.author_notes %}
+      {% include project_notes.liquid notes=page.author_notes %}
+    {% endif %}
+
     {% if page.project_links %}
       <div class="nerfies-links">
         {% for link in page.project_links %}
@@ -254,6 +258,26 @@ layout: default
     {% include project_feature_section.liquid section=page.feature_section %}
   {% endif %}
 
+  {% if page.highlight_section %}
+    {% include project_highlight_section.liquid section=page.highlight_section %}
+  {% endif %}
+
+  {% if page.tabs_section %}
+    {% include project_tabs.liquid section=page.tabs_section %}
+  {% endif %}
+
+  {% if page.carousel_section %}
+    {% include project_carousel.liquid section=page.carousel_section %}
+  {% endif %}
+
+  {% if page.bootstrap_carousel_section %}
+    {% include project_bootstrap_carousel.liquid section=page.bootstrap_carousel_section %}
+  {% endif %}
+
+  {% if page.two_columns_section %}
+    {% include project_two_columns.liquid section=page.two_columns_section %}
+  {% endif %}
+
   {% unless content == blank %}
     <section class="nerfies-section nerfies-prose">
       {{ content }}
@@ -284,4 +308,6 @@ layout: default
     Project page template inspired by
     <a href="https://github.com/nerfies/nerfies.github.io" target="_blank" rel="noopener noreferrer">Nerfies</a>.
   </p>
+
+  <script defer src="{{ '/assets/js/project-showcase.js' | relative_url | bust_file_cache }}"></script>
 </article>

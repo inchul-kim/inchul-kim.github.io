@@ -1,0 +1,14 @@
+{% assign notes = include.notes %}
+{% if notes and notes.size > 0 %}
+  <p class="nerfies-notes">
+    {% for note in notes %}
+      <span>
+        {% if note.symbol %}
+          <sup>{{ note.symbol }}</sup>
+        {% endif %}
+        {{ note.text | default: note }}
+      </span>
+      {% unless forloop.last %}, {% endunless %}
+    {% endfor %}
+  </p>
+{% endif %}

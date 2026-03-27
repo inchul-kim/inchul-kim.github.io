@@ -1,5 +1,8 @@
 # Installing and Deploying
 
+> This repository also includes an Astro-based research project page template in `project-template-astro/`.  
+> See `PROJECT_TEMPLATE_ASTRO.md` for setup and usage.
+
 <!--ts-->
 
 - [Installing and Deploying](#installing-and-deploying)

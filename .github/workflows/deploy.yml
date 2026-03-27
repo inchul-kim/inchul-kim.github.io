@@ -9,6 +9,9 @@ on:
       - "assets/**"
       - "_sass/**"
       - "_scripts/**"
+      - "_config.yml"
+      - ".github/workflows/deploy.yml"
+      - "project-template-astro/**"
       - "**.bib"
       - "**.html"
       - "**.js"
@@ -17,18 +20,12 @@ on:
       - "**.yml"
       - "Gemfile"
       - "Gemfile.lock"
-      - "!.github/workflows/axe.yml"
-      - "!.github/workflows/broken-links.yml"
-      - "!.github/workflows/deploy-docker-tag.yml"
-      - "!.github/workflows/deploy-image.yml"
-      - "!.github/workflows/docker-slim.yml"
-      - "!.github/workflows/lighthouse-badger.yml"
-      - "!.github/workflows/prettier.yml"
+      - "package.json"
+      - "package-lock.json"
       - "!lighthouse_results/**"
       - "!CONTRIBUTING.md"
       - "!CUSTOMIZE.md"
       - "!FAQ.md"
-      - "!INSTALL.md"
       - "!README.md"
   pull_request:
     branches:
@@ -38,6 +35,9 @@ on:
       - "assets/**"
       - "_sass/**"
       - "_scripts/**"
+      - "_config.yml"
+      - ".github/workflows/deploy.yml"
+      - "project-template-astro/**"
       - "**.bib"
       - "**.html"
       - "**.js"
@@ -46,59 +46,83 @@ on:
       - "**.yml"
       - "Gemfile"
       - "Gemfile.lock"
-      - "!.github/workflows/axe.yml"
-      - "!.github/workflows/broken-links.yml"
-      - "!.github/workflows/deploy-docker-tag.yml"
-      - "!.github/workflows/deploy-image.yml"
-      - "!.github/workflows/docker-slim.yml"
-      - "!.github/workflows/lighthouse-badger.yml"
-      - "!.github/workflows/prettier.yml"
+      - "package.json"
+      - "package-lock.json"
       - "!lighthouse_results/**"
       - "!CONTRIBUTING.md"
       - "!CUSTOMIZE.md"
       - "!FAQ.md"
-      - "!INSTALL.md"
       - "!README.md"
   workflow_dispatch:
 
 permissions:
   contents: write
 
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   deploy:
-    # available images: https://github.com/actions/runner-images#available-images
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout 🛎️
+      - name: Checkout repository
         uses: actions/checkout@v4
-      - name: Setup Ruby 💎
+
+      - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: "3.3.5"
           bundler-cache: true
-      - name: Setup Python 🐍
+
+      - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.13"
-          cache: "pip" # caching pip dependencies
-      - name: Update _config.yml ⚙️
+          cache: pip
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            project-template-astro/package-lock.json
+
+      - name: Update giscus repository in _config.yml
         uses: fjogeleit/yaml-update-action@main
         with:
           commitChange: false
           valueFile: "_config.yml"
           propertyPath: "giscus.repo"
           value: ${{ github.repository }}
-      - name: Install and Build 🔧
+
+      - name: Build Jekyll site
         run: |
-          sudo apt-get update && sudo apt-get install -y imagemagick
+          sudo apt-get update
+          sudo apt-get install -y imagemagick
           pip3 install --upgrade nbconvert
           export JEKYLL_ENV=production
           bundle exec jekyll build
-      - name: Purge unused CSS 🧹
+
+      - name: Purge unused Jekyll CSS
         run: |
           npm install -g purgecss
           purgecss -c purgecss.config.js
-      - name: Deploy 🚀
+
+      - name: Build Astro project template
+        run: |
+          npm --prefix project-template-astro ci
+          npm --prefix project-template-astro run check
+          npm --prefix project-template-astro run build -- --base /project-template-astro/
+
+      - name: Copy Astro build into Jekyll output
+        run: |
+          mkdir -p _site/project-template-astro
+          cp -a project-template-astro/dist/. _site/project-template-astro/
+
+      - name: Deploy to GitHub Pages
         if: github.event_name != 'pull_request'
         uses: JamesIves/github-pages-deploy-action@v4
         with:

@@ -1,0 +1,20 @@
+{% assign section = include.section %}
+{% assign title = include.title | default: section.title %}
+{% assign left = include.left | default: section.left %}
+{% assign right = include.right | default: section.right %}
+
+{% if left or right %}
+  <section class="nerfies-section nerfies-two-columns-section">
+    {% if title %}
+      <h2>{{ title }}</h2>
+    {% endif %}
+    <div class="nerfies-two-columns">
+      <div class="nerfies-two-columns__column">
+        {% include project_media_item.liquid item=left default_loading='lazy' %}
+      </div>
+      <div class="nerfies-two-columns__column">
+        {% include project_media_item.liquid item=right default_loading='lazy' %}
+      </div>
+    </div>
+  </section>
+{% endif %}

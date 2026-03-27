@@ -191,6 +191,8 @@ exclude:
   - lighthouse_results/
   - package.json
   - package-lock.json
+  - PROJECT_TEMPLATE_ASTRO.md
+  - project-template-astro/
   - _pages/about_einstein.md
   - _posts/2023-07-04-jupyter-notebook.md
   - purgecss.config.js
@@ -478,7 +480,7 @@ third_party_libraries:
     version: "5.0.0"
   img-comparison-slider:
     integrity:
-      css: "sha256-3qTIuuUWIFnnU3LpQMjqiXc0p09rvd0dmj+WkpQXSR8="
+      css: "sha256-yInMrAM/RjDTYKd3LK9aPqxqsjSmDM3TDuRFcpDyKiM="
       js: "sha256-EXHg3x1K4oIWdyohPeKX2ZS++Wxt/FRPH7Nl01nat1o="
       map: "sha256-3wfqS2WU5kGA/ePcgFzJXl5oSN1QsgZI4/edprTgX8w="
     url:

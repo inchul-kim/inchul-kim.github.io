@@ -1,0 +1,56 @@
+{% assign section = include.section %}
+{% assign title = include.title | default: section.title %}
+{% assign tabs = include.tabs | default: section.tabs %}
+{% assign tabs_id = include.id | default: section.id | default: title | default: tabs.first.label | default: 'project-tabs' | slugify %}
+
+{% if tabs and tabs.size > 0 %}
+  <section class="nerfies-section nerfies-tabs-section">
+    {% if title %}
+      <h2>{{ title }}</h2>
+    {% endif %}
+
+    <div
+      id="{{ tabs_id }}"
+      class="nerfies-tabs"
+      data-project-tabs
+    >
+      <div class="nerfies-tabs__list" role="tablist" aria-label="{{ title | default: 'Project tabs' }}">
+        {% for tab in tabs %}
+          {% assign tab_panel_id = tabs_id | append: '-panel-' | append: forloop.index0 %}
+          {% assign tab_button_id = tabs_id | append: '-tab-' | append: forloop.index0 %}
+          <button
+            id="{{ tab_button_id }}"
+            type="button"
+            class="nerfies-tabs__button{% if forloop.first %} is-active{% endif %}"
+            role="tab"
+            aria-controls="{{ tab_panel_id }}"
+            aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
+            tabindex="{% if forloop.first %}0{% else %}-1{% endif %}"
+            data-project-tab-button
+            data-tab-index="{{ forloop.index0 }}"
+          >
+            {{ tab.label | default: tab.title | default: 'Tab' }}
+          </button>
+        {% endfor %}
+      </div>
+
+      {% for tab in tabs %}
+        {% assign tab_panel_id = tabs_id | append: '-panel-' | append: forloop.index0 %}
+        {% assign tab_button_id = tabs_id | append: '-tab-' | append: forloop.index0 %}
+        <section
+          id="{{ tab_panel_id }}"
+          class="nerfies-tabs__panel{% if forloop.first %} is-active{% endif %}"
+          role="tabpanel"
+          aria-labelledby="{{ tab_button_id }}"
+          {% unless forloop.first %}
+            hidden
+          {% endunless %}
+          data-project-tab-panel
+          data-tab-index="{{ forloop.index0 }}"
+        >
+          {% include project_media_item.liquid item=tab default_loading='lazy' %}
+        </section>
+      {% endfor %}
+    </div>
+  </section>
+{% endif %}

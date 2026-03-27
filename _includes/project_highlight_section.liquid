@@ -1,0 +1,13 @@
+{% assign section = include.section %}
+{% assign title = include.title | default: section.title | default: 'Highlight' %}
+{% assign highlight_content = include.content | default: include.markdown | default: section.content | default: section.markdown %}
+{% assign full_bleed = include.full_bleed | default: section.full_bleed %}
+
+{% if highlight_content %}
+  <section class="nerfies-section nerfies-highlight{% if full_bleed != false %} nerfies-highlight--bleed{% endif %}">
+    {% if title %}
+      <h2>{{ title }}</h2>
+    {% endif %}
+    <div class="nerfies-prose">{{ highlight_content | markdownify }}</div>
+  </section>
+{% endif %}

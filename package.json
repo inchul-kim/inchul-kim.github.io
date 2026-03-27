@@ -1,4 +1,13 @@
 {
+  "scripts": {
+    "astro:install": "npm --prefix project-template-astro install",
+    "astro:dev": "npm --prefix project-template-astro run dev",
+    "astro:build": "npm --prefix project-template-astro run build",
+    "astro:preview": "npm --prefix project-template-astro run preview",
+    "astro:check": "npm --prefix project-template-astro run check",
+    "astro:lint": "npm --prefix project-template-astro run lint",
+    "astro:format": "npm --prefix project-template-astro run format"
+  },
   "devDependencies": {
     "@shopify/prettier-plugin-liquid": "^1.10.2",
     "prettier": "^3.8.1"

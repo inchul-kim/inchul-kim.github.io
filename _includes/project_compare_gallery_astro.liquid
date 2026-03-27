@@ -1,0 +1,94 @@
+{% assign examples = include.examples %}
+{% assign first_example = examples | first %}
+{% assign compare_max_width = include.max_width | default: page.compare_gallery_max_width | default: '' %}
+
+{% if first_example %}
+  {% assign gallery_id = include.id | default: first_example.left_image | slugify %}
+
+  {% assign first_left_image = first_example.left_image %}
+  {% assign first_right_image = first_example.right_image %}
+  {% assign first_left_label = first_example.left_label | default: include.left_label | default: 'Before' %}
+  {% assign first_right_label = first_example.right_label | default: include.right_label | default: 'After' %}
+  {% assign first_left_alt = first_example.left_alt | default: first_left_label %}
+  {% assign first_right_alt = first_example.right_alt | default: first_right_label %}
+  {% assign first_caption = first_example.caption | default: include.caption | default: '' %}
+
+  {% unless first_left_image contains '://' %}
+    {% assign first_left_image = first_left_image | relative_url %}
+  {% endunless %}
+  {% unless first_right_image contains '://' %}
+    {% assign first_right_image = first_right_image | relative_url %}
+  {% endunless %}
+
+  <div
+    id="{{ gallery_id }}"
+    class="astro-compare-gallery"
+    data-astro-compare-gallery
+    {% if compare_max_width != blank %}
+      style="max-width: {{ compare_max_width }}; margin-left: auto; margin-right: auto;"
+    {% endif %}
+  >
+    <div class="nerfies-compare">
+      <div class="nerfies-compare__overlay">
+        <span class="nerfies-compare__label nerfies-compare__label--left" data-astro-compare-left-label>{{ first_left_label }}</span>
+        <span class="nerfies-compare__label nerfies-compare__label--right" data-astro-compare-right-label>{{ first_right_label }}</span>
+      </div>
+
+      <div class="astro-compare-slider">
+        <div
+          class="astro-compare-slider__mount"
+          data-astro-compare
+          data-left-src="{{ first_left_image }}"
+          data-right-src="{{ first_right_image }}"
+          data-left-alt="{{ first_left_alt }}"
+          data-right-alt="{{ first_right_alt }}"
+          aria-label="{{ include.aria_label | default: 'Image comparison slider' }}"
+        ></div>
+      </div>
+
+      <p class="nerfies-caption" data-astro-compare-caption>{{ first_caption }}</p>
+    </div>
+
+    <div class="nerfies-compare-thumbs" role="list" aria-label="{{ include.thumb_label | default: 'Comparison examples' }}">
+      {% for example in examples %}
+        {% assign left_image = example.left_image %}
+        {% assign right_image = example.right_image %}
+        {% assign thumb_image = example.thumb | default: left_image %}
+        {% assign left_label = example.left_label | default: include.left_label | default: 'Before' %}
+        {% assign right_label = example.right_label | default: include.right_label | default: 'After' %}
+        {% assign left_alt = example.left_alt | default: left_label %}
+        {% assign right_alt = example.right_alt | default: right_label %}
+        {% assign caption = example.caption | default: include.caption | default: '' %}
+
+        {% unless left_image contains '://' %}
+          {% assign left_image = left_image | relative_url %}
+        {% endunless %}
+        {% unless right_image contains '://' %}
+          {% assign right_image = right_image | relative_url %}
+        {% endunless %}
+        {% unless thumb_image contains '://' %}
+          {% assign thumb_image = thumb_image | relative_url %}
+        {% endunless %}
+
+        <button
+          type="button"
+          class="nerfies-compare-thumb{% if forloop.first %} is-active{% endif %}"
+          data-astro-compare-thumb
+          data-left-src="{{ left_image }}"
+          data-right-src="{{ right_image }}"
+          data-left-alt="{{ left_alt }}"
+          data-right-alt="{{ right_alt }}"
+          data-left-label="{{ left_label }}"
+          data-right-label="{{ right_label }}"
+          data-caption="{{ caption }}"
+          aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}"
+          aria-label="{{ example.title | default: caption | default: 'Comparison example' }}"
+        >
+          <img src="{{ thumb_image }}" alt="{{ example.title | default: 'Comparison thumbnail' }}" loading="lazy">
+        </button>
+      {% endfor %}
+    </div>
+  </div>
+
+  <script defer src="{{ '/assets/js/project-astro-compare.js' | relative_url | bust_file_cache }}"></script>
+{% endif %}

@@ -1,0 +1,45 @@
+{% assign model_src = include.src | default: include.model_src | default: include.model %}
+{% assign model_alt = include.alt | default: include.model_alt | default: '3D model' %}
+{% assign model_poster = include.poster | default: include.model_poster %}
+{% assign model_ar = include.ar %}
+{% assign model_autoplay = include.autoplay %}
+{% assign model_auto_rotate = include.auto_rotate %}
+{% assign model_reveal = include.reveal %}
+
+{% if model_src %}
+  {% unless model_src contains '://' %}
+    {% assign model_src = model_src | relative_url %}
+  {% endunless %}
+  {% if model_poster %}
+    {% unless model_poster contains '://' %}
+      {% assign model_poster = model_poster | relative_url %}
+    {% endunless %}
+  {% endif %}
+
+  <model-viewer
+    class="nerfies-model-viewer"
+    src="{{ model_src }}"
+    alt="{{ model_alt }}"
+    camera-controls
+    {% if model_poster %}
+      poster="{{ model_poster }}"
+    {% endif %}
+    {% if model_ar != false %}
+      ar
+    {% endif %}
+    {% if model_autoplay %}
+      autoplay
+    {% endif %}
+    {% if model_auto_rotate != false %}
+      auto-rotate
+    {% endif %}
+    {% if model_reveal %}
+      reveal="{{ model_reveal }}"
+    {% endif %}
+  ></model-viewer>
+
+  <script
+    type="module"
+    src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
+  ></script>
+{% endif %}

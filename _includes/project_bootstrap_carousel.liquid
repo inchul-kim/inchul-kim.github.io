@@ -1,0 +1,84 @@
+{% assign section = include.section %}
+{% assign title = include.title | default: section.title %}
+{% assign items = include.items | default: section.items %}
+{% assign carousel_id = include.id | default: section.id | default: title | default: 'project-carousel-bootstrap' | slugify %}
+{% assign swipe_threshold = include.swipe_threshold | default: section.swipe_threshold | default: 44 %}
+{% assign swipe_vertical_ratio = include.swipe_vertical_ratio | default: section.swipe_vertical_ratio | default: 1.0 %}
+
+{% if items and items.size > 0 %}
+  <section class="nerfies-section nerfies-bcarousel-section">
+    {% if title %}
+      <h2>{{ title }}</h2>
+    {% endif %}
+
+    <div class="nerfies-bcarousel">
+      <div
+        id="{{ carousel_id }}"
+        class="carousel slide"
+        data-ride="false"
+        data-interval="false"
+        data-pause="hover"
+        data-wrap="true"
+        data-bs-ride="false"
+        data-bs-interval="false"
+        data-swipe-threshold="{{ swipe_threshold }}"
+        data-swipe-vertical-ratio="{{ swipe_vertical_ratio }}"
+      >
+        <div class="carousel-inner">
+          {% for item in items %}
+            {% assign image_path = item.image | default: item.path %}
+            {% assign image_alt = item.alt | default: item.title | default: 'Carousel image' %}
+            {% assign image_caption = item.caption %}
+            {% assign image_loading = item.loading | default: 'lazy' %}
+            {% if image_path %}
+              {% unless image_path contains '://' %}
+                {% assign image_path = image_path | relative_url %}
+              {% endunless %}
+            {% endif %}
+
+            <div class="carousel-item{% if forloop.first %} active{% endif %}">
+              {% if image_path %}
+                <img
+                  src="{{ image_path }}"
+                  class="d-block w-100 nerfies-bcarousel__image"
+                  alt="{{ image_alt }}"
+                  loading="{{ image_loading }}"
+                >
+              {% endif %}
+              {% if image_caption %}
+                <p class="nerfies-bcarousel__caption">{{ image_caption }}</p>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+
+        {% if items.size > 1 %}
+          <a
+            class="carousel-control-prev nerfies-bcarousel__control"
+            href="#{{ carousel_id }}"
+            role="button"
+            data-target="#{{ carousel_id }}"
+            data-bs-target="#{{ carousel_id }}"
+            data-slide="prev"
+            data-bs-slide="prev"
+            aria-label="Previous slide"
+          >
+            <span class="nerfies-bcarousel__control-icon" aria-hidden="true">&#10094;</span>
+          </a>
+          <a
+            class="carousel-control-next nerfies-bcarousel__control"
+            href="#{{ carousel_id }}"
+            role="button"
+            data-target="#{{ carousel_id }}"
+            data-bs-target="#{{ carousel_id }}"
+            data-slide="next"
+            data-bs-slide="next"
+            aria-label="Next slide"
+          >
+            <span class="nerfies-bcarousel__control-icon" aria-hidden="true">&#10095;</span>
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+{% endif %}

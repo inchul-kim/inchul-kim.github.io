@@ -1,0 +1,63 @@
+{% assign section = include.section %}
+{% assign title = include.title | default: section.title %}
+{% assign slides = include.slides | default: section.slides %}
+{% assign carousel_id = include.id | default: section.id | default: title | default: slides.first.title | default: 'project-carousel' | slugify %}
+
+{% if slides and slides.size > 0 %}
+  <section class="nerfies-section nerfies-carousel-section">
+    {% if title %}
+      <h2>{{ title }}</h2>
+    {% endif %}
+
+    <div
+      id="{{ carousel_id }}"
+      class="nerfies-carousel"
+      data-project-carousel
+    >
+      <div class="nerfies-carousel__controls">
+        <button
+          type="button"
+          class="nerfies-carousel__nav nerfies-carousel__nav--prev"
+          data-project-carousel-prev
+          aria-label="Previous slide"
+        >
+          &#9664;
+        </button>
+        <div class="nerfies-carousel__dots" role="tablist" aria-label="{{ title | default: 'Carousel slides' }}">
+          {% for slide in slides %}
+            <button
+              type="button"
+              class="nerfies-carousel__dot{% if forloop.first %} is-active{% endif %}"
+              data-project-carousel-dot
+              data-slide-index="{{ forloop.index0 }}"
+              aria-label="Go to slide {{ forloop.index }}"
+              aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
+            ></button>
+          {% endfor %}
+        </div>
+        <button
+          type="button"
+          class="nerfies-carousel__nav nerfies-carousel__nav--next"
+          data-project-carousel-next
+          aria-label="Next slide"
+        >
+          &#9654;
+        </button>
+      </div>
+
+      <div class="nerfies-carousel__viewport" data-project-carousel-viewport>
+        <div class="nerfies-carousel__track">
+          {% for slide in slides %}
+            <section
+              class="nerfies-carousel__slide"
+              data-project-carousel-slide
+              data-slide-index="{{ forloop.index0 }}"
+            >
+              {% include project_media_item.liquid item=slide default_loading='lazy' %}
+            </section>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+{% endif %}
