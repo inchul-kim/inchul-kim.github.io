@@ -21,6 +21,7 @@ affiliations:
   - id: 2
     name: Example Research Lab
 teaser_image: "/assets/publication/[EG2026]cbct_mar/project/teaser.svg"
+teaser_image_mobile: "/assets/publication/[EG2026]cbct_mar/project/teaser_mobile.png"
 abstract: >
   This is a minimal example project page that demonstrates how to assign
   one or more organization IDs to each author and render numeric superscripts.

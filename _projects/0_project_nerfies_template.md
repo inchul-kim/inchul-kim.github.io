@@ -60,6 +60,8 @@ teaser_caption: "Optional teaser caption."
 # teaser_video: /assets/publication/[PROJECT_TAG]/teaser.mp4
 # teaser_image: /assets/publication/[PROJECT_TAG]/teaser.svg # png/jpg/svg all supported
 # teaser_image_dark: /assets/publication/[PROJECT_TAG]/teaser_dark.svg # optional dark-theme variant
+# teaser_image_mobile: /assets/publication/[PROJECT_TAG]/teaser_mobile.png # optional mobile fallback
+# teaser_image_dark_mobile: /assets/publication/[PROJECT_TAG]/teaser_dark_mobile.png # optional mobile dark fallback
 # teaser_pdf: /assets/publication/[PROJECT_TAG]/teaser.pdf
 # teaser_pdf_preview: /assets/publication/[PROJECT_TAG]/teaser_page1.png
 # teaser_pdf_height: 560

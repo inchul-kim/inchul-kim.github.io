@@ -50,6 +50,8 @@ project_links:
 # teaser_caption: "Local MP4 teaser from existing assets."
 teaser_image: "/assets/publication/[EG2026]cbct_mar/project/teaser.svg"
 teaser_image_dark: "/assets/publication/[EG2026]cbct_mar/project/teaser_dark.svg"
+teaser_image_mobile: "/assets/publication/[EG2026]cbct_mar/project/teaser_mobile.png"
+teaser_image_dark_mobile: "/assets/publication/[EG2026]cbct_mar/project/teaser_dark_mobile.png"
 # teaser_pdf: "/assets/publication/[EG2026]cbct_mar/project/teaser.pdf"
 # teaser_pdf_height: 560
 # teaser_caption: "Our pipeline"

@@ -131,18 +131,50 @@ layout: default
           {% unless teaser_image_url contains '://' %}
             {% assign teaser_image_url = teaser_image_url | relative_url %}
           {% endunless %}
+          {% assign teaser_image_mobile_url = page.teaser_image_mobile %}
+          {% if teaser_image_mobile_url %}
+            {% unless teaser_image_mobile_url contains '://' %}
+              {% assign teaser_image_mobile_url = teaser_image_mobile_url | relative_url %}
+            {% endunless %}
+          {% endif %}
           {% assign teaser_image_dark_url = page.teaser_image_dark | default: page.teaser_dark_image %}
           {% if teaser_image_dark_url %}
             {% unless teaser_image_dark_url contains '://' %}
               {% assign teaser_image_dark_url = teaser_image_dark_url | relative_url %}
             {% endunless %}
           {% endif %}
+          {% assign teaser_image_dark_mobile_url = page.teaser_image_dark_mobile | default: page.teaser_dark_image_mobile %}
+          {% if teaser_image_dark_mobile_url %}
+            {% unless teaser_image_dark_mobile_url contains '://' %}
+              {% assign teaser_image_dark_mobile_url = teaser_image_dark_mobile_url | relative_url %}
+            {% endunless %}
+          {% endif %}
           {% capture teaser_image_markup %}
             {% if teaser_image_dark_url %}
-              <img class="nerfies-teaser-image nerfies-teaser-image--light" src="{{ teaser_image_url }}" alt="{{ page.title }} teaser image (light theme)">
-              <img class="nerfies-teaser-image nerfies-teaser-image--dark" src="{{ teaser_image_dark_url }}" alt="{{ page.title }} teaser image (dark theme)" onerror="this.style.display='none'; if (this.previousElementSibling) { this.previousElementSibling.style.display='block'; }">
+              <picture>
+                {% if teaser_image_mobile_url %}
+                  <source media="(max-width: 576px)" srcset="{{ teaser_image_mobile_url }}" />
+                {% endif %}
+                <img class="nerfies-teaser-image nerfies-teaser-image--light" src="{{ teaser_image_url }}" alt="{{ page.title }} teaser image (light theme)">
+              </picture>
+              <picture>
+                {% if teaser_image_dark_mobile_url %}
+                  <source media="(max-width: 576px)" srcset="{{ teaser_image_dark_mobile_url }}" />
+                {% endif %}
+                <img
+                  class="nerfies-teaser-image nerfies-teaser-image--dark"
+                  src="{{ teaser_image_dark_url }}"
+                  alt="{{ page.title }} teaser image (dark theme)"
+                  onerror="this.style.display='none'; var prev = this.parentElement && this.parentElement.previousElementSibling; if (prev) { var prevImg = prev.querySelector('img'); if (prevImg) { prevImg.style.display='block'; } }"
+                >
+              </picture>
             {% else %}
-              <img class="nerfies-teaser-image" src="{{ teaser_image_url }}" alt="{{ page.title }} teaser image">
+              <picture>
+                {% if teaser_image_mobile_url %}
+                  <source media="(max-width: 576px)" srcset="{{ teaser_image_mobile_url }}" />
+                {% endif %}
+                <img class="nerfies-teaser-image" src="{{ teaser_image_url }}" alt="{{ page.title }} teaser image">
+              </picture>
             {% endif %}
           {% endcapture %}
           {% if teaser_pdf_url %}

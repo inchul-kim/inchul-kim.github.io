@@ -175,9 +175,10 @@
 }
 
 .nerfies-teaser-media {
+  --teaser-edge-safe-padding: 4px;
   border: 1px solid var(--global-divider-color);
   border-radius: 0;
-  overflow: visible;
+  overflow: hidden;
   background: var(--global-card-bg-color);
 }
 
@@ -187,16 +188,14 @@
   display: block;
   width: 100%;
   height: auto;
+  box-sizing: border-box;
+  padding-inline: var(--teaser-edge-safe-padding);
+  object-fit: contain;
 }
 
-.nerfies-teaser-media img[src$=".svg"] {
+.nerfies-teaser-media picture {
   display: block;
   width: 100%;
-  max-width: 100%;
-  height: auto;
-  border-radius: 0 !important;
-  box-sizing: border-box;
-  padding-inline: 6px;
 }
 
 .nerfies-teaser-pdf-preview {
@@ -205,6 +204,7 @@
 }
 
 .nerfies-teaser-media object {
+  padding-inline: 0;
   height: 560px;
   background: #fff;
 }
