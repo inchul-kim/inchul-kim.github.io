@@ -5,7 +5,7 @@
 <style type="text/css">
 	.st0{fill:url(#SVGID_1_);}
 	.st1{fill:#FFFFFF;}
-	.st2{font-family:'LibertinusSans-Regular';}
+	.st2{font-family:'Libertinus Sans','LibertinusSans-Regular','Times New Roman','TimesNewRomanPSMT','Times-Roman',Times,serif;}
 	.st3{font-size:22px;}
 	.st4{font-size:18px;}
 	.st5{fill:none;stroke:#009245;stroke-width:1.5;stroke-miterlimit:10;}
@@ -3999,7 +3999,7 @@ Dh06dOjQklpr/x8hLemI2syhgAAAAABJRU5ErkJggg==" transform="matrix(0.1963 0 0 0.140
 	</linearGradient>
 	<polygon class="st0" points="89.4,76.3 17.9,25.9 218.9,25.9 147.5,76.3 	"/>
 </g>
-<text transform="matrix(1 0 0 1 6.476 19.3597)" class="st1 st2 st3">Traditional image sensor</text>
+<text transform="matrix(1 0 0 1 6.476 19.3597)" class="st1 st2 st3" textLength="224" lengthAdjust="spacingAndGlyphs">Traditional image sensor</text>
 <text transform="matrix(1 0 0 1 75.9334 105.6855)" class="st1 st2 st4">Photodiode</text>
 <g>
 	<g>
@@ -5930,7 +5930,7 @@ q1zlKle5ylWucpWr/H9RWmv/D6p85Y5sIGW/AAAAAElFTkSuQmCC" transform="matrix(0.1963 0
 	<polygon style="fill:url(#SVGID_00000059299635458586221840000009181328645025877437_);" points="88.6,184.3 17.9,133.9 
 		218.9,133.9 147.5,184.3 	"/>
 </g>
-<text transform="matrix(1 0 0 1 9.5778 127.4191)" class="st1 st2 st3">Dual-pixel image sensor</text>
+<text transform="matrix(1 0 0 1 9.5778 127.4191)" class="st1 st2 st3" textLength="220" lengthAdjust="spacingAndGlyphs">Dual-pixel image sensor</text>
 <text transform="matrix(1 0 0 1 149.6808 212.2183)"><tspan x="0" y="0" class="st1 st2 st4">Right</tspan><tspan x="0" y="19" class="st1 st2 st4">photodiode</tspan></text>
 <g>
 	<g>
