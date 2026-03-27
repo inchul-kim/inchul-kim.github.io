@@ -177,7 +177,7 @@
 .nerfies-teaser-media {
   border: 1px solid var(--global-divider-color);
   border-radius: 0;
-  overflow: hidden;
+  overflow: visible;
   background: var(--global-card-bg-color);
 }
 
@@ -187,6 +187,16 @@
   display: block;
   width: 100%;
   height: auto;
+}
+
+.nerfies-teaser-media img[src$=".svg"] {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 0 !important;
+  box-sizing: border-box;
+  padding-inline: 6px;
 }
 
 .nerfies-teaser-pdf-preview {

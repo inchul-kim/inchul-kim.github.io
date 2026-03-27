@@ -18,7 +18,7 @@
     position: relative;
     width: 100%;
     cursor: pointer;
-    overflow: hidden;
+    overflow: visible;
 
     /* CRITICAL:
        Opaque background masks preview1
@@ -60,6 +60,8 @@
     max-height: none !important;
     object-fit: contain !important;
     border-radius: 0 !important;
+    box-sizing: border-box !important;
+    padding-inline: 6px !important;
   }
 
   @media (min-width: 576px) {
