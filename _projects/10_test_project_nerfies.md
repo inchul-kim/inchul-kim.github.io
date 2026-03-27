@@ -4,7 +4,7 @@ title: "Test Project Page (Nerfies Style)"
 description: "Sandbox page to validate the Nerfies-like project template in this site."
 importance: 100
 category: work
-published: true
+published: false
 permalink: /projects/test-nerfies-page/
 img: "assets/publication/[CVPR2023]dual_pixel/dual_pixel.png"
 project_kicker: "Template Validation"
