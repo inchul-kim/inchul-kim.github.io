@@ -147,6 +147,16 @@
   margin-bottom: 0;
 }
 
+/* figure caption spacing inside overview/method */
+.nerfies-feature-figure .caption {
+  margin-bottom: 0.3rem; /* adjust */
+}
+
+/* description block spacing after figures */
+.nerfies-feature-figures + .nerfies-feature-description {
+  margin-top: 0.5rem; /* adjust */
+}
+
 .nerfies-feature-figures {
   margin-top: 0.7rem;
   display: grid;
