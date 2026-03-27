@@ -305,7 +305,7 @@
             subtitle: item.institution || "",
             summary: "",
             highlights: item.highlights || [],
-            date: getDateRange(item.startDate, item.endDate, false),
+            date: getDateRange(item.startDate, item.endDate, true),
             location: item.location || "",
           };
         });
