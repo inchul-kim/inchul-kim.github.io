@@ -24,16 +24,8 @@
   line-height: 1.2;
 }
 
-.nerfies-subtitle {
-  margin: 0 auto 1rem;
-  max-width: 780px;
-  font-size: 1.08rem;
-  color: var(--global-text-color-light);
-}
-
 .nerfies-authors,
-.nerfies-affiliations,
-.nerfies-venue {
+.nerfies-affiliations {
   margin: 0.35rem 0;
 }
 
@@ -60,16 +52,6 @@
 .nerfies-separator {
   margin: 0 0.4rem;
   color: var(--global-divider-color);
-}
-
-.nerfies-dot {
-  margin: 0 0.45rem;
-  color: var(--global-divider-color);
-}
-
-.nerfies-venue {
-  color: var(--global-theme-color);
-  font-weight: 600;
 }
 
 .nerfies-links {
@@ -352,15 +334,6 @@ html[data-theme="dark"] .nerfies-teaser-media .nerfies-teaser-image--dark {
   margin-bottom: 0;
 }
 
-.nerfies-highlights {
-  margin: 0;
-  padding-left: 1.25rem;
-}
-
-.nerfies-highlights li p {
-  margin: 0.2rem 0 0.55rem;
-}
-
 .nerfies-bibtex {
   margin: 0;
   border: 1px solid var(--global-divider-color);
@@ -397,10 +370,6 @@ html[data-theme="dark"] .nerfies-teaser-media .nerfies-teaser-image--dark {
   }
 
   .nerfies-kicker {
-    font-size: 1rem;
-  }
-
-  .nerfies-subtitle {
     font-size: 1rem;
   }
 
