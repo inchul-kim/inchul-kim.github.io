@@ -13,10 +13,6 @@
   <section class="nerfies-section nerfies-feature-section">
     <h2>{{ section_title }}</h2>
 
-    {% if section.description %}
-      <div class="nerfies-prose nerfies-feature-description">{{ section.description | markdownify }}</div>
-    {% endif %}
-
     {% if section.figures %}
       {% assign figure_count = section.figures | size %}
       <div class="nerfies-feature-figures{% if figure_count > 1 %} nerfies-feature-figures--grid{% endif %}">
@@ -38,6 +34,10 @@
           {% endif %}
         {% endfor %}
       </div>
+    {% endif %}
+
+    {% if section.description %}
+      <div class="nerfies-prose nerfies-feature-description">{{ section.description | markdownify }}</div>
     {% endif %}
   </section>
 {% endif %}

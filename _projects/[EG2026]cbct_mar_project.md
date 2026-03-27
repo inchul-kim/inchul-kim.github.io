@@ -107,7 +107,7 @@ feature_section:
   figures:
     - path: assets/publication/[EG2026]cbct_mar/project/pipeline.png
       title: Pipeline overview
-      caption: Polychromatic CT reconstruction with differentiable Gaussian primitives.
+      caption: CBCT reconstruction with differentiable Gaussian primitives and our polychromatic X-ray model.
       loading: eager
 # highlights:
 #   - "Frontmatter fields map correctly to hero and metadata blocks."
