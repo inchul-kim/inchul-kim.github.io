@@ -285,9 +285,9 @@ html[data-theme="dark"] .nerfies-teaser-media .nerfies-teaser-image--dark {
   border-radius: 0;
   overflow: hidden;
   background: var(--global-card-bg-color);
-  --divider-width: 1px;
-  --divider-color: rgba(255, 255, 255, 0.32);
-  --default-handle-opacity: 0.72;
+  --divider-width: 2px;
+  --divider-color: rgba(255, 255, 255, 0.88);
+  --default-handle-opacity: 0.9;
   --default-handle-color: rgba(255, 255, 255, 0.14);
   --default-handle-width: 56px;
 }
@@ -304,19 +304,22 @@ html[data-theme="dark"] .nerfies-teaser-media .nerfies-teaser-image--dark {
 }
 
 .nerfies-compare__handle {
-  display: inline-flex;
+  display: inline-grid;
+  grid-auto-flow: column;
   align-items: center;
   justify-content: center;
-  gap: 0.38rem;
-  min-width: 56px;
-  height: 38px;
-  padding: 0 0.45rem;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.14);
+  gap: 0.5rem;
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.14);
   color: rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.9);
-  box-shadow: none;
-  font-size: 0.7rem;
+  border: 2px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  font-size: 0.78rem;
   line-height: 1;
   color: rgba(255, 255, 255, 0.92) !important;
   -webkit-text-fill-color: rgba(255, 255, 255, 0.92);
@@ -331,9 +334,7 @@ html[data-theme="dark"] .nerfies-teaser-media .nerfies-teaser-image--dark {
 }
 
 .nerfies-compare__handle-bar {
-  width: 2px;
-  height: 16px;
-  background: rgba(255, 255, 255, 0.9);
+  display: none;
 }
 
 .nerfies-compare-thumbs {
@@ -512,6 +513,23 @@ html[data-theme="dark"] .nerfies-teaser-media .nerfies-teaser-image--dark {
   padding: 0.75rem;
 }
 
+.nerfies-compare-tab-gallery__tabs {
+  margin-bottom: 0.8rem;
+  border: 1px solid var(--global-divider-color);
+}
+
+.nerfies-compare-tab-gallery__viewer {
+  margin-top: 0;
+}
+
+.nerfies-compare-tab-gallery__panels {
+  margin-top: 0.35rem;
+}
+
+.nerfies-compare-tab-gallery__panel[hidden] {
+  display: none !important;
+}
+
 .nerfies-carousel {
   border: 1px solid var(--global-divider-color);
   background: var(--global-card-bg-color);
@@ -613,10 +631,41 @@ html[data-theme="dark"] .nerfies-teaser-media .nerfies-teaser-image--dark {
   touch-action: pan-y;
 }
 
+.nerfies-bcarousel .carousel-item > figure,
+.nerfies-bcarousel .carousel-item > .nerfies-youtube,
+.nerfies-bcarousel .carousel-item > .nerfies-model-viewer,
+.nerfies-bcarousel .carousel-item > .nerfies-prose {
+  margin: 0;
+}
+
 .nerfies-bcarousel__image {
   border: 1px solid var(--global-divider-color);
   border-radius: 0.75rem;
   object-fit: cover;
+}
+
+.nerfies-bcarousel .carousel-item figure img,
+.nerfies-bcarousel .carousel-item video,
+.nerfies-bcarousel .carousel-item iframe,
+.nerfies-bcarousel .carousel-item model-viewer {
+  display: block;
+  width: 100%;
+  border-radius: 0.75rem;
+}
+
+.nerfies-bcarousel .carousel-item figure img,
+.nerfies-bcarousel .carousel-item video,
+.nerfies-bcarousel .carousel-item model-viewer {
+  border: 1px solid var(--global-divider-color);
+}
+
+.nerfies-bcarousel .carousel-item figure .caption,
+.nerfies-bcarousel .carousel-item .nerfies-caption {
+  margin: 0.8rem 0 0.35rem;
+  text-align: center;
+  color: var(--global-text-color-light);
+  font-size: 1.05rem;
+  font-weight: 600;
 }
 
 .nerfies-bcarousel__caption {
@@ -625,6 +674,85 @@ html[data-theme="dark"] .nerfies-teaser-media .nerfies-teaser-image--dark {
   color: var(--global-text-color-light);
   font-size: 1.05rem;
   font-weight: 600;
+}
+
+.nerfies-bcarousel__meta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.65rem;
+}
+
+.nerfies-bcarousel__count {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--global-text-color-light);
+}
+
+.nerfies-bcarousel__count-sep {
+  margin: 0 0.28rem;
+  opacity: 0.55;
+}
+
+.nerfies-bcarousel__thumbs {
+  display: flex;
+  gap: 0.55rem;
+  margin-top: 0.7rem;
+  padding: 0.1rem 0.05rem 0.4rem;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--global-theme-color) 45%, transparent) transparent;
+}
+
+.nerfies-bcarousel__thumb {
+  position: relative;
+  flex: 0 0 auto;
+  width: 96px;
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: 0.8rem;
+  background: transparent;
+  cursor: pointer;
+  transition:
+    transform 0.18s ease,
+    border-color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.nerfies-bcarousel__thumb img,
+.nerfies-bcarousel__thumb-fallback {
+  display: block;
+  width: 92px;
+  height: 60px;
+  border-radius: 0.65rem;
+  border: 1px solid var(--global-divider-color);
+  background: color-mix(in srgb, var(--global-card-bg-color) 88%, var(--global-theme-color) 12%);
+}
+
+.nerfies-bcarousel__thumb img {
+  object-fit: cover;
+}
+
+.nerfies-bcarousel__thumb-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--global-text-color-light);
+  font-weight: 700;
+}
+
+.nerfies-bcarousel__thumb:hover,
+.nerfies-bcarousel__thumb:focus-visible {
+  transform: translateY(-1px);
+  border-color: var(--global-theme-color);
+  outline: none;
+}
+
+.nerfies-bcarousel__thumb.is-active {
+  border-color: var(--global-theme-color);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--global-theme-color) 40%, transparent);
 }
 
 .nerfies-bcarousel__control {
@@ -680,6 +808,23 @@ html[data-theme="dark"] .nerfies-teaser-media .nerfies-teaser-image--dark {
   display: none;
 }
 
+.astro-compare-tab-gallery__tabs {
+  margin-bottom: 0.8rem;
+  border: 1px solid var(--global-divider-color);
+}
+
+.astro-compare-tab-gallery__viewer {
+  margin-top: 0;
+}
+
+.astro-compare-tab-gallery__panels {
+  margin-top: 0.35rem;
+}
+
+.astro-compare-tab-gallery__panel[hidden] {
+  display: none !important;
+}
+
 @media (max-width: 768px) {
   .nerfies-title {
     font-size: 2rem;
@@ -716,5 +861,20 @@ html[data-theme="dark"] .nerfies-teaser-media .nerfies-teaser-image--dark {
 
   .nerfies-two-columns {
     grid-template-columns: 1fr;
+  }
+
+  .nerfies-bcarousel {
+    padding-left: 0.55rem;
+    padding-right: 0.55rem;
+  }
+
+  .nerfies-bcarousel__thumb {
+    width: 82px;
+  }
+
+  .nerfies-bcarousel__thumb img,
+  .nerfies-bcarousel__thumb-fallback {
+    width: 78px;
+    height: 52px;
   }
 }

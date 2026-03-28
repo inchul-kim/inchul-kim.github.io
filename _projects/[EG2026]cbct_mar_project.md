@@ -40,7 +40,7 @@ project_links:
   #   # url: https://arxiv.org/abs/xxxx.xxxxx
   #   icon: ai ai-arxiv
   - label: DOI
-    # url: https://doi.org/xx.xxxx/xxxxx
+    url: https://doi.org/10.1111/cgf.70339
     icon: ai ai-doi
   # - label: Demo Video
   #   url: /assets/publication/[CVPR2026]cbct_pose/ours_broccoli.mp4
@@ -55,49 +55,175 @@ teaser_image_dark_mobile: "/assets/publication/[EG2026]cbct_mar/project/teaser_d
 # teaser_pdf: "/assets/publication/[EG2026]cbct_mar/project/teaser.pdf"
 # teaser_pdf_height: 560
 # teaser_caption: "Our pipeline"
-compare_gallery_examples:
-  - title: Real - Broccoli
-    left_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/fdk/broccoli_fdk.png"
-    right_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/ours/broccoli_ours.png"
-    left_label: FDK
-    right_label: Ours
-    caption: "Real broccoli scene."
-    divider_position: 50
-  - title: Real - Chicken
-    left_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/fdk/chicken_fdk.png"
-    right_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/ours/chicken_ours.png"
-    left_label: FDK
-    right_label: Ours
-    caption: "Real chicken scene."
-    divider_position: 50
-  - title: Real - Paprika
-    left_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/fdk/paprika_fdk.png"
-    right_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/ours/paprika_ours.png"
-    left_label: FDK
-    right_label: Ours
-    caption: "Real paprika scene."
-    divider_position: 50
-  - title: Real - Walnut
-    left_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/fdk/walnut_fdk.png"
-    right_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/ours/walnut_ours.png"
-    left_label: FDK
-    right_label: Ours
-    caption: "Real walnut scene."
-    divider_position: 50
-  - title: Synthetic - LIDC
-    left_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/synthetic/fdk/lidc_fdk.png"
-    right_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/synthetic/ours/lidc_ours.png"
-    left_label: FDK
-    right_label: Ours
-    caption: "Synthetic chest scene."
-    divider_position: 50
-  - title: Synthetic - Teeth
-    left_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/synthetic/fdk/teeth_fdk.png"
-    right_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/synthetic/ours/teeth_ours.png"
-    left_label: FDK
-    right_label: Ours
-    caption: "Synthetic teeth scene."
-    divider_position: 50
+comparison_sections:
+  - title: Synthetic Scenes
+    id: eg2026-synthetic-comparisons
+    thumb_label: Synthetic scenes
+    groups:
+      - label: FDK
+        left_label: FDK
+        right_label: Ours
+        caption: "Synthetic-scene comparison against ours."
+        examples:
+          - title: LIDC
+            left_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/synthetic/fdk/lidc_fdk.png"
+            right_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/synthetic/ours/lidc_ours.png"
+            thumb: "assets/publication/[EG2026]cbct_mar/project/comparisons/synthetic/ours/lidc_ours.png"
+            caption: "Synthetic chest scene."
+          - title: Teeth
+            left_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/synthetic/fdk/teeth_fdk.png"
+            right_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/synthetic/ours/teeth_ours.png"
+            thumb: "assets/publication/[EG2026]cbct_mar/project/comparisons/synthetic/ours/teeth_ours.png"
+            caption: "Synthetic teeth scene."
+      - label: LIMAR
+        left_label: LIMAR
+        right_label: Ours
+        caption: "Synthetic-scene comparison against ours."
+        examples:
+          - title: LIDC
+            left_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/synthetic/limar/lidc_limar.png"
+            right_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/synthetic/ours/lidc_ours.png"
+            thumb: "assets/publication/[EG2026]cbct_mar/project/comparisons/synthetic/ours/lidc_ours.png"
+            caption: "Synthetic chest scene."
+          - title: Teeth
+            left_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/synthetic/limar/teeth_limar.png"
+            right_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/synthetic/ours/teeth_ours.png"
+            thumb: "assets/publication/[EG2026]cbct_mar/project/comparisons/synthetic/ours/teeth_ours.png"
+            caption: "Synthetic teeth scene."
+      - label: Park et al.
+        left_label: Park et al.
+        right_label: Ours
+        caption: "Synthetic-scene comparison against ours."
+        examples:
+          - title: LIDC
+            left_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/synthetic/parketal/lidc_parketal.png"
+            right_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/synthetic/ours/lidc_ours.png"
+            thumb: "assets/publication/[EG2026]cbct_mar/project/comparisons/synthetic/ours/lidc_ours.png"
+            caption: "Synthetic chest scene."
+          - title: Teeth
+            left_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/synthetic/parketal/teeth_parketal.png"
+            right_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/synthetic/ours/teeth_ours.png"
+            thumb: "assets/publication/[EG2026]cbct_mar/project/comparisons/synthetic/ours/teeth_ours.png"
+            caption: "Synthetic teeth scene."
+      - label: Polyner
+        left_label: Polyner
+        right_label: Ours
+        caption: "Synthetic-scene comparison against ours."
+        examples:
+          - title: LIDC
+            left_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/synthetic/polyner/lidc_polyner.png"
+            right_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/synthetic/ours/lidc_ours.png"
+            thumb: "assets/publication/[EG2026]cbct_mar/project/comparisons/synthetic/ours/lidc_ours.png"
+            caption: "Synthetic chest scene."
+          - title: Teeth
+            left_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/synthetic/polyner/teeth_polyner.png"
+            right_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/synthetic/ours/teeth_ours.png"
+            thumb: "assets/publication/[EG2026]cbct_mar/project/comparisons/synthetic/ours/teeth_ours.png"
+            caption: "Synthetic teeth scene."
+  - title: Real Scenes
+    id: eg2026-real-comparisons
+    thumb_label: Real scenes
+    groups:
+      - label: FDK
+        left_label: FDK
+        right_label: Ours
+        caption: "Real-scene comparison against ours."
+        examples:
+          - title: Broccoli
+            left_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/fdk/broccoli_fdk.png"
+            right_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/ours/broccoli_ours.png"
+            thumb: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/ours/broccoli_ours.png"
+            caption: "Real broccoli scene."
+          - title: Chicken
+            left_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/fdk/chicken_fdk.png"
+            right_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/ours/chicken_ours.png"
+            thumb: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/ours/chicken_ours.png"
+            caption: "Real chicken scene."
+          - title: Paprika
+            left_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/fdk/paprika_fdk.png"
+            right_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/ours/paprika_ours.png"
+            thumb: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/ours/paprika_ours.png"
+            caption: "Real paprika scene."
+          - title: Walnut
+            left_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/fdk/walnut_fdk.png"
+            right_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/ours/walnut_ours.png"
+            thumb: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/ours/walnut_ours.png"
+            caption: "Real walnut scene."
+      - label: LIMAR
+        left_label: LIMAR
+        right_label: Ours
+        caption: "Real-scene comparison against ours."
+        examples:
+          - title: Broccoli
+            left_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/limar/broccoli_limar.png"
+            right_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/ours/broccoli_ours.png"
+            thumb: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/ours/broccoli_ours.png"
+            caption: "Real broccoli scene."
+          - title: Chicken
+            left_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/limar/chicken_limar.png"
+            right_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/ours/chicken_ours.png"
+            thumb: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/ours/chicken_ours.png"
+            caption: "Real chicken scene."
+          - title: Paprika
+            left_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/limar/paprika_limar.png"
+            right_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/ours/paprika_ours.png"
+            thumb: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/ours/paprika_ours.png"
+            caption: "Real paprika scene."
+          - title: Walnut
+            left_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/limar/walnut_limar.png"
+            right_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/ours/walnut_ours.png"
+            thumb: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/ours/walnut_ours.png"
+            caption: "Real walnut scene."
+      - label: Park et al.
+        left_label: Park et al.
+        right_label: Ours
+        caption: "Real-scene comparison against ours."
+        examples:
+          - title: Broccoli
+            left_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/parketal/broccoli_parketal.png"
+            right_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/ours/broccoli_ours.png"
+            thumb: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/ours/broccoli_ours.png"
+            caption: "Real broccoli scene."
+          - title: Chicken
+            left_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/parketal/chicken_parketal.png"
+            right_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/ours/chicken_ours.png"
+            thumb: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/ours/chicken_ours.png"
+            caption: "Real chicken scene."
+          - title: Paprika
+            left_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/parketal/paprika_parketal.png"
+            right_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/ours/paprika_ours.png"
+            thumb: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/ours/paprika_ours.png"
+            caption: "Real paprika scene."
+          - title: Walnut
+            left_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/parketal/walnut_parketal.png"
+            right_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/ours/walnut_ours.png"
+            thumb: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/ours/walnut_ours.png"
+            caption: "Real walnut scene."
+      - label: Polyner
+        left_label: Polyner
+        right_label: Ours
+        caption: "Real-scene comparison against ours."
+        examples:
+          - title: Broccoli
+            left_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/polyner/broccoli_polyner.png"
+            right_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/ours/broccoli_ours.png"
+            thumb: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/ours/broccoli_ours.png"
+            caption: "Real broccoli scene."
+          - title: Chicken
+            left_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/polyner/chicken_polyner.png"
+            right_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/ours/chicken_ours.png"
+            thumb: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/ours/chicken_ours.png"
+            caption: "Real chicken scene."
+          - title: Paprika
+            left_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/polyner/paprika_polyner.png"
+            right_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/ours/paprika_ours.png"
+            thumb: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/ours/paprika_ours.png"
+            caption: "Real paprika scene."
+          - title: Walnut
+            left_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/polyner/walnut_polyner.png"
+            right_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/ours/walnut_ours.png"
+            thumb: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/ours/walnut_ours.png"
+            caption: "Real walnut scene."
 abstract: >
   Cone-beam computed tomography (CBCT) enables volumetric reconstruction from X-ray projections, but suffers from severe artifacts--especially beam hardening--when imaging materials with high attenuation such as metals. These artifacts arise from the polychromatic nature of X-rays and are not properly addressed by conventional monochromatic reconstruction algorithms. While recent neural representation-based methods offer improved reconstruction quality, they are computationally expensive and often impractical for deployment. We propose a novel physics-inspired, self-calibrating metal artifact reduction method that efficiently reconstructs 3D CBCT volumes while correcting beam hardening artifacts. Our method integrates a polychromatic X-ray projection model, material-dependent attenuation profiles, and system response modeling into a Gaussian Splatting framework. Unlike prior work, we eliminate the need for manual metal masks or strong prior assumptions, and we optimize both reconstruction parameters and X-ray spectral characteristics jointly during training. We further introduce a high-fidelity synthetic CBCT dataset generation pipeline validated on Monte-Carlo x-ray simulation toolbox and release new datasets with severe metal-induced artifacts to support the community. This is the first splat-based method for reducing beam hardening in CBCT. Extensive experiments on both synthetic and real-world datasets demonstrate that our method outperforms state-of-the-art approaches in artifact suppression and reconstruction accuracy.
 feature_section:
@@ -140,17 +266,26 @@ The teaser section above should autoplay muted, and this image should load from 
 {% include figure.liquid loading="eager" path="assets/publication/[CVPR2023]dual_pixel/dual_pixel_sensor.png" title="Test figure" class="img-fluid rounded z-depth-1" %}
 {% endcomment %}
 
-We show four real (broccoli, chicken, paprika, and walnut) and two synthetic metal-artifact reduction results.
-Compared with the results from FDK, our method reduces metal-induced streaky artifacts consistently across scenes.
+We benchmark against baseline methods (FDK, LIMAR) and NeRF-based MAR approaches (Park et al., Polyner) across synthetic and real scenes.
+Our method consistently achieves superior artifact reduction while preserving fine structural details.
 
-<!-- Thumbnail-based multi-example slider: -->
+<div class="nerfies-two-columns">
+  {% for section in page.comparison_sections %}
+    <div class="nerfies-two-columns__column">
+      <h3>{{ section.title }}</h3>
 
-{% include project_compare_gallery.liquid
-  id="test-gallery"
-  examples=page.compare_gallery_examples
-  thumb_label="Test comparisons"
-  max_width="700px"
-%}
+      {% include project_compare_tab_gallery.liquid
+        id=section.id
+        groups=section.groups
+        tab_label="Comparison methods"
+        thumb_label=section.thumb_label
+        max_width="700px"
+      %}
+    </div>
+
+{% endfor %}
+
+</div>
 
 <!-- ## Notes
 

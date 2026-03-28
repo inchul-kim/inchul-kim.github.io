@@ -10489,6 +10489,23 @@ Error generating stack: ` +
       Dh(l, t),
       Uh(l, t));
   }
+  function Nh(l, t) {
+    let a = t.dataset.panelId;
+    l.querySelectorAll("[data-astro-compare-tab]").forEach((n) => {
+      if (!(n instanceof HTMLElement)) return;
+      let c = n === t;
+      n.classList.toggle("is-active", c), n.setAttribute("aria-selected", c ? "true" : "false"), n.setAttribute("tabindex", c ? "0" : "-1");
+    }),
+      l.querySelectorAll("[data-astro-compare-panel]").forEach((n) => {
+        if (!(n instanceof HTMLElement)) return;
+        let c = n.dataset.panelId === a;
+        n.classList.toggle("is-active", c), (n.hidden = !c);
+      });
+    let u = l.querySelector(`[data-astro-compare-panel][data-panel-id="${a}"]`);
+    if (!(u instanceof HTMLElement)) return;
+    let e = u.querySelector("[data-astro-compare-thumb].is-active") || u.querySelector("[data-astro-compare-thumb]");
+    e instanceof HTMLElement && fd(l, e);
+  }
   function Hh() {
     document.querySelectorAll("[data-astro-compare-gallery]").forEach((l) => {
       if (!(l instanceof HTMLElement)) return;
@@ -10501,11 +10518,42 @@ Error generating stack: ` +
       a && fd(l, a);
     });
   }
+  function Rh() {
+    document.querySelectorAll("[data-astro-compare-tab-gallery]").forEach((l) => {
+      if (!(l instanceof HTMLElement)) return;
+      let t = l.querySelectorAll("[data-astro-compare-tab]");
+      if (t.length === 0) return;
+      t.forEach((u) => {
+        u instanceof HTMLElement &&
+          (u.addEventListener("click", () => Nh(l, u)),
+          u.addEventListener("keydown", (e) => {
+            let n = Array.from(t),
+              c = n.indexOf(u);
+            if (c < 0) return;
+            let i = c;
+            if (e.key === "ArrowRight" || e.key === "ArrowDown") i = c === n.length - 1 ? 0 : c + 1;
+            else if (e.key === "ArrowLeft" || e.key === "ArrowUp") i = c === 0 ? n.length - 1 : c - 1;
+            else if (e.key === "Home") i = 0;
+            else if (e.key === "End") i = n.length - 1;
+            else return;
+            e.preventDefault();
+            let f = n[i];
+            f instanceof HTMLElement && (Nh(l, f), f.focus());
+          }));
+      }),
+        l.querySelectorAll("[data-astro-compare-panel] [data-astro-compare-thumb]").forEach((u) => {
+          u instanceof HTMLElement && u.addEventListener("click", () => fd(l, u));
+        });
+      let a = l.querySelector("[data-astro-compare-tab].is-active") || t[0];
+      a instanceof HTMLElement && Nh(l, a);
+    });
+  }
   function yd() {
     document.querySelectorAll("[data-astro-compare]").forEach((l) => {
       od(l);
     }),
-      Hh();
+      Hh(),
+      Rh();
   }
   document.readyState === "loading" ? document.addEventListener("DOMContentLoaded", yd) : yd();
 })();

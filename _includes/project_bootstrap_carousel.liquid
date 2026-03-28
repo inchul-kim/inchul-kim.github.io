@@ -4,6 +4,13 @@
 {% assign carousel_id = include.id | default: section.id | default: title | default: 'project-carousel-bootstrap' | slugify %}
 {% assign swipe_threshold = include.swipe_threshold | default: section.swipe_threshold | default: 44 %}
 {% assign swipe_vertical_ratio = include.swipe_vertical_ratio | default: section.swipe_vertical_ratio | default: 1.0 %}
+{% assign show_thumbnails = section.show_thumbnails %}
+{% if include.show_thumbnails != null %}
+  {% assign show_thumbnails = include.show_thumbnails %}
+{% endif %}
+{% if show_thumbnails == null %}
+  {% assign show_thumbnails = true %}
+{% endif %}
 
 {% if items and items.size > 0 %}
   <section class="nerfies-section nerfies-bcarousel-section">
@@ -26,28 +33,8 @@
       >
         <div class="carousel-inner">
           {% for item in items %}
-            {% assign image_path = item.image | default: item.path %}
-            {% assign image_alt = item.alt | default: item.title | default: 'Carousel image' %}
-            {% assign image_caption = item.caption %}
-            {% assign image_loading = item.loading | default: 'lazy' %}
-            {% if image_path %}
-              {% unless image_path contains '://' %}
-                {% assign image_path = image_path | relative_url %}
-              {% endunless %}
-            {% endif %}
-
-            <div class="carousel-item{% if forloop.first %} active{% endif %}">
-              {% if image_path %}
-                <img
-                  src="{{ image_path }}"
-                  class="d-block w-100 nerfies-bcarousel__image"
-                  alt="{{ image_alt }}"
-                  loading="{{ image_loading }}"
-                >
-              {% endif %}
-              {% if image_caption %}
-                <p class="nerfies-bcarousel__caption">{{ image_caption }}</p>
-              {% endif %}
+            <div class="carousel-item{% if forloop.first %} active{% endif %}" data-slide-index="{{ forloop.index0 }}">
+              {% include project_media_item.liquid item=item default_loading='lazy' %}
             </div>
           {% endfor %}
         </div>
@@ -79,6 +66,47 @@
           </a>
         {% endif %}
       </div>
+
+      {% if items.size > 1 %}
+        <div class="nerfies-bcarousel__meta">
+          <p class="nerfies-bcarousel__count" aria-live="polite">
+            <span data-bcarousel-current>1</span>
+            <span class="nerfies-bcarousel__count-sep">/</span>
+            <span data-bcarousel-total>{{ items.size }}</span>
+          </p>
+        </div>
+
+        {% if show_thumbnails %}
+          <div class="nerfies-bcarousel__thumbs" role="list" aria-label="{{ title | default: 'Carousel items' }}">
+            {% for item in items %}
+              {% assign thumb_path = item.thumb | default: item.thumbnail | default: item.poster | default: item.image | default: item.path %}
+              {% assign thumb_alt = item.thumb_alt | default: item.alt | default: item.title | default: 'Carousel thumbnail' %}
+              {% assign thumb_label = item.title | default: item.caption | default: 'Slide ' | append: forloop.index %}
+              {% if thumb_path %}
+                {% unless thumb_path contains '://' %}
+                  {% assign thumb_path = thumb_path | relative_url %}
+                {% endunless %}
+              {% endif %}
+
+              <button
+                type="button"
+                class="nerfies-bcarousel__thumb{% if forloop.first %} is-active{% endif %}"
+                data-bcarousel-thumb
+                data-slide-index="{{ forloop.index0 }}"
+                aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}"
+                aria-label="{{ thumb_label }}"
+                title="{{ thumb_label }}"
+              >
+                {% if thumb_path %}
+                  <img src="{{ thumb_path }}" alt="{{ thumb_alt }}" loading="lazy">
+                {% else %}
+                  <span class="nerfies-bcarousel__thumb-fallback">{{ forloop.index }}</span>
+                {% endif %}
+              </button>
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endif %}
     </div>
   </section>
 {% endif %}

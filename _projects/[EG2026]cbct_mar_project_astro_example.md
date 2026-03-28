@@ -4,7 +4,7 @@ title: "Splat-based Metal Artifact Reduction in Cone-Beam CT via Polychromatic M
 description: "Example page using Astro-style features ported into the Jekyll project_nerfies layout."
 importance: 100
 category: work
-published: true
+published: false
 permalink: /projects/eg2026_cbct_mar_astro_example/
 # img: "assets/publication/[CVPR2023]dual_pixel/dual_pixel.png"
 project_kicker: "Computer Graphics Forum (EG 2026) - Astro-style Feature Showcase"
@@ -101,6 +101,62 @@ compare_gallery_examples:
     right_label: Ours
     caption: "Synthetic teeth scene."
     divider_position: 50
+compare_tabs_groups:
+  - label: FDK (Real)
+    left_label: FDK
+    right_label: Ours
+    caption: "Real-scene comparison against ours."
+    examples:
+      - title: Broccoli
+        left_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/fdk/broccoli_fdk.png"
+        right_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/ours/broccoli_ours.png"
+        thumb: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/ours/broccoli_ours.png"
+        caption: "Real broccoli scene."
+      - title: Chicken
+        left_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/fdk/chicken_fdk.png"
+        right_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/ours/chicken_ours.png"
+        thumb: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/ours/chicken_ours.png"
+        caption: "Real chicken scene."
+      - title: Paprika
+        left_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/fdk/paprika_fdk.png"
+        right_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/ours/paprika_ours.png"
+        thumb: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/ours/paprika_ours.png"
+        caption: "Real paprika scene."
+      - title: Walnut
+        left_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/fdk/walnut_fdk.png"
+        right_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/ours/walnut_ours.png"
+        thumb: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/ours/walnut_ours.png"
+        caption: "Real walnut scene."
+  - label: FDK (Synthetic)
+    left_label: FDK
+    right_label: Ours
+    caption: "Synthetic-scene comparison against ours."
+    examples:
+      - title: LIDC
+        left_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/synthetic/fdk/lidc_fdk.png"
+        right_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/synthetic/ours/lidc_ours.png"
+        thumb: "assets/publication/[EG2026]cbct_mar/project/comparisons/synthetic/ours/lidc_ours.png"
+        caption: "Synthetic chest scene."
+      - title: Teeth
+        left_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/synthetic/fdk/teeth_fdk.png"
+        right_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/synthetic/ours/teeth_ours.png"
+        thumb: "assets/publication/[EG2026]cbct_mar/project/comparisons/synthetic/ours/teeth_ours.png"
+        caption: "Synthetic teeth scene."
+  - label: Mixed Demo
+    left_label: FDK
+    right_label: Ours
+    caption: "A mixed set to demonstrate method tabs plus scene thumbnails."
+    examples:
+      - title: Broccoli
+        left_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/fdk/broccoli_fdk.png"
+        right_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/ours/broccoli_ours.png"
+        thumb: "assets/publication/[EG2026]cbct_mar/project/comparisons/real/fdk/broccoli_fdk.png"
+        caption: "Real broccoli scene."
+      - title: LIDC
+        left_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/synthetic/fdk/lidc_fdk.png"
+        right_image: "assets/publication/[EG2026]cbct_mar/project/comparisons/synthetic/ours/lidc_ours.png"
+        thumb: "assets/publication/[EG2026]cbct_mar/project/comparisons/synthetic/fdk/lidc_fdk.png"
+        caption: "Synthetic chest scene."
 abstract: >
   Cone-beam computed tomography (CBCT) enables volumetric reconstruction from X-ray projections, but suffers from severe artifacts--especially beam hardening--when imaging materials with high attenuation such as metals. These artifacts arise from the polychromatic nature of X-rays and are not properly addressed by conventional monochromatic reconstruction algorithms. While recent neural representation-based methods offer improved reconstruction quality, they are computationally expensive and often impractical for deployment. We propose a novel physics-inspired, self-calibrating metal artifact reduction method that efficiently reconstructs 3D CBCT volumes while correcting beam hardening artifacts. Our method integrates a polychromatic X-ray projection model, material-dependent attenuation profiles, and system response modeling into a Gaussian Splatting framework. Unlike prior work, we eliminate the need for manual metal masks or strong prior assumptions, and we optimize both reconstruction parameters and X-ray spectral characteristics jointly during training. We further introduce a high-fidelity synthetic CBCT dataset generation pipeline validated on Monte-Carlo x-ray simulation toolbox and release new datasets with severe metal-induced artifacts to support the community. This is the first splat-based method for reducing beam hardening in CBCT. Extensive experiments on both synthetic and real-world datasets demonstrate that our method outperforms state-of-the-art approaches in artifact suppression and reconstruction accuracy.
 highlight_section:
@@ -243,6 +299,16 @@ Compared with the results from FDK, our method reduces metal-induced streaky art
   id="eg2026-astro-thumb-gallery"
   examples=page.compare_gallery_examples
   thumb_label="Switch scenes"
+  max_width="700px"
+%}
+
+## Astro Slider + Method Tabs + Scene Thumbnails
+
+{% include project_compare_tabs_astro.liquid
+  id="eg2026-astro-tab-gallery"
+  groups=page.compare_tabs_groups
+  tab_label="Comparison methods"
+  thumb_label="Scenes"
   max_width="700px"
 %}
 
