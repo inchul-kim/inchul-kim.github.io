@@ -530,6 +530,21 @@ html[data-theme="dark"] .nerfies-teaser-media .nerfies-teaser-image--dark {
   display: none !important;
 }
 
+.project-compare-section {
+  margin-bottom: var(--project-compare-section-gap, 2rem);
+}
+
+.project-compare-section:last-child {
+  margin-bottom: 0;
+}
+
+.project-compare-section__title {
+  margin: 0 0 var(--project-compare-title-gap, 1rem);
+  font-size: 1.35rem;
+  line-height: 1.25;
+  font-weight: 400;
+}
+
 .nerfies-carousel {
   border: 1px solid var(--global-divider-color);
   background: var(--global-card-bg-color);

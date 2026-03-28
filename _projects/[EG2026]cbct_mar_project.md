@@ -55,6 +55,8 @@ teaser_image_dark_mobile: "/assets/publication/[EG2026]cbct_mar/project/teaser_d
 # teaser_pdf: "/assets/publication/[EG2026]cbct_mar/project/teaser.pdf"
 # teaser_pdf_height: 560
 # teaser_caption: "Our pipeline"
+comparison_section_gap: 2rem
+comparison_title_gap: 1rem
 comparison_sections:
   - title: Synthetic Scenes
     id: eg2026-synthetic-comparisons
@@ -269,23 +271,25 @@ The teaser section above should autoplay muted, and this image should load from 
 We benchmark against baseline methods (FDK, LIMAR) and NeRF-based MAR approaches (Park et al., Polyner) across synthetic and real scenes.
 Our method consistently achieves superior artifact reduction while preserving fine structural details.
 
-<div class="nerfies-two-columns">
-  {% for section in page.comparison_sections %}
-    <div class="nerfies-two-columns__column">
-      <h3>{{ section.title }}</h3>
+{% for section in page.comparison_sections %}
 
-      {% include project_compare_tab_gallery.liquid
-        id=section.id
-        groups=section.groups
-        tab_label="Comparison methods"
-        thumb_label=section.thumb_label
-        max_width="700px"
-      %}
-    </div>
+<section
+  class="project-compare-section"
+  style="--project-compare-section-gap: {{ page.comparison_section_gap | default: '2rem' }}; --project-compare-title-gap: {{ page.comparison_title_gap | default: '1rem' }};"
+>
+  <h3 class="project-compare-section__title">{{ section.title }}</h3>
+
+{% include project_compare_tab_gallery.liquid
+  id=section.id
+  groups=section.groups
+  tab_label="Comparison methods"
+  thumb_label=section.thumb_label
+  max_width="1000px"
+%}
+
+</section>
 
 {% endfor %}
-
-</div>
 
 <!-- ## Notes
 
