@@ -271,25 +271,28 @@ The teaser section above should autoplay muted, and this image should load from 
 We benchmark against baseline methods (FDK, LIMAR) and NeRF-based MAR approaches (Park et al., Polyner) across synthetic and real scenes.
 Our method consistently achieves superior artifact reduction while preserving fine structural details.
 
+<div class="project-compare-sections-grid">
 {% for section in page.comparison_sections %}
 
-<section
-  class="project-compare-section"
-  style="--project-compare-section-gap: {{ page.comparison_section_gap | default: '2rem' }}; --project-compare-title-gap: {{ page.comparison_title_gap | default: '1rem' }};"
->
-  <h3 class="project-compare-section__title">{{ section.title }}</h3>
+  <section
+    class="project-compare-section"
+    style="--project-compare-section-gap: {{ page.comparison_section_gap | default: '2rem' }}; --project-compare-title-gap: {{ page.comparison_title_gap | default: '1rem' }};"
+  >
+    <h3 class="project-compare-section__title">{{ section.title }}</h3>
 
 {% include project_compare_tab_gallery.liquid
-  id=section.id
-  groups=section.groups
-  tab_label="Comparison methods"
-  thumb_label=section.thumb_label
-  max_width="1000px"
-%}
+    id=section.id
+    groups=section.groups
+    tab_label="Comparison methods"
+    thumb_label=section.thumb_label
+    max_width="min(100%, 1000px)"
+  %}
 
-</section>
+  </section>
 
 {% endfor %}
+
+</div>
 
 <!-- ## Notes
 
