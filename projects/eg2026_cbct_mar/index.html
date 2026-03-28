@@ -275,7 +275,7 @@
     <div class="container mt-5" role="main">
       
         <article class="nerfies-project-page">
-  <link rel="stylesheet" href="/assets/css/nerfies-project.css?728f8eeb4ee12e550c499d9f50cb7dec">
+  <link rel="stylesheet" href="/assets/css/nerfies-project.css?4210590f01f3e71bce24e29daaabf6bd">
   
   
     
@@ -675,12 +675,14 @@
           
         
           
-            <span class="nerfies-link nerfies-link-disabled" aria-disabled="true">
+            
+            
+            <a class="nerfies-link" href="https://doi.org/10.1111/cgf.70339" target="_blank" rel="noopener noreferrer">
               
                 <i class="ai ai-doi"></i>
               
               <span>DOI</span>
-            </span>
+            </a>
           
         
       </div>
@@ -811,13 +813,366 @@ You can replace this section with adapted HTML blocks from the reference templat
 
 <h2 id="results">Results</h2>
 
-<p>We show four real (broccoli, chicken, paprika, and walnut) and two synthetic metal-artifact reduction results.
-Compared with the results from FDK, our method reduces metal-induced streaky artifacts consistently across scenes.</p>
+<p>We benchmark against baseline methods (FDK, LIMAR) and NeRF-based MAR approaches (Park et al., Polyner) across synthetic and real scenes.
+Our method consistently achieves superior artifact reduction while preserving fine structural details.</p>
 
-<!-- Thumbnail-based multi-example slider: -->
+<div class="nerfies-two-columns">
+  
+    <div class="nerfies-two-columns__column">
+      <h3>Synthetic Scenes</h3>
 
-<div id="test-gallery" class="nerfies-compare-gallery" data-compare-gallery="" style="max-width: 700px; margin-left: auto; margin-right: auto;">
-    <div class="nerfies-compare">
+      
+
+
+
+
+
+
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+
+  <div id="eg2026-synthetic-comparisons" class="nerfies-compare-tab-gallery" data-compare-tab-gallery="" style="max-width: 700px; margin-left: auto; margin-right: auto;">
+    <div class="nerfies-tabs__list nerfies-compare-tab-gallery__tabs" role="tablist" aria-label="Comparison methods">
+      
+        
+        
+          
+          
+          <button id="eg2026-synthetic-comparisons-tab-0" type="button" class="nerfies-tabs__button is-active" data-compare-tab="" data-tab-index="0" role="tab" aria-selected="true" tabindex="0" aria-controls="eg2026-synthetic-comparisons-panel-0">
+            FDK
+          </button>
+        
+      
+        
+        
+          
+          
+          <button id="eg2026-synthetic-comparisons-tab-1" type="button" class="nerfies-tabs__button" data-compare-tab="" data-tab-index="1" role="tab" aria-selected="false" tabindex="-1" aria-controls="eg2026-synthetic-comparisons-panel-1">
+            LIMAR
+          </button>
+        
+      
+        
+        
+          
+          
+          <button id="eg2026-synthetic-comparisons-tab-2" type="button" class="nerfies-tabs__button" data-compare-tab="" data-tab-index="2" role="tab" aria-selected="false" tabindex="-1" aria-controls="eg2026-synthetic-comparisons-panel-2">
+            Park et al.
+          </button>
+        
+      
+        
+        
+          
+          
+          <button id="eg2026-synthetic-comparisons-tab-3" type="button" class="nerfies-tabs__button" data-compare-tab="" data-tab-index="3" role="tab" aria-selected="false" tabindex="-1" aria-controls="eg2026-synthetic-comparisons-panel-3">
+            Polyner
+          </button>
+        
+      
+    </div>
+
+    <div class="nerfies-compare nerfies-compare-tab-gallery__viewer">
+      <div class="nerfies-compare__overlay">
+        <span class="nerfies-compare__label nerfies-compare__label--left" data-compare-left-label="">FDK</span>
+        <span class="nerfies-compare__label nerfies-compare__label--right" data-compare-right-label="">Ours</span>
+      </div>
+
+      <img-comparison-slider class="nerfies-compare__slider" value="50">
+        <img slot="first" src="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/synthetic/fdk/lidc_fdk.png" alt="FDK" loading="eager">
+        <img slot="second" src="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/synthetic/ours/lidc_ours.png" alt="Ours" loading="eager">
+        <span slot="handle" class="nerfies-compare__handle" aria-hidden="true">
+          <span class="nerfies-compare__handle-arrow">◀</span>
+          <span class="nerfies-compare__handle-bar"></span>
+          <span class="nerfies-compare__handle-arrow">▶</span>
+        </span>
+      </img-comparison-slider>
+
+      <p class="nerfies-caption" data-compare-caption="">Synthetic chest scene.</p>
+    </div>
+
+    <div class="nerfies-compare-tab-gallery__panels">
+      
+        
+        
+          
+          
+          <div id="eg2026-synthetic-comparisons-panel-0" class="nerfies-compare-tab-gallery__panel is-active" data-compare-panel="" data-tab-index="0" role="tabpanel" aria-labelledby="eg2026-synthetic-comparisons-tab-0">
+            <div class="nerfies-compare-thumbs" role="list" aria-label="Synthetic scenes">
+              
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+
+                
+                
+                
+
+                <button type="button" class="nerfies-compare-thumb" data-compare-thumb="" data-left-image="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/synthetic/fdk/lidc_fdk.png" data-right-image="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/synthetic/ours/lidc_ours.png" data-left-alt="FDK" data-right-alt="Ours" data-left-label="FDK" data-right-label="Ours" data-caption="Synthetic chest scene." data-divider-position="50" data-scene-key="lidc" aria-pressed="false" aria-label="LIDC" title="LIDC">
+                  <img src="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/synthetic/ours/lidc_ours.png" alt="LIDC" loading="lazy">
+                </button>
+              
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+
+                
+                
+                
+
+                <button type="button" class="nerfies-compare-thumb" data-compare-thumb="" data-left-image="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/synthetic/fdk/teeth_fdk.png" data-right-image="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/synthetic/ours/teeth_ours.png" data-left-alt="FDK" data-right-alt="Ours" data-left-label="FDK" data-right-label="Ours" data-caption="Synthetic teeth scene." data-divider-position="50" data-scene-key="teeth" aria-pressed="false" aria-label="Teeth" title="Teeth">
+                  <img src="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/synthetic/ours/teeth_ours.png" alt="Teeth" loading="lazy">
+                </button>
+              
+            </div>
+          </div>
+        
+      
+        
+        
+          
+          
+          <div id="eg2026-synthetic-comparisons-panel-1" class="nerfies-compare-tab-gallery__panel" data-compare-panel="" data-tab-index="1" role="tabpanel" aria-labelledby="eg2026-synthetic-comparisons-tab-1" hidden="">
+            <div class="nerfies-compare-thumbs" role="list" aria-label="Synthetic scenes">
+              
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+
+                
+                
+                
+
+                <button type="button" class="nerfies-compare-thumb" data-compare-thumb="" data-left-image="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/synthetic/limar/lidc_limar.png" data-right-image="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/synthetic/ours/lidc_ours.png" data-left-alt="LIMAR" data-right-alt="Ours" data-left-label="LIMAR" data-right-label="Ours" data-caption="Synthetic chest scene." data-divider-position="50" data-scene-key="lidc" aria-pressed="false" aria-label="LIDC" title="LIDC">
+                  <img src="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/synthetic/ours/lidc_ours.png" alt="LIDC" loading="lazy">
+                </button>
+              
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+
+                
+                
+                
+
+                <button type="button" class="nerfies-compare-thumb" data-compare-thumb="" data-left-image="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/synthetic/limar/teeth_limar.png" data-right-image="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/synthetic/ours/teeth_ours.png" data-left-alt="LIMAR" data-right-alt="Ours" data-left-label="LIMAR" data-right-label="Ours" data-caption="Synthetic teeth scene." data-divider-position="50" data-scene-key="teeth" aria-pressed="false" aria-label="Teeth" title="Teeth">
+                  <img src="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/synthetic/ours/teeth_ours.png" alt="Teeth" loading="lazy">
+                </button>
+              
+            </div>
+          </div>
+        
+      
+        
+        
+          
+          
+          <div id="eg2026-synthetic-comparisons-panel-2" class="nerfies-compare-tab-gallery__panel" data-compare-panel="" data-tab-index="2" role="tabpanel" aria-labelledby="eg2026-synthetic-comparisons-tab-2" hidden="">
+            <div class="nerfies-compare-thumbs" role="list" aria-label="Synthetic scenes">
+              
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+
+                
+                
+                
+
+                <button type="button" class="nerfies-compare-thumb" data-compare-thumb="" data-left-image="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/synthetic/parketal/lidc_parketal.png" data-right-image="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/synthetic/ours/lidc_ours.png" data-left-alt="Park et al." data-right-alt="Ours" data-left-label="Park et al." data-right-label="Ours" data-caption="Synthetic chest scene." data-divider-position="50" data-scene-key="lidc" aria-pressed="false" aria-label="LIDC" title="LIDC">
+                  <img src="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/synthetic/ours/lidc_ours.png" alt="LIDC" loading="lazy">
+                </button>
+              
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+
+                
+                
+                
+
+                <button type="button" class="nerfies-compare-thumb" data-compare-thumb="" data-left-image="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/synthetic/parketal/teeth_parketal.png" data-right-image="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/synthetic/ours/teeth_ours.png" data-left-alt="Park et al." data-right-alt="Ours" data-left-label="Park et al." data-right-label="Ours" data-caption="Synthetic teeth scene." data-divider-position="50" data-scene-key="teeth" aria-pressed="false" aria-label="Teeth" title="Teeth">
+                  <img src="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/synthetic/ours/teeth_ours.png" alt="Teeth" loading="lazy">
+                </button>
+              
+            </div>
+          </div>
+        
+      
+        
+        
+          
+          
+          <div id="eg2026-synthetic-comparisons-panel-3" class="nerfies-compare-tab-gallery__panel" data-compare-panel="" data-tab-index="3" role="tabpanel" aria-labelledby="eg2026-synthetic-comparisons-tab-3" hidden="">
+            <div class="nerfies-compare-thumbs" role="list" aria-label="Synthetic scenes">
+              
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+
+                
+                
+                
+
+                <button type="button" class="nerfies-compare-thumb" data-compare-thumb="" data-left-image="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/synthetic/polyner/lidc_polyner.png" data-right-image="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/synthetic/ours/lidc_ours.png" data-left-alt="Polyner" data-right-alt="Ours" data-left-label="Polyner" data-right-label="Ours" data-caption="Synthetic chest scene." data-divider-position="50" data-scene-key="lidc" aria-pressed="false" aria-label="LIDC" title="LIDC">
+                  <img src="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/synthetic/ours/lidc_ours.png" alt="LIDC" loading="lazy">
+                </button>
+              
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+
+                
+                
+                
+
+                <button type="button" class="nerfies-compare-thumb" data-compare-thumb="" data-left-image="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/synthetic/polyner/teeth_polyner.png" data-right-image="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/synthetic/ours/teeth_ours.png" data-left-alt="Polyner" data-right-alt="Ours" data-left-label="Polyner" data-right-label="Ours" data-caption="Synthetic teeth scene." data-divider-position="50" data-scene-key="teeth" aria-pressed="false" aria-label="Teeth" title="Teeth">
+                  <img src="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/synthetic/ours/teeth_ours.png" alt="Teeth" loading="lazy">
+                </button>
+              
+            </div>
+          </div>
+        
+      
+    </div>
+  </div>
+
+
+    </div>
+
+
+    <div class="nerfies-two-columns__column">
+      <h3>Real Scenes</h3>
+
+      
+
+
+
+
+
+
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+
+  <div id="eg2026-real-comparisons" class="nerfies-compare-tab-gallery" data-compare-tab-gallery="" style="max-width: 700px; margin-left: auto; margin-right: auto;">
+    <div class="nerfies-tabs__list nerfies-compare-tab-gallery__tabs" role="tablist" aria-label="Comparison methods">
+      
+        
+        
+          
+          
+          <button id="eg2026-real-comparisons-tab-0" type="button" class="nerfies-tabs__button is-active" data-compare-tab="" data-tab-index="0" role="tab" aria-selected="true" tabindex="0" aria-controls="eg2026-real-comparisons-panel-0">
+            FDK
+          </button>
+        
+      
+        
+        
+          
+          
+          <button id="eg2026-real-comparisons-tab-1" type="button" class="nerfies-tabs__button" data-compare-tab="" data-tab-index="1" role="tab" aria-selected="false" tabindex="-1" aria-controls="eg2026-real-comparisons-panel-1">
+            LIMAR
+          </button>
+        
+      
+        
+        
+          
+          
+          <button id="eg2026-real-comparisons-tab-2" type="button" class="nerfies-tabs__button" data-compare-tab="" data-tab-index="2" role="tab" aria-selected="false" tabindex="-1" aria-controls="eg2026-real-comparisons-panel-2">
+            Park et al.
+          </button>
+        
+      
+        
+        
+          
+          
+          <button id="eg2026-real-comparisons-tab-3" type="button" class="nerfies-tabs__button" data-compare-tab="" data-tab-index="3" role="tab" aria-selected="false" tabindex="-1" aria-controls="eg2026-real-comparisons-panel-3">
+            Polyner
+          </button>
+        
+      
+    </div>
+
+    <div class="nerfies-compare nerfies-compare-tab-gallery__viewer">
       <div class="nerfies-compare__overlay">
         <span class="nerfies-compare__label nerfies-compare__label--left" data-compare-left-label="">FDK</span>
         <span class="nerfies-compare__label nerfies-compare__label--right" data-compare-right-label="">Ours</span>
@@ -836,118 +1191,365 @@ Compared with the results from FDK, our method reduces metal-induced streaky art
       <p class="nerfies-caption" data-compare-caption="">Real broccoli scene.</p>
     </div>
 
-    <div class="nerfies-compare-thumbs" role="list" aria-label="Test comparisons">
+    <div class="nerfies-compare-tab-gallery__panels">
       
         
         
-        
-        
-        
-        
+          
+          
+          <div id="eg2026-real-comparisons-panel-0" class="nerfies-compare-tab-gallery__panel is-active" data-compare-panel="" data-tab-index="0" role="tabpanel" aria-labelledby="eg2026-real-comparisons-tab-0">
+            <div class="nerfies-compare-thumbs" role="list" aria-label="Real scenes">
+              
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
-        
-        
-        
-        
-        
-        
+                
+                
+                
 
-        <button type="button" class="nerfies-compare-thumb is-active" data-compare-thumb="" data-left-image="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/real/fdk/broccoli_fdk.png" data-right-image="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/real/ours/broccoli_ours.png" data-left-alt="FDK" data-right-alt="Ours" data-left-label="FDK" data-right-label="Ours" data-caption="Real broccoli scene." data-divider-position="50" aria-pressed="true" aria-label="Real - Broccoli">
-          <img src="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/real/fdk/broccoli_fdk.png" alt="Real - Broccoli" loading="lazy">
-        </button>
+                <button type="button" class="nerfies-compare-thumb" data-compare-thumb="" data-left-image="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/real/fdk/broccoli_fdk.png" data-right-image="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/real/ours/broccoli_ours.png" data-left-alt="FDK" data-right-alt="Ours" data-left-label="FDK" data-right-label="Ours" data-caption="Real broccoli scene." data-divider-position="50" data-scene-key="broccoli" aria-pressed="false" aria-label="Broccoli" title="Broccoli">
+                  <img src="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/real/ours/broccoli_ours.png" alt="Broccoli" loading="lazy">
+                </button>
+              
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+
+                
+                
+                
+
+                <button type="button" class="nerfies-compare-thumb" data-compare-thumb="" data-left-image="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/real/fdk/chicken_fdk.png" data-right-image="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/real/ours/chicken_ours.png" data-left-alt="FDK" data-right-alt="Ours" data-left-label="FDK" data-right-label="Ours" data-caption="Real chicken scene." data-divider-position="50" data-scene-key="chicken" aria-pressed="false" aria-label="Chicken" title="Chicken">
+                  <img src="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/real/ours/chicken_ours.png" alt="Chicken" loading="lazy">
+                </button>
+              
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+
+                
+                
+                
+
+                <button type="button" class="nerfies-compare-thumb" data-compare-thumb="" data-left-image="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/real/fdk/paprika_fdk.png" data-right-image="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/real/ours/paprika_ours.png" data-left-alt="FDK" data-right-alt="Ours" data-left-label="FDK" data-right-label="Ours" data-caption="Real paprika scene." data-divider-position="50" data-scene-key="paprika" aria-pressed="false" aria-label="Paprika" title="Paprika">
+                  <img src="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/real/ours/paprika_ours.png" alt="Paprika" loading="lazy">
+                </button>
+              
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+
+                
+                
+                
+
+                <button type="button" class="nerfies-compare-thumb" data-compare-thumb="" data-left-image="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/real/fdk/walnut_fdk.png" data-right-image="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/real/ours/walnut_ours.png" data-left-alt="FDK" data-right-alt="Ours" data-left-label="FDK" data-right-label="Ours" data-caption="Real walnut scene." data-divider-position="50" data-scene-key="walnut" aria-pressed="false" aria-label="Walnut" title="Walnut">
+                  <img src="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/real/ours/walnut_ours.png" alt="Walnut" loading="lazy">
+                </button>
+              
+            </div>
+          </div>
+        
       
         
         
-        
-        
-        
-        
+          
+          
+          <div id="eg2026-real-comparisons-panel-1" class="nerfies-compare-tab-gallery__panel" data-compare-panel="" data-tab-index="1" role="tabpanel" aria-labelledby="eg2026-real-comparisons-tab-1" hidden="">
+            <div class="nerfies-compare-thumbs" role="list" aria-label="Real scenes">
+              
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
-        
-        
-        
-        
-        
-        
+                
+                
+                
 
-        <button type="button" class="nerfies-compare-thumb" data-compare-thumb="" data-left-image="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/real/fdk/chicken_fdk.png" data-right-image="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/real/ours/chicken_ours.png" data-left-alt="FDK" data-right-alt="Ours" data-left-label="FDK" data-right-label="Ours" data-caption="Real chicken scene." data-divider-position="50" aria-pressed="false" aria-label="Real - Chicken">
-          <img src="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/real/fdk/chicken_fdk.png" alt="Real - Chicken" loading="lazy">
-        </button>
+                <button type="button" class="nerfies-compare-thumb" data-compare-thumb="" data-left-image="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/real/limar/broccoli_limar.png" data-right-image="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/real/ours/broccoli_ours.png" data-left-alt="LIMAR" data-right-alt="Ours" data-left-label="LIMAR" data-right-label="Ours" data-caption="Real broccoli scene." data-divider-position="50" data-scene-key="broccoli" aria-pressed="false" aria-label="Broccoli" title="Broccoli">
+                  <img src="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/real/ours/broccoli_ours.png" alt="Broccoli" loading="lazy">
+                </button>
+              
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+
+                
+                
+                
+
+                <button type="button" class="nerfies-compare-thumb" data-compare-thumb="" data-left-image="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/real/limar/chicken_limar.png" data-right-image="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/real/ours/chicken_ours.png" data-left-alt="LIMAR" data-right-alt="Ours" data-left-label="LIMAR" data-right-label="Ours" data-caption="Real chicken scene." data-divider-position="50" data-scene-key="chicken" aria-pressed="false" aria-label="Chicken" title="Chicken">
+                  <img src="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/real/ours/chicken_ours.png" alt="Chicken" loading="lazy">
+                </button>
+              
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+
+                
+                
+                
+
+                <button type="button" class="nerfies-compare-thumb" data-compare-thumb="" data-left-image="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/real/limar/paprika_limar.png" data-right-image="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/real/ours/paprika_ours.png" data-left-alt="LIMAR" data-right-alt="Ours" data-left-label="LIMAR" data-right-label="Ours" data-caption="Real paprika scene." data-divider-position="50" data-scene-key="paprika" aria-pressed="false" aria-label="Paprika" title="Paprika">
+                  <img src="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/real/ours/paprika_ours.png" alt="Paprika" loading="lazy">
+                </button>
+              
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+
+                
+                
+                
+
+                <button type="button" class="nerfies-compare-thumb" data-compare-thumb="" data-left-image="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/real/limar/walnut_limar.png" data-right-image="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/real/ours/walnut_ours.png" data-left-alt="LIMAR" data-right-alt="Ours" data-left-label="LIMAR" data-right-label="Ours" data-caption="Real walnut scene." data-divider-position="50" data-scene-key="walnut" aria-pressed="false" aria-label="Walnut" title="Walnut">
+                  <img src="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/real/ours/walnut_ours.png" alt="Walnut" loading="lazy">
+                </button>
+              
+            </div>
+          </div>
+        
       
         
         
-        
-        
-        
-        
+          
+          
+          <div id="eg2026-real-comparisons-panel-2" class="nerfies-compare-tab-gallery__panel" data-compare-panel="" data-tab-index="2" role="tabpanel" aria-labelledby="eg2026-real-comparisons-tab-2" hidden="">
+            <div class="nerfies-compare-thumbs" role="list" aria-label="Real scenes">
+              
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
-        
-        
-        
-        
-        
-        
+                
+                
+                
 
-        <button type="button" class="nerfies-compare-thumb" data-compare-thumb="" data-left-image="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/real/fdk/paprika_fdk.png" data-right-image="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/real/ours/paprika_ours.png" data-left-alt="FDK" data-right-alt="Ours" data-left-label="FDK" data-right-label="Ours" data-caption="Real paprika scene." data-divider-position="50" aria-pressed="false" aria-label="Real - Paprika">
-          <img src="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/real/fdk/paprika_fdk.png" alt="Real - Paprika" loading="lazy">
-        </button>
+                <button type="button" class="nerfies-compare-thumb" data-compare-thumb="" data-left-image="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/real/parketal/broccoli_parketal.png" data-right-image="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/real/ours/broccoli_ours.png" data-left-alt="Park et al." data-right-alt="Ours" data-left-label="Park et al." data-right-label="Ours" data-caption="Real broccoli scene." data-divider-position="50" data-scene-key="broccoli" aria-pressed="false" aria-label="Broccoli" title="Broccoli">
+                  <img src="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/real/ours/broccoli_ours.png" alt="Broccoli" loading="lazy">
+                </button>
+              
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+
+                
+                
+                
+
+                <button type="button" class="nerfies-compare-thumb" data-compare-thumb="" data-left-image="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/real/parketal/chicken_parketal.png" data-right-image="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/real/ours/chicken_ours.png" data-left-alt="Park et al." data-right-alt="Ours" data-left-label="Park et al." data-right-label="Ours" data-caption="Real chicken scene." data-divider-position="50" data-scene-key="chicken" aria-pressed="false" aria-label="Chicken" title="Chicken">
+                  <img src="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/real/ours/chicken_ours.png" alt="Chicken" loading="lazy">
+                </button>
+              
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+
+                
+                
+                
+
+                <button type="button" class="nerfies-compare-thumb" data-compare-thumb="" data-left-image="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/real/parketal/paprika_parketal.png" data-right-image="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/real/ours/paprika_ours.png" data-left-alt="Park et al." data-right-alt="Ours" data-left-label="Park et al." data-right-label="Ours" data-caption="Real paprika scene." data-divider-position="50" data-scene-key="paprika" aria-pressed="false" aria-label="Paprika" title="Paprika">
+                  <img src="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/real/ours/paprika_ours.png" alt="Paprika" loading="lazy">
+                </button>
+              
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+
+                
+                
+                
+
+                <button type="button" class="nerfies-compare-thumb" data-compare-thumb="" data-left-image="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/real/parketal/walnut_parketal.png" data-right-image="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/real/ours/walnut_ours.png" data-left-alt="Park et al." data-right-alt="Ours" data-left-label="Park et al." data-right-label="Ours" data-caption="Real walnut scene." data-divider-position="50" data-scene-key="walnut" aria-pressed="false" aria-label="Walnut" title="Walnut">
+                  <img src="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/real/ours/walnut_ours.png" alt="Walnut" loading="lazy">
+                </button>
+              
+            </div>
+          </div>
+        
       
         
         
-        
-        
-        
-        
+          
+          
+          <div id="eg2026-real-comparisons-panel-3" class="nerfies-compare-tab-gallery__panel" data-compare-panel="" data-tab-index="3" role="tabpanel" aria-labelledby="eg2026-real-comparisons-tab-3" hidden="">
+            <div class="nerfies-compare-thumbs" role="list" aria-label="Real scenes">
+              
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
-        
-        
-        
-        
-        
-        
+                
+                
+                
 
-        <button type="button" class="nerfies-compare-thumb" data-compare-thumb="" data-left-image="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/real/fdk/walnut_fdk.png" data-right-image="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/real/ours/walnut_ours.png" data-left-alt="FDK" data-right-alt="Ours" data-left-label="FDK" data-right-label="Ours" data-caption="Real walnut scene." data-divider-position="50" aria-pressed="false" aria-label="Real - Walnut">
-          <img src="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/real/fdk/walnut_fdk.png" alt="Real - Walnut" loading="lazy">
-        </button>
-      
-        
-        
-        
-        
-        
-        
+                <button type="button" class="nerfies-compare-thumb" data-compare-thumb="" data-left-image="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/real/polyner/broccoli_polyner.png" data-right-image="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/real/ours/broccoli_ours.png" data-left-alt="Polyner" data-right-alt="Ours" data-left-label="Polyner" data-right-label="Ours" data-caption="Real broccoli scene." data-divider-position="50" data-scene-key="broccoli" aria-pressed="false" aria-label="Broccoli" title="Broccoli">
+                  <img src="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/real/ours/broccoli_ours.png" alt="Broccoli" loading="lazy">
+                </button>
+              
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
-        
-        
-        
-        
-        
-        
+                
+                
+                
 
-        <button type="button" class="nerfies-compare-thumb" data-compare-thumb="" data-left-image="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/synthetic/fdk/lidc_fdk.png" data-right-image="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/synthetic/ours/lidc_ours.png" data-left-alt="FDK" data-right-alt="Ours" data-left-label="FDK" data-right-label="Ours" data-caption="Synthetic chest scene." data-divider-position="50" aria-pressed="false" aria-label="Synthetic - LIDC">
-          <img src="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/synthetic/fdk/lidc_fdk.png" alt="Synthetic - LIDC" loading="lazy">
-        </button>
-      
-        
-        
-        
-        
-        
-        
+                <button type="button" class="nerfies-compare-thumb" data-compare-thumb="" data-left-image="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/real/polyner/chicken_polyner.png" data-right-image="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/real/ours/chicken_ours.png" data-left-alt="Polyner" data-right-alt="Ours" data-left-label="Polyner" data-right-label="Ours" data-caption="Real chicken scene." data-divider-position="50" data-scene-key="chicken" aria-pressed="false" aria-label="Chicken" title="Chicken">
+                  <img src="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/real/ours/chicken_ours.png" alt="Chicken" loading="lazy">
+                </button>
+              
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
 
-        
-        
-        
-        
-        
-        
+                
+                
+                
 
-        <button type="button" class="nerfies-compare-thumb" data-compare-thumb="" data-left-image="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/synthetic/fdk/teeth_fdk.png" data-right-image="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/synthetic/ours/teeth_ours.png" data-left-alt="FDK" data-right-alt="Ours" data-left-label="FDK" data-right-label="Ours" data-caption="Synthetic teeth scene." data-divider-position="50" aria-pressed="false" aria-label="Synthetic - Teeth">
-          <img src="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/synthetic/fdk/teeth_fdk.png" alt="Synthetic - Teeth" loading="lazy">
-        </button>
+                <button type="button" class="nerfies-compare-thumb" data-compare-thumb="" data-left-image="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/real/polyner/paprika_polyner.png" data-right-image="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/real/ours/paprika_ours.png" data-left-alt="Polyner" data-right-alt="Ours" data-left-label="Polyner" data-right-label="Ours" data-caption="Real paprika scene." data-divider-position="50" data-scene-key="paprika" aria-pressed="false" aria-label="Paprika" title="Paprika">
+                  <img src="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/real/ours/paprika_ours.png" alt="Paprika" loading="lazy">
+                </button>
+              
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+
+                
+                
+                
+
+                <button type="button" class="nerfies-compare-thumb" data-compare-thumb="" data-left-image="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/real/polyner/walnut_polyner.png" data-right-image="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/real/ours/walnut_ours.png" data-left-alt="Polyner" data-right-alt="Ours" data-left-label="Polyner" data-right-label="Ours" data-caption="Real walnut scene." data-divider-position="50" data-scene-key="walnut" aria-pressed="false" aria-label="Walnut" title="Walnut">
+                  <img src="/assets/publication/%5BEG2026%5Dcbct_mar/project/comparisons/real/ours/walnut_ours.png" alt="Walnut" loading="lazy">
+                </button>
+              
+            </div>
+          </div>
+        
       
     </div>
   </div>
+
+
+    </div>
+
+
+
+</div>
 
 <!-- ## Notes
 
@@ -985,7 +1587,7 @@ When you share the exact repository/page you want to import, we can map each sou
     <a href="https://github.com/nerfies/nerfies.github.io" target="_blank" rel="noopener noreferrer">Nerfies</a>.
   </p>
 
-  <script defer src="/assets/js/project-showcase.js?8fd06ff722bb84decd83ae3e824f0143"></script>
+  <script defer src="/assets/js/project-showcase.js?552b7de748668a2cd37b4f2d03433703"></script>
 </article>
 
       
@@ -1095,7 +1697,7 @@ When you share the exact repository/page you want to import, we can map each sou
   <!-- Image Layouts -->
   
     <script defer src="https://cdn.jsdelivr.net/npm/img-comparison-slider@8.0.6/dist/index.min.js" integrity="sha256-EXHg3x1K4oIWdyohPeKX2ZS++Wxt/FRPH7Nl01nat1o=" crossorigin="anonymous"></script>
-    <script defer src="/assets/js/project-compare-gallery.js?9c1f8a06fdc50138854db3f91a92017e"></script>
+    <script defer src="/assets/js/project-compare-gallery.js?eb7e17d485daad4fbb7f92a403ea1afb"></script>
   
   
   

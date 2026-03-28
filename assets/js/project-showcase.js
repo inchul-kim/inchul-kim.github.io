@@ -113,10 +113,44 @@
     const swipeVerticalRatio = Math.max(0.2, parseNumber(carousel.dataset.swipeVerticalRatio, 1.0));
     const wrap = parseBoolean(carousel.dataset.wrap, true);
 
+    const carouselRoot = carousel.closest(".nerfies-bcarousel");
+    const slides = Array.from(carousel.querySelectorAll(".carousel-item"));
+    const thumbs = carouselRoot ? Array.from(carouselRoot.querySelectorAll("[data-bcarousel-thumb]")) : [];
+    const currentCountNode = carouselRoot ? carouselRoot.querySelector("[data-bcarousel-current]") : null;
+    const totalCountNode = carouselRoot ? carouselRoot.querySelector("[data-bcarousel-total]") : null;
+    if (slides.length === 0) return;
+
     const prevControl = carousel.querySelector(".carousel-control-prev");
     const nextControl = carousel.querySelector(".carousel-control-next");
     const touchSurface = carousel.querySelector(".carousel-inner") || carousel;
     touchSurface.style.touchAction = "pan-y";
+
+    let currentIndex = Math.max(
+      0,
+      slides.findIndex((slide) => slide.classList.contains("active"))
+    );
+
+    if (totalCountNode) {
+      totalCountNode.textContent = String(slides.length);
+    }
+
+    const updateThumbAndCounter = (index) => {
+      if (currentCountNode) {
+        currentCountNode.textContent = String(index + 1);
+      }
+
+      thumbs.forEach((thumb, thumbIndex) => {
+        const isActive = thumbIndex === index;
+        thumb.classList.toggle("is-active", isActive);
+        thumb.setAttribute("aria-pressed", isActive ? "true" : "false");
+        thumb.setAttribute("aria-current", isActive ? "true" : "false");
+      });
+
+      const activeThumb = thumbs[index];
+      if (activeThumb instanceof HTMLElement) {
+        activeThumb.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+      }
+    };
 
     let startX = 0;
     let startY = 0;
@@ -141,6 +175,21 @@
       bootstrapApi.carousel("pause");
     }
 
+    const activateIndex = (index) => {
+      if (!Number.isFinite(index) || index < 0 || index >= slides.length) return;
+
+      if (bootstrapApi) {
+        bootstrapApi.carousel(index);
+        bootstrapApi.carousel("pause");
+      } else {
+        slides.forEach((slide, slideIndex) => {
+          slide.classList.toggle("active", slideIndex === index);
+        });
+        currentIndex = index;
+        updateThumbAndCounter(currentIndex);
+      }
+    };
+
     const triggerSlide = (direction) => {
       if (bootstrapApi) {
         bootstrapApi.carousel(direction);
@@ -148,12 +197,57 @@
         return;
       }
 
-      if (direction === "next" && nextControl instanceof HTMLElement) {
-        nextControl.click();
-      } else if (direction === "prev" && prevControl instanceof HTMLElement) {
-        prevControl.click();
+      if (direction === "next") {
+        const nextIndex = currentIndex < slides.length - 1 ? currentIndex + 1 : wrap ? 0 : currentIndex;
+        activateIndex(nextIndex);
+      } else if (direction === "prev") {
+        const prevIndex = currentIndex > 0 ? currentIndex - 1 : wrap ? slides.length - 1 : currentIndex;
+        activateIndex(prevIndex);
       }
     };
+
+    thumbs.forEach((thumb) => {
+      thumb.addEventListener("click", () => {
+        const index = Number(thumb.dataset.slideIndex);
+        activateIndex(index);
+      });
+    });
+
+    if (!bootstrapApi) {
+      if (nextControl instanceof HTMLElement) {
+        nextControl.addEventListener("click", (event) => {
+          event.preventDefault();
+          triggerSlide("next");
+        });
+      }
+      if (prevControl instanceof HTMLElement) {
+        prevControl.addEventListener("click", (event) => {
+          event.preventDefault();
+          triggerSlide("prev");
+        });
+      }
+    }
+
+    const syncFromSlidEvent = (event) => {
+      const relatedTarget = event && event.relatedTarget;
+      const nextIndex = slides.findIndex((slide) => slide === relatedTarget);
+      if (nextIndex >= 0) {
+        currentIndex = nextIndex;
+      } else {
+        currentIndex = Math.max(
+          0,
+          slides.findIndex((slide) => slide.classList.contains("active"))
+        );
+      }
+      updateThumbAndCounter(currentIndex);
+      if (bootstrapApi) bootstrapApi.carousel("pause");
+    };
+
+    if (bootstrapApi && typeof bootstrapApi.on === "function") {
+      bootstrapApi.on("slid.bs.carousel", syncFromSlidEvent);
+    } else {
+      carousel.addEventListener("slid.bs.carousel", syncFromSlidEvent);
+    }
 
     touchSurface.addEventListener(
       "touchstart",
@@ -206,6 +300,7 @@
       { passive: true }
     );
 
+    updateThumbAndCounter(currentIndex);
     carousel.dataset.touchSwipeInit = "true";
   }
 
