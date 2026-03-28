@@ -413,6 +413,23 @@ html[data-theme="dark"] .nerfies-teaser-media .nerfies-teaser-image--dark {
   display: none !important;
 }
 
+.project-compare-sections-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.project-compare-sections-grid > .project-compare-section {
+  min-width: 0;
+  margin-bottom: 0;
+}
+
+.project-compare-sections-grid .nerfies-compare-tab-gallery {
+  width: 100%;
+  min-width: 0;
+}
+
 .project-compare-section {
   margin-bottom: var(--project-compare-section-gap, 2rem);
 }
@@ -474,6 +491,13 @@ html[data-theme="dark"] .nerfies-teaser-media .nerfies-teaser-image--dark {
   width: 100%;
   border-radius: 0.5rem;
   overflow: hidden;
+}
+
+@media (max-width: 900px) {
+  .project-compare-sections-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
 }
 
 @media (max-width: 768px) {

@@ -275,7 +275,7 @@
     <div class="container mt-5" role="main">
       
         <article class="nerfies-project-page">
-  <link rel="stylesheet" href="/assets/css/nerfies-project.css?b70b2c5b67d6b7ec9c41b80b483fb550">
+  <link rel="stylesheet" href="/assets/css/nerfies-project.css?1f3bd2ca8264b3261289ee152f0b2b79">
   
   
     
@@ -816,8 +816,11 @@ You can replace this section with adapted HTML blocks from the reference templat
 <p>We benchmark against baseline methods (FDK, LIMAR) and NeRF-based MAR approaches (Park et al., Polyner) across synthetic and real scenes.
 Our method consistently achieves superior artifact reduction while preserving fine structural details.</p>
 
-<section class="project-compare-section" style="--project-compare-section-gap: 2rem; --project-compare-title-gap: 1rem;">
-  <h3 class="project-compare-section__title">Synthetic Scenes</h3>
+<div class="project-compare-sections-grid">
+
+
+  <section class="project-compare-section" style="--project-compare-section-gap: 2rem; --project-compare-title-gap: 1rem;">
+    <h3 class="project-compare-section__title">Synthetic Scenes</h3>
 
 
 
@@ -840,7 +843,7 @@ Our method consistently achieves superior artifact reduction while preserving fi
   
   
 
-  <div id="eg2026-synthetic-comparisons" class="nerfies-compare-tab-gallery" data-compare-tab-gallery="" style="max-width: 1000px; margin-left: auto; margin-right: auto;">
+  <div id="eg2026-synthetic-comparisons" class="nerfies-compare-tab-gallery" data-compare-tab-gallery="" style="max-width: min(100%, 1000px); margin-left: auto; margin-right: auto;">
     <div class="nerfies-tabs__list nerfies-compare-tab-gallery__tabs" role="tablist" aria-label="Comparison methods">
       
         
@@ -1103,10 +1106,12 @@ Our method consistently achieves superior artifact reduction while preserving fi
 
 
 
-</section>
+  </section>
 
-<section class="project-compare-section" style="--project-compare-section-gap: 2rem; --project-compare-title-gap: 1rem;">
-  <h3 class="project-compare-section__title">Real Scenes</h3>
+
+
+  <section class="project-compare-section" style="--project-compare-section-gap: 2rem; --project-compare-title-gap: 1rem;">
+    <h3 class="project-compare-section__title">Real Scenes</h3>
 
 
 
@@ -1117,19 +1122,19 @@ Our method consistently achieves superior artifact reduction while preserving fi
 
   
 
-  
-  
-  
-  
   
   
   
   
+  
+  
+  
+  
 
   
   
 
-  <div id="eg2026-real-comparisons" class="nerfies-compare-tab-gallery" data-compare-tab-gallery="" style="max-width: 1000px; margin-left: auto; margin-right: auto;">
+  <div id="eg2026-real-comparisons" class="nerfies-compare-tab-gallery" data-compare-tab-gallery="" style="max-width: min(100%, 1000px); margin-left: auto; margin-right: auto;">
     <div class="nerfies-tabs__list nerfies-compare-tab-gallery__tabs" role="tablist" aria-label="Comparison methods">
       
         
@@ -1544,7 +1549,11 @@ Our method consistently achieves superior artifact reduction while preserving fi
 
 
 
-</section>
+  </section>
+
+
+
+</div>
 
 <!-- ## Notes
 
