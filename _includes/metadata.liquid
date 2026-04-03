@@ -59,7 +59,10 @@
   <meta property="og:type" content="{% if is_blog_post %}article{% else %}website{% endif %}">
   <meta property="og:title" content="{% if resolved_page_title %}{{ title }} | {{ resolved_page_title }}{% else %}{{ title }}{% endif %}">
   <meta property="og:url" content="{{ page.url | prepend: site.baseurl | prepend: site.url | remove_first: 'index.html' }}">
-  <meta property="og:description" content="{% if resolved_page_description %}{{ resolved_page_description }}{% else %}{{ site.description }}{% endif %}">
+  <meta
+    property="og:description"
+    content="{% if resolved_page_description %}{{ resolved_page_description }}{% else %}{{ site.description }}{% endif %}"
+  >
   {% if page.og_image or site.og_image %}
     <meta property="og:image" content="{% if page.og_image %}{{ page.og_image }}{% else %}{{ site.og_image }}{% endif %}">
   {% endif %}
@@ -68,7 +71,10 @@
   <!-- Twitter card -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="{% if resolved_page_title %}{{ resolved_page_title }}{% else %}{{ title }}{% endif %}">
-  <meta name="twitter:description" content="{% if resolved_page_description %}{{ resolved_page_description }}{% else %}{{ site.description }}{% endif %}">
+  <meta
+    name="twitter:description"
+    content="{% if resolved_page_description %}{{ resolved_page_description }}{% else %}{{ site.description }}{% endif %}"
+  >
   {% if page.og_image or site.og_image %}
     <meta name="twitter:image" content="{% if page.og_image %}{{ page.og_image }}{% else %}{{ site.og_image }}{% endif %}">
   {% endif %}
