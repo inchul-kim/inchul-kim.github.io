@@ -3,6 +3,7 @@ layout: default
 ---
 <article class="nerfies-project-page">
   <link rel="stylesheet" href="{{ '/assets/css/nerfies-project.css' | relative_url | bust_file_cache }}">
+  {% assign project_title = page.publication_title | default: page.title %}
   {% assign use_affiliation_superscripts = false %}
   {% if page.authors %}
     {% for author in page.authors %}
@@ -24,7 +25,7 @@ layout: default
     {% if page.project_kicker %}
       <p class="nerfies-kicker">{{ page.project_kicker }}</p>
     {% endif %}
-    <h1 class="nerfies-title">{{ page.title }}</h1>
+    <h1 class="nerfies-title">{{ project_title }}</h1>
     {% if page.project_subtitle %}
       <p class="nerfies-subtitle">{{ page.project_subtitle }}</p>
     {% endif %}
@@ -159,7 +160,7 @@ layout: default
                 {% if teaser_image_mobile_url %}
                   <source media="(max-width: 576px)" srcset="{{ teaser_image_mobile_url }}" />
                 {% endif %}
-                <img class="nerfies-teaser-image nerfies-teaser-image--light" src="{{ teaser_image_url }}" alt="{{ page.title }} teaser image (light theme)">
+                <img class="nerfies-teaser-image nerfies-teaser-image--light" src="{{ teaser_image_url }}" alt="{{ project_title }} teaser image (light theme)">
               </picture>
               <picture>
                 {% if teaser_image_dark_mobile_url %}
@@ -168,7 +169,7 @@ layout: default
                 <img
                   class="nerfies-teaser-image nerfies-teaser-image--dark"
                   src="{{ teaser_image_dark_url }}"
-                  alt="{{ page.title }} teaser image (dark theme)"
+                  alt="{{ project_title }} teaser image (dark theme)"
                   onerror="this.style.display='none'; var prev = this.parentElement && this.parentElement.previousElementSibling; if (prev) { var prevImg = prev.querySelector('img'); if (prevImg) { prevImg.style.display='block'; } }"
                 >
               </picture>
@@ -177,7 +178,7 @@ layout: default
                 {% if teaser_image_mobile_url %}
                   <source media="(max-width: 576px)" srcset="{{ teaser_image_mobile_url }}" />
                 {% endif %}
-                <img class="nerfies-teaser-image" src="{{ teaser_image_url }}" alt="{{ page.title }} teaser image">
+                <img class="nerfies-teaser-image" src="{{ teaser_image_url }}" alt="{{ project_title }} teaser image">
               </picture>
             {% endif %}
           {% endcapture %}
@@ -208,13 +209,13 @@ layout: default
               rel="noopener noreferrer"
               aria-label="Open teaser PDF in a new tab"
             >
-              <img src="{{ teaser_pdf_preview_url }}" alt="{{ page.title }} teaser preview">
+              <img src="{{ teaser_pdf_preview_url }}" alt="{{ project_title }} teaser preview">
             </a>
           {% else %}
             <object
               data="{{ teaser_pdf_url }}"
               type="application/pdf"
-              aria-label="{{ page.title }} teaser PDF"
+              aria-label="{{ project_title }} teaser PDF"
               style="height: {{ page.teaser_pdf_height | default: 560 }}px;"
             >
               <p>
@@ -287,7 +288,7 @@ layout: default
   {% if page.citation %}
     <section class="nerfies-section">
       <h2>BibTeX</h2>
-      <pre class="nerfies-bibtex"><code>{{ page.citation }}</code></pre>
+      <pre class="nerfies-bibtex"><code>{{ page.citation | hideCustomBibtex }}</code></pre>
     </section>
   {% endif %}
 

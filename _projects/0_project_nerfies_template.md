@@ -2,6 +2,9 @@
 layout: project_nerfies
 title: "Project Title"
 description: "One-line summary for your projects card."
+# Optional: point to a BibTeX key to inherit title, description, abstract, citation,
+# permalink, authors, and common publication links (Paper, Supp, DOI, arXiv, Code, Data).
+# publication: your_bibtex_key
 importance: 0
 category: work
 published: false
@@ -45,10 +48,10 @@ images:
   compare: true
 project_links:
   - label: Paper
-    url: /assets/publication/[PROJECT_TAG]/paper.pdf
+    # url: /assets/publication/[PROJECT_TAG]/paper.pdf
     icon: fa-solid fa-file-pdf
   - label: arXiv
-    url: https://arxiv.org/abs/0000.00000
+    # url: https://arxiv.org/abs/0000.00000
     icon: ai ai-arxiv
   - label: Code
     url: https://github.com/yourname/your-repo

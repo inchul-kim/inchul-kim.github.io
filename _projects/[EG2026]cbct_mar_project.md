@@ -1,7 +1,6 @@
 ---
 layout: project_nerfies
-title: "Splat-based Metal Artifact Reduction in Cone-Beam CT via Polychromatic Modeling"
-description: "Splat-based Metal Artifact Reduction in Cone-Beam CT via Polychromatic Modeling"
+publication: cbctmar:cgf:2026
 importance: 100
 category: work
 published: true
@@ -25,10 +24,8 @@ images:
   compare: true
 project_links:
   - label: Paper
-    url: /assets/publication/[EG2026]cbct_mar/CTGS-beamhardening-main.pdf
     icon: fa-solid fa-file-pdf
   - label: Supp
-    url: /assets/publication/[EG2026]cbct_mar/CTGS-beamhardening-supple.pdf
     icon: fa-solid fa-file-pdf
   - label: Code
     # url: /tba
@@ -40,7 +37,6 @@ project_links:
   #   # url: https://arxiv.org/abs/xxxx.xxxxx
   #   icon: ai ai-arxiv
   - label: DOI
-    url: https://doi.org/10.1111/cgf.70339
     icon: ai ai-doi
   # - label: Demo Video
   #   url: /assets/publication/[CVPR2026]cbct_pose/ours_broccoli.mp4
@@ -241,16 +237,6 @@ feature_section:
 #   - "Frontmatter fields map correctly to hero and metadata blocks."
 #   - "Teaser media and action links render with the scoped stylesheet."
 #   - "Markdown content and BibTeX display work without touching existing layouts."
-citation: |
-  @Article{Choi:EG:2026,
-    author  = {Kiseok Choi and Inchul Kim and Jaemin Cho and Hyeongjun Cho and Min H. Kim},
-    title   = {Splat-based Metal Artifact Reduction in Cone-Beam CT via Polychromatic Modeling},
-    journal = {Computer Graphics Forum (Proc. EUROGRAPHICS 2026)},
-    year    = {2026},
-    volume  = {45},
-    number  = {2},
-    pages   = {}
-  }
 related_publications: false
 giscus_comments: false
 ---
