@@ -52,7 +52,7 @@ ninja.data = [{
           description: "",
           section: "News",},{id: "projects-splat-based-metal-artifact-reduction-in-cone-beam-ct-via-polychromatic-modeling",
           title: 'Splat-based Metal Artifact Reduction in Cone-Beam CT via Polychromatic Modeling',
-          description: "Splat-based Metal Artifact Reduction in Cone-Beam CT via Polychromatic Modeling",
+          description: "A physics-inspired, CBCT method that reduces metal-induced beam hardening artifacts with polychromatic modeling and Gaussian Splatting.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/eg2026_cbct_mar/";
             },},{
