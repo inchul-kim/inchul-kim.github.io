@@ -272,18 +272,20 @@ html[data-theme="dark"] .nerfies-teaser-media .nerfies-teaser-image--dark {
   grid-auto-flow: column;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  width: 56px;
-  height: 56px;
+  gap: 0.42rem;
+  position: relative;
+  overflow: hidden;
+  width: 52px;
+  height: 52px;
   padding: 0;
   border-radius: 50%;
-  background: rgba(0, 0, 0, 0.14);
+  background: rgba(20, 26, 36, 0.72);
   color: rgba(255, 255, 255, 0.5);
-  border: 2px solid rgba(255, 255, 255, 0.95);
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.35);
-  backdrop-filter: blur(7px);
-  -webkit-backdrop-filter: blur(7px);
-  font-size: 0.78rem;
+  border: 1.5px solid rgba(255, 255, 255, 0.92);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.08) inset,
+    0 4px 12px rgba(0, 0, 0, 0.16);
+  font-size: 0.72rem;
   line-height: 1;
   color: rgba(255, 255, 255, 0.92) !important;
   -webkit-text-fill-color: rgba(255, 255, 255, 0.92);
@@ -291,10 +293,12 @@ html[data-theme="dark"] .nerfies-teaser-media .nerfies-teaser-image--dark {
 
 .nerfies-compare__handle-arrow {
   display: inline-block;
-  font-weight: 700;
+  position: relative;
+  z-index: 1;
+  font-weight: 600;
   color: rgba(255, 255, 255, 0.95) !important;
   -webkit-text-fill-color: rgba(255, 255, 255, 0.95);
-  text-shadow: 0 0 1px rgba(255, 255, 255, 0.35);
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.18);
 }
 
 .nerfies-compare__handle-bar {
