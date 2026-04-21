@@ -2,6 +2,7 @@
   max-width: 980px;
   margin: 0 auto;
   padding-bottom: 2.5rem;
+  --nerfies-kicker-color: #ca8216;
 }
 
 .nerfies-hero {
@@ -14,8 +15,8 @@
   font-size: 1.2rem;
   text-transform: none;
   letter-spacing: 0.01em;
-  color: var(--global-text-color);
-  opacity: 0.5;
+  color: var(--nerfies-kicker-color);
+  opacity: 1;
   font-weight: 700;
 }
 
@@ -188,11 +189,19 @@ html[data-theme="dark"] .nerfies-teaser-media .nerfies-teaser-image--light {
   display: none;
 }
 
+html[data-theme="dark"] .nerfies-project-page {
+  --nerfies-kicker-color: #ffd166;
+}
+
 html[data-theme="dark"] .nerfies-teaser-media .nerfies-teaser-image--dark {
   display: block;
 }
 
 @media (prefers-color-scheme: dark) {
+  html:not([data-theme]) .nerfies-project-page {
+    --nerfies-kicker-color: #ffd166;
+  }
+
   html:not([data-theme]) .nerfies-teaser-media .nerfies-teaser-image--light {
     display: none;
   }
