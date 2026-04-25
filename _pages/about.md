@@ -2,7 +2,7 @@
 layout: about
 title: Home
 permalink: /
-# subtitle: <a href='https://vclab.kaist.ac.kr/'>KAIST Visual Computing Lab</a>
+subtitle: <a href='https://vclab.kaist.ac.kr/'>KAIST Visual Computing Lab</a>
 
 # profile:
 #   align: right
@@ -27,13 +27,12 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-<!-- I am a PhD student of the [Visual Computing Lab](https://vclab.kaist.ac.kr/) at the Korea Advanced Institute of Science and Technology (KAIST), South Korea, under supervision of Prof. [Min H. Kim](https://vclab.kaist.ac.kr/minhkim/index.html). -->
-<!-- Click <a href="{{ '/assets/pdf/ickim_cv_latest.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer">here</a> for the CV. -->
+I am a PhD student of the [Visual Computing Lab](https://vclab.kaist.ac.kr/) at the Korea Advanced Institute of Science and Technology (KAIST), South Korea, under the supervision of Prof. [Min H. Kim](https://vclab.kaist.ac.kr/minhkim/index.html).
 
-<!-- Current research fields: hyperspectral imaging, learning-based image reconstruction, computational imaging -->
+<!-- My current research interests include hyperspectral imaging, learning-based image reconstruction, and computational imaging. -->
 
-<!-- ABCDE Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+<div class="social">
+  <div class="contact-icons">{% include social.liquid %}</div>
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
-
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them. -->
+  <div class="contact-note">{{ site.contact_note }}</div>
+</div>
