@@ -26,11 +26,13 @@ You can find my full CV <a href="{{ '/assets/pdf/ickim_cv_latest.pdf' | relative
 
 #### Recent Collaborative Research
 
+<div class="bio-compact-list" markdown="1">
+
 In addition to my primary research direction, I have also contributed to collaborative projects on CT-related imaging problems.
 
 - **Cone-beam CT reconstruction**: studying reconstruction under sparse views and challenging acquisition settings.
 - **Metal artifact reduction**: developing methods to reduce severe CT artifacts while preserving meaningful structures.
 
-
+</div>
 
 {% include bio/cv-highlights.liquid %}

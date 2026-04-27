@@ -93,6 +93,16 @@
   }
 }
 
+.bio-compact-list {
+  p {
+    margin-bottom: 0.35rem;
+  }
+
+  ul {
+    margin-top: 0;
+  }
+}
+
 // @media (max-width: 768px) {
 //   .thumbnail-img {
 //     max-width: 90%; // allow image to grow wider on small screens

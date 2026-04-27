@@ -226,7 +226,13 @@ layout: default
           {% endif %}
         {% endif %}
       </div>
-      {% if teaser_pdf_rendered or (teaser_pdf_url and page.teaser_image == blank) %}
+      {% assign show_teaser_pdf_link = false %}
+      {% if teaser_pdf_rendered %}
+        {% assign show_teaser_pdf_link = true %}
+      {% elsif teaser_pdf_url and page.teaser_image == blank %}
+        {% assign show_teaser_pdf_link = true %}
+      {% endif %}
+      {% if show_teaser_pdf_link %}
         <p class="nerfies-teaser-pdf-link">
           <a href="{{ teaser_pdf_url }}" target="_blank" rel="noopener noreferrer">Open teaser PDF in a new tab</a>
         </p>
