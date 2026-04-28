@@ -62,6 +62,17 @@
   margin: 0 auto;
 }
 
+@media (max-width: 576px) {
+  .teaching-list .w-90 {
+    width: 100% !important;
+  }
+
+  .teaching-list .thumbnail-img {
+    aspect-ratio: auto;
+    max-height: none;
+  }
+}
+
 /* =========================================
    News inline animation (KEYFRAMES)
    ========================================= */
