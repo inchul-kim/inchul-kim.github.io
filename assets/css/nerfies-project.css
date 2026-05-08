@@ -55,6 +55,16 @@
   color: var(--global-divider-color);
 }
 
+.nerfies-award {
+  margin: 0.8rem 0 0.25rem;
+  font-size: 1.25rem;
+  line-height: 1.35;
+}
+
+.nerfies-award p {
+  margin: 0;
+}
+
 .nerfies-links {
   display: flex;
   flex-wrap: wrap;
