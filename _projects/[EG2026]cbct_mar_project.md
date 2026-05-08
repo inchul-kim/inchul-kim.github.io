@@ -7,6 +7,7 @@ published: true
 permalink: /projects/eg2026_cbct_mar/
 # img: "assets/publication/[CVPR2023]dual_pixel/dual_pixel.png"
 project_kicker: "Computer Graphics Forum (presented at Eurographics 2026)"
+project_award: '<a href="https://www.eg.org/wp/eurographics-awards-programme/other-eg-awards/2297-2/" style="color: red !important; font-weight: 900;"><u>Günter Enderle Best Paper Award</u></a>'
 # project_subtitle: "A test page to verify sections, media, links, and typography."
 authors:
   - name: Kiseok Choi

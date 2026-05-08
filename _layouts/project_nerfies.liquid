@@ -81,6 +81,10 @@ layout: default
       {% include project_notes.liquid notes=page.author_notes %}
     {% endif %}
 
+    {% if page.project_award %}
+      <div class="nerfies-award">{{ page.project_award | markdownify }}</div>
+    {% endif %}
+
     {% if page.project_links %}
       <div class="nerfies-links">
         {% for link in page.project_links %}
