@@ -297,19 +297,6 @@
           };
         });
 
-        var projects = sortByDateDescending(toArray(parsed.projects), "startDate");
-        addTimelineCard(container, "Projects", projects, function (item) {
-          return {
-            title: item.name || "",
-            url: item.url || null,
-            subtitle: item.institution || "",
-            summary: "",
-            highlights: item.highlights || [],
-            date: getDateRange(item.startDate, item.endDate, true),
-            location: item.location || "",
-          };
-        });
-
         var awards = sortByDateDescending(toArray(parsed.awards), "date");
         addTimelineCard(container, "Honors and Awards", awards, function (item) {
           return {
@@ -320,6 +307,19 @@
             highlights: item.highlights || item.summary || [],
             date: normalizeDate(item.date),
             location: "",
+          };
+        });
+
+        var projects = sortByDateDescending(toArray(parsed.projects), "startDate");
+        addTimelineCard(container, "Projects", projects, function (item) {
+          return {
+            title: item.name || "",
+            url: item.url || null,
+            subtitle: item.institution || "",
+            summary: "",
+            highlights: item.highlights || [],
+            date: getDateRange(item.startDate, item.endDate, true),
+            location: item.location || "",
           };
         });
       })
