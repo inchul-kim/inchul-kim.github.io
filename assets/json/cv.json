@@ -66,6 +66,29 @@
       "courses": ["Summa Cum Laude"]
     }
   ],
+  "awards": [
+    {
+      "title": "Best Paper Award (Günter Enderle Best Paper Award)",
+      "date": "2026",
+      "awarder": "Eurographics 2026",
+      "url": "/assets/pdf/eg2026_best_paper_award.pdf",
+      "highlights": "Polychromatic modelling of X-ray physics for CBCT metal artifact reduction."
+    },
+    {
+      "title": "Outstanding Teaching Assistant Award (in Korean)",
+      "date": "2023",
+      "awarder": "Korea Advanced Institute of Science and Technology (KAIST)",
+      "url": "/assets/pdf/outstanding_ta_award_spring_2023.pdf"
+      // "highlights": "Compact hyperspectral imaging at low cost (presented at <a href=\"/publications#prism:siga:2017\">ACM SIGGRAPH Asia 2017</a>)."
+    },
+    {
+      "title": "KAIST Breakthroughs",
+      "date": "2017",
+      "awarder": "Korea Advanced Institute of Science and Technology (KAIST)",
+      "url": "https://breakthroughs.kaist.ac.kr/sub02/view/id/228/",
+      "highlights": "Compact hyperspectral imaging at low cost (presented at <a href=\"/publications#prism:siga:2017\">ACM SIGGRAPH Asia 2017</a>)."
+    }
+  ],
   "projects": [
     {
       "name": "Hyperspectral Imaging System",
@@ -93,22 +116,6 @@
       "startDate": "2016",
       "endDate": "2017"
       // "url": "https://example.com"
-    }
-  ],
-  "awards": [
-    {
-      "title": "Outstanding Teaching Assistant Award (in Korean)",
-      "date": "2023",
-      "awarder": "Korea Advanced Institute of Science and Technology (KAIST)",
-      "url": "/assets/pdf/outstanding_ta_award_spring_2023.pdf"
-      // "highlights": "Compact hyperspectral imaging at low cost (presented at <a href=\"/publications#prism:siga:2017\">ACM SIGGRAPH Asia 2017</a>)."
-    },
-    {
-      "title": "KAIST Breakthroughs",
-      "date": "2017",
-      "awarder": "Korea Advanced Institute of Science and Technology (KAIST)",
-      "url": "https://breakthroughs.kaist.ac.kr/sub02/view/id/228/",
-      "highlights": "Compact hyperspectral imaging at low cost (presented at <a href=\"/publications#prism:siga:2017\">ACM SIGGRAPH Asia 2017</a>)."
     }
   ],
   "contact": {
