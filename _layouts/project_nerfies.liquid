@@ -1,8 +1,7 @@
 ---
-layout: default
+layout: project_standalone
 ---
 <article class="nerfies-project-page">
-  <link rel="stylesheet" href="{{ '/assets/css/nerfies-project.css' | relative_url | bust_file_cache }}">
   {% assign project_title = page.publication_title | default: page.title %}
   {% assign use_affiliation_superscripts = false %}
   {% if page.authors %}

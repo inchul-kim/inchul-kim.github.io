@@ -1,3 +1,61 @@
+.project-standalone-container {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 1.25rem max(1rem, 4vw) 3rem;
+}
+
+.project-standalone-theme-toggle {
+  position: fixed;
+  top: 0.85rem;
+  right: max(1rem, 4vw);
+  z-index: 1030;
+  display: grid;
+  place-items: center;
+  width: 2.45rem;
+  height: 2.45rem;
+  padding: 0;
+  border: 1px solid color-mix(in srgb, var(--global-divider-color) 72%, transparent);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--global-bg-color) 94%, var(--global-card-bg-color) 6%);
+  color: var(--global-text-color);
+  box-shadow: 0 0.35rem 1.15rem rgba(0, 0, 0, 0.11);
+  cursor: pointer;
+  transition:
+    transform 0.16s ease,
+    border-color 0.16s ease,
+    box-shadow 0.16s ease,
+    color 0.16s ease;
+}
+
+.project-standalone-theme-toggle:hover,
+.project-standalone-theme-toggle:focus-visible {
+  transform: translateY(-1px);
+  border-color: var(--global-theme-color);
+  color: var(--global-theme-color);
+  box-shadow: 0 0.45rem 1.35rem rgba(0, 0, 0, 0.14);
+  outline: none;
+}
+
+.project-standalone-theme-toggle #light-toggle-system,
+.project-standalone-theme-toggle #light-toggle-dark,
+.project-standalone-theme-toggle #light-toggle-light {
+  grid-area: 1 / 1;
+  padding: 0 !important;
+  margin: 0;
+  width: 1.15rem;
+  height: 1.15rem;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+html[data-theme-setting="system"] .project-standalone-theme-toggle #light-toggle-system,
+html[data-theme-setting="dark"] .project-standalone-theme-toggle #light-toggle-dark,
+html[data-theme-setting="light"] .project-standalone-theme-toggle #light-toggle-light {
+  display: inline-flex;
+}
+
 .nerfies-project-page {
   max-width: 980px;
   margin: 0 auto;
@@ -888,6 +946,11 @@ html[data-theme="dark"] .nerfies-teaser-media .nerfies-teaser-image--dark {
 }
 
 @media (max-width: 768px) {
+  .project-standalone-theme-toggle {
+    top: 0.7rem;
+    right: 0.7rem;
+  }
+
   .nerfies-title {
     font-size: 2rem;
   }
@@ -938,5 +1001,11 @@ html[data-theme="dark"] .nerfies-teaser-media .nerfies-teaser-image--dark {
   .nerfies-bcarousel__thumb-fallback {
     width: 78px;
     height: 52px;
+  }
+}
+
+@media print {
+  .project-standalone-theme-toggle {
+    display: none;
   }
 }

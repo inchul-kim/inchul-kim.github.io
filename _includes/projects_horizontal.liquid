@@ -1,5 +1,15 @@
 <div class="col mb-4">
-  <a href="{% if project.redirect %}{{ project.redirect }}{% else %}{{ project.url | relative_url }}{% endif %}">
+  {% assign project_url = project.url | relative_url %}
+  {% if project.redirect %}
+    {% assign project_url = project.redirect %}
+  {% endif %}
+  <a
+    href="{{ project_url }}"
+    {% if project.layout == 'project_nerfies' or project.open_new_tab %}
+      target="_blank"
+      rel="noopener noreferrer"
+    {% endif %}
+  >
     <div class="card h-100 hoverable">
       <div class="row no-gutters">
         {% if project.img %}

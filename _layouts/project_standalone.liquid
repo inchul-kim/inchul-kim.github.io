@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="{{ site.lang }}">
+  <head>
+    {% if page.redirect %}
+      {% if page.redirect == true %}
+        {% assign redirect = site.baseurl | append: '/' %}
+      {% elsif page.redirect contains '://' %}
+        {% assign redirect = page.redirect %}
+      {% else %}
+        {% assign redirect = page.redirect | relative_url %}
+      {% endif %}
+      <meta http-equiv="refresh" content="3; url={{ redirect }}">
+    {% endif %}
+    <script>
+      window.projectStandaloneThemeIsolated = true;
+    </script>
+    {% include head.liquid %}
+    <link rel="stylesheet" href="{{ '/assets/css/nerfies-project.css' | relative_url | bust_file_cache }}">
+  </head>
+
+  <body class="project-standalone-body">
+    {% if site.enable_darkmode %}
+      <button id="light-toggle" class="project-standalone-theme-toggle" title="Change theme" aria-label="Change theme">
+        <i class="ti ti-sun-moon" id="light-toggle-system"></i>
+        <i class="ti ti-moon-filled" id="light-toggle-dark"></i>
+        <i class="ti ti-sun-filled" id="light-toggle-light"></i>
+      </button>
+    {% endif %}
+
+    <main class="project-standalone-container" role="main">
+      {{ content }}
+    </main>
+
+    {% include scripts.liquid %}
+  </body>
+</html>
