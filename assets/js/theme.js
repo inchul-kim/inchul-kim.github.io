@@ -1,5 +1,8 @@
 // Has to be in the head tag, otherwise a flicker effect will occur.
 
+let pageScopedThemeSetting = null;
+let isPageScopedTheme = () => window.projectStandaloneThemeIsolated === true;
+
 // Toggle through light, dark, and system theme settings.
 let toggleThemeSetting = () => {
   let themeSetting = determineThemeSetting();
@@ -14,7 +17,11 @@ let toggleThemeSetting = () => {
 
 // Change the theme setting and apply the theme.
 let setThemeSetting = (themeSetting) => {
-  localStorage.setItem("theme", themeSetting);
+  if (isPageScopedTheme()) {
+    pageScopedThemeSetting = themeSetting;
+  } else {
+    localStorage.setItem("theme", themeSetting);
+  }
 
   document.documentElement.setAttribute("data-theme-setting", themeSetting);
 
@@ -254,7 +261,7 @@ let transTheme = () => {
 // Determine the expected state of the theme toggle, which can be "dark", "light", or
 // "system". Default is "system".
 let determineThemeSetting = () => {
-  let themeSetting = localStorage.getItem("theme");
+  let themeSetting = pageScopedThemeSetting || localStorage.getItem("theme");
   if (themeSetting != "dark" && themeSetting != "light" && themeSetting != "system") {
     themeSetting = "system";
   }
@@ -285,6 +292,7 @@ let initTheme = () => {
   // Add event listener to the theme toggle button.
   document.addEventListener("DOMContentLoaded", function () {
     const mode_toggle = document.getElementById("light-toggle");
+    if (!mode_toggle) return;
 
     mode_toggle.addEventListener("click", function () {
       toggleThemeSetting();
