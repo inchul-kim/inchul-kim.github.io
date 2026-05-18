@@ -1,14 +1,28 @@
+.project-standalone-body {
+  position: relative;
+}
+
 .project-standalone-container {
   box-sizing: border-box;
   width: 100%;
   padding: 1.25rem max(1rem, 4vw) 3rem;
 }
 
-.project-standalone-theme-toggle {
-  position: fixed;
+.project-standalone-actions {
+  position: absolute;
   top: 0.85rem;
   right: max(1rem, 4vw);
-  z-index: 1030;
+  z-index: 2;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-end;
+  width: auto;
+  padding: 0;
+}
+
+.project-standalone-theme-toggle {
+  position: relative;
+  z-index: 1;
   display: grid;
   place-items: center;
   width: 2.45rem;
@@ -946,8 +960,8 @@ html[data-theme="dark"] .nerfies-teaser-media .nerfies-teaser-image--dark {
 }
 
 @media (max-width: 768px) {
-  .project-standalone-theme-toggle {
-    top: 0.7rem;
+  .project-standalone-actions {
+    top: 0.55rem;
     right: 0.7rem;
   }
 

@@ -20,11 +20,13 @@
 
   <body class="project-standalone-body">
     {% if site.enable_darkmode %}
-      <button id="light-toggle" class="project-standalone-theme-toggle" title="Change theme" aria-label="Change theme">
-        <i class="ti ti-sun-moon" id="light-toggle-system"></i>
-        <i class="ti ti-moon-filled" id="light-toggle-dark"></i>
-        <i class="ti ti-sun-filled" id="light-toggle-light"></i>
-      </button>
+      <div class="project-standalone-actions">
+        <button id="light-toggle" class="project-standalone-theme-toggle" title="Change theme" aria-label="Change theme">
+          <i class="ti ti-sun-moon" id="light-toggle-system"></i>
+          <i class="ti ti-moon-filled" id="light-toggle-dark"></i>
+          <i class="ti ti-sun-filled" id="light-toggle-light"></i>
+        </button>
+      </div>
     {% endif %}
 
     <main class="project-standalone-container" role="main">
