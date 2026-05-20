@@ -114,6 +114,64 @@
   }
 }
 
+:root {
+  --reading-font-size: 1.1rem;
+  --news-font-size: 1rem;
+  --course_desc-font-size: 1.05rem;
+  --reading-line-height: 1.65;
+}
+
+/* General reading text. Keep this scoped so generated CV rows stay balanced. */
+.post article > p,
+.post article > ul,
+.post article > ol,
+.post article .clearfix > p,
+.post article .clearfix > ul,
+.post article .clearfix > ol,
+.bio-compact-list > p,
+.bio-compact-list > ul,
+.bio-compact-list > ol,
+#markdown-content > p,
+#markdown-content > ul,
+#markdown-content > ol {
+  font-size: var(--reading-font-size);
+  line-height: var(--reading-line-height);
+}
+
+/* Project listing card descriptions. */
+.projects .card-text {
+  font-size: var(--reading-font-size);
+  line-height: 1.55;
+}
+
+/* Bio CV entries generated from assets/json/cv.json. Keep date badges compact. */
+#bio-cv-highlights.cv-compact .list-group-item h6,
+#bio-cv-highlights.cv-compact .list-group-item .items,
+#bio-cv-highlights.cv-compact .list-group-item .items li,
+#bio-cv-highlights.cv-compact .list-group-item .item {
+  font-size: var(--reading-font-size) !important;
+}
+
+#bio-cv-highlights.cv-compact .list-group-item h6 {
+  line-height: 1.35;
+}
+
+#bio-cv-highlights.cv-compact .list-group-item .items {
+  line-height: 1.5;
+}
+
+/* Teaching course descriptions. */
+.teaching-list .course-description {
+  font-size: var(--course_desc-font-size);
+  line-height: 1.55;
+}
+
+/* News item text. Keep the date column compact. */
+.news table td {
+  font-size: var(--news-font-size);
+  line-height: 1.55;
+}
+
 // @media (max-width: 768px) {
 //   .thumbnail-img {
 //     max-width: 90%; // allow image to grow wider on small screens

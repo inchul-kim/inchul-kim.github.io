@@ -467,6 +467,13 @@ html[data-theme="dark"] .nerfies-teaser-media .nerfies-teaser-image--dark {
   border-color: var(--global-theme-color);
 }
 
+.nerfies-prose,
+.nerfies-feature-description,
+.nerfies-highlights {
+  font-size: var(--reading-font-size);
+  line-height: var(--reading-line-height);
+}
+
 .nerfies-prose > :first-child {
   margin-top: 0;
 }
