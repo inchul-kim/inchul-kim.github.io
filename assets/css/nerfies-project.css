@@ -5,7 +5,9 @@
 .project-standalone-container {
   box-sizing: border-box;
   width: 100%;
-  padding: 1.25rem max(1rem, 4vw) 3rem;
+  max-width: var(--project-max-width, 980px);
+  margin: 0 auto;
+  padding: 1.25rem 15px 3rem;
 }
 
 .project-standalone-actions {
@@ -71,8 +73,8 @@ html[data-theme-setting="light"] .project-standalone-theme-toggle #light-toggle-
 }
 
 .nerfies-project-page {
-  max-width: 980px;
-  margin: 0 auto;
+  max-width: none;
+  margin: 0;
   padding-bottom: 2.5rem;
   --nerfies-kicker-color: #ca8216;
 }
@@ -583,7 +585,8 @@ html[data-theme="dark"] .nerfies-teaser-media .nerfies-teaser-image--dark {
 }
 
 .nerfies-wide {
-  width: min(100%, 1200px);
+  width: 100%;
+  max-width: var(--project-max-width, 1200px);
   margin-left: auto;
   margin-right: auto;
 }

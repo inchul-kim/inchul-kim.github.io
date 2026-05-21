@@ -62,9 +62,37 @@
   margin: 0 auto;
 }
 
+.teaching-thumbnail-frame {
+  box-sizing: border-box;
+  width: 116px;
+  max-width: 100%;
+}
+
+@media (min-width: 576px) {
+  .publications .publication-thumb-col {
+    flex: 0 0 230px;
+    max-width: 230px;
+  }
+
+  .publications .publication-details-col {
+    flex: 1 1 0;
+    max-width: calc(100% - 230px);
+  }
+
+  .teaching-list .teaching-thumbnail-col {
+    flex: 0 0 130px;
+    max-width: 130px;
+  }
+
+  .teaching-list .teaching-course-col {
+    flex: 1 1 0;
+    max-width: calc(100% - 130px);
+  }
+}
+
 @media (max-width: 576px) {
-  .teaching-list .w-90 {
-    width: 100% !important;
+  .teaching-thumbnail-frame {
+    width: 100%;
   }
 
   .teaching-list .thumbnail-img {

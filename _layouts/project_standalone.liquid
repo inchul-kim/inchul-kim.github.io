@@ -29,7 +29,7 @@
       </div>
     {% endif %}
 
-    <main class="project-standalone-container" role="main">
+    <main class="project-standalone-container" role="main" style="--project-max-width: {{ site.max_width | default: '980px' }};">
       {{ content }}
     </main>
 
