@@ -98,14 +98,28 @@ layout: project_standalone
               target="_blank"
               rel="noopener noreferrer"
             >
-              {% if link.icon %}
+              {% if link.icon_svg %}
+                <img
+                  class="nerfies-link-icon-img"
+                  src="{{ link.icon_svg | relative_url }}"
+                  alt=""
+                  aria-hidden="true"
+                >
+              {% elsif link.icon %}
                 <i class="{{ link.icon }}"></i>
               {% endif %}
               <span>{{ link.label | default: 'Link' }}</span>
             </a>
-          {% elsif link.label or link.icon %}
+          {% elsif link.label or link.icon or link.icon_svg %}
             <span class="nerfies-link nerfies-link-disabled" aria-disabled="true">
-              {% if link.icon %}
+              {% if link.icon_svg %}
+                <img
+                  class="nerfies-link-icon-img"
+                  src="{{ link.icon_svg | relative_url }}"
+                  alt=""
+                  aria-hidden="true"
+                >
+              {% elsif link.icon %}
                 <i class="{{ link.icon }}"></i>
               {% endif %}
               <span>{{ link.label | default: 'Link' }}</span>

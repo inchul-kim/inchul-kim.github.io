@@ -39,6 +39,9 @@ project_links:
   #   icon: ai ai-arxiv
   - label: DOI
     icon: ai ai-doi
+  - label: Project
+    url: https://vclab.kaist.ac.kr/eg2026/index.html
+    icon_svg: /assets/img/vclab_logo.svg
   # - label: Demo Video
   #   url: /assets/publication/[CVPR2026]cbct_pose/ours_broccoli.mp4
   #   icon: fa-solid fa-film
