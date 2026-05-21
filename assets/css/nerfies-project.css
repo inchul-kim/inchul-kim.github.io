@@ -168,6 +168,14 @@ html[data-theme-setting="light"] .project-standalone-theme-toggle #light-toggle-
   color: var(--global-theme-color);
 }
 
+.nerfies-link-icon-img {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  flex: 0 0 auto;
+  object-fit: contain;
+}
+
 .nerfies-link-disabled {
   opacity: 0.5;
   cursor: not-allowed;
@@ -183,6 +191,10 @@ html[data-theme-setting="light"] .project-standalone-theme-toggle #light-toggle-
 }
 
 .nerfies-link-disabled i {
+  opacity: 0.55;
+}
+
+.nerfies-link-disabled .nerfies-link-icon-img {
   opacity: 0.55;
 }
 
