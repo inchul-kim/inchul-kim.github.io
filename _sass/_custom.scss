@@ -3,6 +3,10 @@
   font-size: 0.6em; // You can adjust: 0.75em, 0.8em, 0.9em, etc.
 }
 
+.post article > .clearfix .social {
+  margin-bottom: 1.5rem;
+}
+
 .preview-cell {
   display: flex;
   align-items: center;
@@ -228,8 +232,8 @@
   .news table tr {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
-    row-gap: 0.35rem;
-    margin-bottom: 1.55rem;
+    row-gap: 0.1rem;
+    margin-bottom: 0.4rem;
     // Optional row divider:
     // padding-bottom: 1rem;
     // border-bottom: 1px solid var(--global-divider-color);
