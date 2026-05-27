@@ -1,4 +1,13 @@
 // Make all social media icons smaller globally
+body,
+button,
+input,
+textarea,
+select {
+  font-family: "Google Sans Flex", sans-serif;
+  font-optical-sizing: auto;
+}
+
 .social-icons .fa {
   font-size: 0.6em; // You can adjust: 0.75em, 0.8em, 0.9em, etc.
 }
