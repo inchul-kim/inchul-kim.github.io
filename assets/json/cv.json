@@ -68,9 +68,9 @@
   ],
   "awards": [
     {
-      "title": "Best Paper Award (Günter Enderle Best Paper Award)",
+      "title": "Best Paper Award at Eurographics 2026 (Günter Enderle Best Paper Award)",
       "date": "2026",
-      "awarder": "Eurographics 2026",
+      "awarder": "European Association for Computer Graphics",
       "url": "/assets/pdf/eg2026_best_paper_award.pdf",
       "highlights": "Splat-based Metal Artifact Reduction in Cone-Beam CT via Polychromatic Modeling"
     },
@@ -79,7 +79,14 @@
       "date": "2023",
       "awarder": "Korea Advanced Institute of Science and Technology (KAIST)",
       "url": "/assets/pdf/outstanding_ta_award_spring_2023.pdf"
-      // "highlights": "Compact hyperspectral imaging at low cost (presented at <a href=\"/publications#prism:siga:2017\">ACM SIGGRAPH Asia 2017</a>)."
+      // "highlights": "A graduate-level computer graphics course"
+    },
+    {
+      "title": "Best Journal Paper Nominee",
+      "date": "2019",
+      "awarder": "IEEE VR 2019",
+      "url": "https://ieeevr.org/2019/awards/conference_awards.html",
+      "highlights": "Motion Parallax for 360° RGBD Video"
     },
     {
       "title": "KAIST Breakthroughs",
