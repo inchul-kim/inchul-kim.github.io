@@ -19,18 +19,11 @@
             <th
               scope="row"
               style="width: 10rem; white-space: nowrap"
-              data-aos="fade-up"
-              data-aos-duration="400"
-              data-aos-once="true"
             >
               {{ item.date | date: '%B, %Y' }}
             </th>
 
-            <td
-              data-aos="fade-up"
-              data-aos-duration="400"
-              data-aos-once="true"
-            >
+            <td>
               {% if item.inline %}
                 {{ item.content | remove: '<p>' | remove: '</p>' | emojify }}
               {% else %}
@@ -39,6 +32,13 @@
             </td>
           </tr>
         {% endfor %}
+        {% if include.limit and page.announcements.limit and news_size > news_limit %}
+          <tr>
+            <td colspan="2">
+              <a href="{{ '/news/' | relative_url }}">Click to see more news</a>
+            </td>
+          </tr>
+        {% endif %}
       </table>
     </div>
   {% else %}

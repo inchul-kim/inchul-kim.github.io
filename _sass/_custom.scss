@@ -227,6 +227,15 @@ select {
   line-height: 1.55;
 }
 
+/* Keep the news block static even when the theme transition class is active. */
+html.transition .news,
+html.transition .news *,
+html.transition .news *::before,
+html.transition .news *::after {
+  transition: none !important;
+  animation: none !important;
+}
+
 @media (max-width: 576px) {
   .news .table-responsive {
     overflow-x: visible;
