@@ -178,32 +178,6 @@ html[data-theme-setting="light"] .project-standalone-theme-toggle #light-toggle-
   object-fit: contain;
 }
 
-.nerfies-link-disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-  color: var(--global-text-color-light);
-  border-color: var(--global-divider-color);
-  background: transparent;
-}
-
-.nerfies-link-disabled:hover {
-  transform: none;
-  border-color: var(--global-divider-color);
-  color: var(--global-text-color-light);
-}
-
-.nerfies-link-disabled i {
-  opacity: 0.55;
-}
-
-.nerfies-link-disabled .nerfies-link-icon-img {
-  opacity: 0.55;
-}
-
-.nerfies-link-disabled span {
-  opacity: 0.8;
-}
-
 .nerfies-section {
   margin-top: 2rem;
 }
