@@ -29,10 +29,10 @@ project_links:
   - label: Supp
     icon: fa-solid fa-file-pdf
   - label: Code
-    # url: /tba
+    url: https://github.com/KAIST-VCLAB/ct-metal-reduction
     icon: fa-brands fa-github
   - label: Data
-    # url: https://your-dataset-link
+    url: https://drive.google.com/drive/folders/1l4noH0qe3abyq17l8Ex3BiDFcygj9hLs
     icon: fa-solid fa-database
   # - label: arXiv
   #   # url: https://arxiv.org/abs/xxxx.xxxxx
