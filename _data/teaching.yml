@@ -3,22 +3,25 @@
     - title: Introduction to Computer Vision
       code: CS484
       term: Fall 2024
-      school: KAIST
+      institution: KAIST
+      location: Daejeon, South Korea
       description: An undergraduate-level course covering basic concepts in computer vision.
-      url: https://vclab.kaist.ac.kr/cs484/index.html
+      url: https://vclab.kaist.ac.kr/cs375/index.html
       image: /assets/img/KAIST_TA/cs484.png
 
     - title: Machine Learning for Computer Vision
       code: CS485
       term: Fall 2023
-      school: KAIST
+      institution: KAIST
+      location: Daejeon, South Korea
       description: An undergraduate course that studies concepts, theories and state-of-the-art methods for visual learning and recognition.
       image: /assets/img/KAIST_TA/cs485.png
 
     - title: Computer Graphics
       code: CS580
       term: Spring 2023
-      school: KAIST
+      institution: KAIST
+      location: Daejeon, South Korea
       description: A graduate course that covers advanced topics in computer graphics such as Monte Carlo methods, path-tracing, radiosity, and other hybrid algorithms.
       url: https://vclab.kaist.ac.kr/cs580/index.html
       image: /assets/img/KAIST_TA/cs580.png
@@ -26,7 +29,8 @@
     - title: Interactive Computer Graphics
       code: CS482
       term: Fall 2022
-      school: KAIST
+      institution: KAIST
+      location: Daejeon, South Korea
       description: An undergraduate team project-based course that builds an interactive OpenGL video game on a mobile platform.
       url: https://vclab.kaist.ac.kr/cs482/index.html
       image: /assets/img/KAIST_TA/cs482.png

@@ -49,7 +49,9 @@ layout: default
                   {{ course.title }}
                 {% endif %}
               </h5>
-              <p class="text-muted mb-1">{{ course.code }} · {{ course.term }} · {{ course.school }}</p>
+              <p class="text-muted mb-1">
+                {{ course.code }} · {{ course.term }} · {{ course.institution }}{% if course.location %} · {{ course.location }}{% endif %}
+              </p>
               {% if course.description %}
                 <p class="course-description mb-0">{{ course.description }}</p>
               {% endif %}
